@@ -100,7 +100,7 @@ public class RandomItemGenerator : MonoBehaviour
 		return itemGenerated;
 	}
 
-	void Update()
+	void Start()
 	{
 		Debug.Log(GetRandomItem());
 	}

@@ -7,10 +7,10 @@ namespace DefaultNamespace
     public class BasicMeleeEnimy: MonoBehaviour, IMovable, IInstansable, IDamegeable, IFightable
 
     {
-        public int MoveRange;
+        public int MoveRange=1;
         private int _life;
         private int _force;
-        private BasicMeleeEnimy[] _poolofTarguets;
+        private Player[] _poolofTarguets;
         private GameObject _closerTarguet;
 
         public int Hp
@@ -44,12 +44,17 @@ namespace DefaultNamespace
         
         public virtual void Move()
         {
-            throw new System.NotImplementedException();
+            if ((Vector3.Distance(_closerTarguet.transform.position, transform.position)<=1))
+            {
+                Attack();
+                return;
+            }
+            transform.position = (_closerTarguet.transform.position - transform.position).normalized * MoveRange;
         }
 
         public void SetTarguet()
         {
-            _poolofTarguets = FindObjectsOfType<BasicMeleeEnimy>();
+            _poolofTarguets = FindObjectsOfType<Player>();
             foreach (var t in _poolofTarguets)
             {
                 if ((Vector3.Distance(_closerTarguet.transform.position, transform.position)>=(Vector3.Distance(t.gameObject.transform.position, transform.position))))
@@ -69,13 +74,13 @@ namespace DefaultNamespace
         
         public void Damege(int damege)
         {
-            throw new System.NotImplementedException();
+            _life =- damege;
         }
 
         
         public void Attack()
         {
-            throw new System.NotImplementedException();
+            _closerTarguet.GetComponent<Player>().Damege(_force);
         }
     }
 }

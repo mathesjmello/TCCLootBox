@@ -16,7 +16,7 @@ namespace DefaultNamespace
 
     public interface IInstansable
     {
-        IInstansable Create(Vector3 position, Quaternion rotation);
+        GameObject Create(Vector3 position, Quaternion rotation);
     }
 
     public interface IFightable
@@ -29,5 +29,10 @@ namespace DefaultNamespace
     {
         int ShotForce { get; set; }
         void Shot();
+    }
+
+    public interface IPreparable
+    {
+        [SerializeField] int Iniciativa { get; set; }
     }
 }

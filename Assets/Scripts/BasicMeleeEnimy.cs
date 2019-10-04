@@ -4,15 +4,18 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class BasicMeleeEnimy: MonoBehaviour, IMovable, IInstansable, IDamegeable, IFightable
+    public class BasicMeleeEnimy: MonoBehaviour, IMovable, IInstansable, IDamegeable, IFightable, IPreparable
 
     {
         public int MoveRange=1;
         private int _life;
         private int _force;
-        private Player[] _poolofTarguets;
-        private GameObject _closerTarguet;
-
+        public Player[] _poolofTarguets;
+        public GameObject _closerTarguet;
+        
+        public int Iniciativa { get; set; }
+        
+        
         public int Hp
         {
             get
@@ -34,8 +37,13 @@ namespace DefaultNamespace
             get{ return _force;}
             set { _force = value; }
         }
-        
-        
+
+        private void Awake()
+        {
+            Iniciativa = Random.Range(0, 20);
+            SetTarguet();
+        }
+
         private void Die()
         {
             throw new System.NotImplementedException();
@@ -66,9 +74,9 @@ namespace DefaultNamespace
       
         }
 
-        public IInstansable Create(Vector3 position, Quaternion rotation)
+        public GameObject Create(Vector3 position, Quaternion rotation)
         {
-            return Instantiate(this, position, rotation);
+            return Instantiate(this, position, rotation).gameObject;
         }
 
         
@@ -82,5 +90,7 @@ namespace DefaultNamespace
         {
             _closerTarguet.GetComponent<Player>().Damege(_force);
         }
+
+        
     }
 }

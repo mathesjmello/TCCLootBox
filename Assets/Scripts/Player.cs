@@ -2,8 +2,10 @@
 
 namespace DefaultNamespace
 {
-    public class Player: MonoBehaviour, IDamegeable, IFightable
+    public class Player: MonoBehaviour, IDamegeable, IFightable, IPreparable
     {
+        
+        public int Iniciativa { get; set; }
         private int _life;
         private int _force;
 
@@ -22,6 +24,12 @@ namespace DefaultNamespace
                 }
             }
         }
+
+        private void Awake()
+        {
+            Iniciativa = Random.Range(0, 20);
+        }
+
         public int HitForce { get { return _force; } set { _force = value; } }
 
         private void Die()
@@ -39,5 +47,6 @@ namespace DefaultNamespace
         {
             throw new System.NotImplementedException();
         }
+
     }
 }

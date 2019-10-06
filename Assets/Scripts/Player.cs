@@ -40,6 +40,7 @@ namespace DefaultNamespace
         public void Damege(int damege)
         {
             _life =- damege;
+            Debug.Log("ai");
         }
 
         

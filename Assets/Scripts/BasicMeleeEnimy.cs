@@ -57,15 +57,16 @@ namespace DefaultNamespace
                 Attack();
                 return;
             }
-            transform.position = (_closerTarguet.transform.position - transform.position).normalized * MoveRange;
+            transform.position = (_closerTarguet.transform.position - transform.position).normalized;
         }
 
         public void SetTarguet()
         {
             _poolofTarguets = FindObjectsOfType<Player>();
+            _closerTarguet = _poolofTarguets[0].gameObject;
             foreach (var t in _poolofTarguets)
             {
-                if ((Vector3.Distance(_closerTarguet.transform.position, transform.position)>=(Vector3.Distance(t.gameObject.transform.position, transform.position))))
+                if ((Vector3.Distance(_closerTarguet.transform.position, transform.position)<=(Vector3.Distance(t.gameObject.transform.position, transform.position))))
                 {
                     _closerTarguet = t.gameObject;
                 }

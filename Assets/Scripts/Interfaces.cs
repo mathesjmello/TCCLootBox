@@ -33,6 +33,6 @@ namespace DefaultNamespace
 
     public interface IPreparable
     {
-        [SerializeField] int Iniciativa { get; set; }
+        int Iniciativa { get; set; }
     }
 }

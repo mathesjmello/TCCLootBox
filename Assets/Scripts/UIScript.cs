@@ -26,6 +26,7 @@ public class UIScript : RandomItemGenerator
 
     private void GetItem()
     {
-        NameText.text = "Name: " + GetItemName();
+        NameText.text = GetItemName();
+        DescriptionText.text = "Your item " + GetItemDescription();
     }
 }

@@ -101,7 +101,15 @@ public class RandomItemGenerator : MonoBehaviour
 	}
 
 	public string GetItemDimension() {
-		
+		int dimensionIndex = Random.Range(0, itemDimension.Length);
+		string dimensionResult = itemDimension[dimensionIndex];
+		return (dimensionResult);
+	}
+
+	public string GetItemPower() {
+		int powerIndex = Random.Range(0, itemPower.Length);
+		string powerResult = itemPower[powerIndex];
+		return (powerResult);
 	}
 	
 

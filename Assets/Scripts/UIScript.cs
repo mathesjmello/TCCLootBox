@@ -10,7 +10,8 @@ public class UIScript : RandomItemGenerator
     // Start is called before the first frame update
     void Start()
     {
-     	GetRandomItem();   
+     	// Teste do método pai (RandomItemGenerator)
+     	Debug.Log(GetItemName());
     }
 
     // Update is called once per frame

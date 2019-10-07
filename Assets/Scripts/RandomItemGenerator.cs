@@ -115,7 +115,7 @@ public class RandomItemGenerator : MonoBehaviour
 
 	void Start()
 	{
-		Debug.Log(GetRandomItem());
+		
 	}
 
 	// Método que gera item completo (Nome, Descrição, Poder, Dimensão)

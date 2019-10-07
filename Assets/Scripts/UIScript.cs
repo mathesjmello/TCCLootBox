@@ -10,7 +10,7 @@ public class UIScript : RandomItemGenerator
    public Text PowerText;
    public Text DimensionText;
    public Button GetItemBtn;
-    // Start is called before the first frame update
+  
     void Start()
     {
      	// Teste do método pai (RandomItemGenerator)
@@ -26,7 +26,10 @@ public class UIScript : RandomItemGenerator
 
     private void GetItem()
     {
-        NameText.text = GetItemName();
-        DescriptionText.text = "Your item " + GetItemDescription();
+      Debug.Log("FUNCIONOU PORRA");
+      NameText.text = GetItemName();
+      DescriptionText.text = "Your item " + GetItemDescription();
+      PowerText.text = GetItemPower();
+      DimensionText.text = GetItemDimension();
     }
 }

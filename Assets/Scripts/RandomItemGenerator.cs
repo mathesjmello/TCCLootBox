@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class RandomItemGenerator : MonoBehaviour
 {
- 
-
 	string[] itemName = new string[] {
 		"Dark Bushido the Fated",
 		"Red Walrus",
@@ -112,7 +110,6 @@ public class RandomItemGenerator : MonoBehaviour
 		return (powerResult);
 	}
 	
-
 	void Start()
 	{
 		

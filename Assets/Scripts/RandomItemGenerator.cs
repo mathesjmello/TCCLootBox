@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class RandomItemGenerator : MonoBehaviour
 {
-	 public Text itemNameText;
-   public Text itemDescriptionText;
-   
+ 
 
 	string[] itemName = new string[] {
 		"Dark Bushido the Fated",

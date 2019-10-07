@@ -88,8 +88,17 @@ public class RandomItemGenerator : MonoBehaviour
 		"Photokinesis"
 	};
 
-	public string GetRandomItem() {
+	public string GetItemName() {
 		int nameIndex = Random.Range(0, itemName.Length);
+		string nameGenerated = itemName[nameIndex];
+		return (nameGenerated);
+	}
+
+	public string GetItemDescription() {
+		
+	}
+	public string GetRandomItem() {
+		int nameIndex = Random.Range(0, itemName.Length);	
 		int descriptionIndex = Random.Range(0, itemDescription.Length);
 		int dimensionIndex = Random.Range(0, itemDimension.Length);
 		int powerIndex = Random.Range(0, itemPower.Length);
@@ -100,7 +109,8 @@ public class RandomItemGenerator : MonoBehaviour
 			"Description: Your item " + itemDescription[descriptionIndex] + " | " +
 			"Dimension: " + itemDimension[dimensionIndex];
 
-		return itemGenerated;
+		string nameGenerated = itemName[nameIndex];
+		return (nameGenerated, );
 	}
 
 	void Start()

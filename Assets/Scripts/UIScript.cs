@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScript : MonoBehaviour
+public class UIScript : RandomItemGenerator
 {
 	 public Text itemNameText;
    public Text itemDescriptionText;

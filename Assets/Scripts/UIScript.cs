@@ -26,10 +26,9 @@ public class UIScript : RandomItemGenerator
 
     private void GetItem()
     {
-      Debug.Log("FUNCIONOU PORRA");
-      NameText.text = GetItemName();
+      NameText.text = "Character Name: " + GetItemName();
       DescriptionText.text = "Your item " + GetItemDescription();
-      PowerText.text = GetItemPower();
-      DimensionText.text = GetItemDimension();
+      PowerText.text = "Power: " + GetItemPower();
+      DimensionText.text = "Round: " + GetItemDimension();
     }
 }

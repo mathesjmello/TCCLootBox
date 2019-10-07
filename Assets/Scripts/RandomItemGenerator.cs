@@ -97,7 +97,7 @@ public class RandomItemGenerator : MonoBehaviour
 		string itemGenerated = 
 			"Name: " + itemName[nameIndex] + " | " +
 			"Power: " + itemPower[powerIndex] + " | " +
-			"Description: " + itemDescription[descriptionIndex] + " | " +
+			"Description: Your item " + itemDescription[descriptionIndex] + " | " +
 			"Dimension: " + itemDimension[dimensionIndex];
 
 		return itemGenerated;

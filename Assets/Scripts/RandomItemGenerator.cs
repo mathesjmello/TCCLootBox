@@ -90,32 +90,41 @@ public class RandomItemGenerator : MonoBehaviour
 
 	public string GetItemName() {
 		int nameIndex = Random.Range(0, itemName.Length);
-		string nameGenerated = itemName[nameIndex];
-		return (nameGenerated);
+		string nameResult = itemName[nameIndex];
+		return (nameResult);
 	}
 
 	public string GetItemDescription() {
+		int descriptionIndex = Random.Range(0, itemDescription.Length);
+		string descriptionResult = itemDescription[descriptionIndex];
+		return (descriptionResult);
+	}
+
+	public string GetItemDimension() {
 		
 	}
-	public string GetRandomItem() {
-		int nameIndex = Random.Range(0, itemName.Length);	
-		int descriptionIndex = Random.Range(0, itemDescription.Length);
-		int dimensionIndex = Random.Range(0, itemDimension.Length);
-		int powerIndex = Random.Range(0, itemPower.Length);
-
-		string itemGenerated = 
-			"Name: " + itemName[nameIndex] + " | " +
-			"Power: " + itemPower[powerIndex] + " | " +
-			"Description: Your item " + itemDescription[descriptionIndex] + " | " +
-			"Dimension: " + itemDimension[dimensionIndex];
-
-		string nameGenerated = itemName[nameIndex];
-		return (nameGenerated, );
-	}
+	
 
 	void Start()
 	{
 		Debug.Log(GetRandomItem());
 	}
+
+	// Método que gera item completo (Nome, Descrição, Poder, Dimensão)
+	// public string GetRandomItem() {
+	// 	int nameIndex = Random.Range(0, itemName.Length);	
+	// 	int descriptionIndex = Random.Range(0, itemDescription.Length);
+	// 	int dimensionIndex = Random.Range(0, itemDimension.Length);
+	// 	int powerIndex = Random.Range(0, itemPower.Length);
+
+	// 	string itemGenerated = 
+	// 		"Name: " + itemName[nameIndex] + " | " +
+	// 		"Power: " + itemPower[powerIndex] + " | " +
+	// 		"Description: Your item " + itemDescription[descriptionIndex] + " | " +
+	// 		"Dimension: " + itemDimension[dimensionIndex];
+
+	// 	string nameGenerated = itemName[nameIndex];
+	// 	return (nameGenerated, );
+	// }
 
 }

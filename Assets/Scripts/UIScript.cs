@@ -17,7 +17,7 @@ public class UIScript : RandomItemGenerator
   
     void Start()
     {	
-      // RandomItemBtn.onClick.AddListener(GetItem);
+      RandomItemBtn.onClick.AddListener(GetItem);
      	// Debug.Log(GetItemName()); 
       lastClickBtn = ulong.Parse(PlayerPrefs.GetString("LastClickBtn"));
     }
@@ -46,12 +46,11 @@ public class UIScript : RandomItemGenerator
       DescriptionText.text = "Your item " + GetItemDescription();
       PowerText.text = "Power: " + GetItemPower();
       DimensionText.text = "Round: " + GetItemDimension();
-    }
 
-    public void BtnClick() {
       lastClickBtn = (ulong)DateTime.Now.Ticks;
       PlayerPrefs.SetString("LastClickBtn", lastClickBtn.ToString());
       // PlayerPrefs.SetString("lastClickBtn", DateTime.Now.Ticks.ToString());
       RandomItemBtn.interactable = false;
     }
+
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,9 +27,9 @@ public class UIScript : RandomItemGenerator
     {
       if (!RandomItemBtn.IsInteractable())
       {
-        ulong difference = ((ulong)System.DateTime.Now.Ticks - lastClickBtn);
-        ulong minutes = difference / System.TimeSpan.TicksPerMillisecond;
-        // Debug.Log(System.DateTime.Now.Ticks);
+        ulong difference = ((ulong)DateTime.Now.Ticks - lastClickBtn);
+        ulong minutes = difference / TimeSpan.TicksPerMillisecond;
+        // Debug.Log(DateTime.Now.Ticks);
         float secondsLeft = (float)(3000.0f - minutes) / 1000.0f;
 
         if (secondsLeft < 0)
@@ -48,7 +49,7 @@ public class UIScript : RandomItemGenerator
     }
 
     public void BtnClick() {
-      lastClickBtn = (ulong)System.DateTime.Now.Ticks;
+      lastClickBtn = (ulong)DateTime.Now.Ticks;
       PlayerPrefs.SetString("lastClickBtn", lastClickBtn.ToString());
       RandomItemBtn.interactable = false;
     }

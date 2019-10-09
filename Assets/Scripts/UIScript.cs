@@ -17,7 +17,7 @@ public class UIScript : RandomItemGenerator
   
     void Start()
     {	
-      RandomItemBtn.onClick.AddListener(GetItem);
+      // RandomItemBtn.onClick.AddListener(GetItem);
      	// Debug.Log(GetItemName()); 
       lastClickBtn = ulong.Parse(PlayerPrefs.GetString("LastClickBtn"));
     }

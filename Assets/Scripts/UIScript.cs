@@ -11,8 +11,8 @@ public class UIScript : RandomItemGenerator
    public Text DescriptionText;
    public Text PowerText;
    public Text DimensionText;
-   public Button RandomItemBtn;
    public Text btnTimer;
+   public Button RandomItemBtn;
 
    private ulong lastClickBtn;
   
@@ -28,22 +28,35 @@ public class UIScript : RandomItemGenerator
     {
       if (!RandomItemBtn.IsInteractable())
       {
-        
-      }   
+        if (BtnReady())  
+          RandomItemBtn.interactable = true;
+          btnTimer.text = "Pronto!";
+          return;
+      }
+
+      ulong difference = ((ulong)DateTime.Now.Ticks - lastClickBtn);
+      ulong minutes = difference / TimeSpan.TicksPerMillisecond;
+      float secondsLeft = (float)(3000.0f - minutes) / 1000.0f;
+
+      string r = "";
+      // Horas
+      r += ((int)secondsLeft % 60).ToString("0") + "s";
+      btnTimer.text = r;
+
     }
 
-    private bool ?BtnReady() {
+    private bool BtnReady() {
       ulong difference = ((ulong)DateTime.Now.Ticks - lastClickBtn);
       ulong minutes = difference / TimeSpan.TicksPerMillisecond;
       // Debug.Log(DateTime.Now.Ticks);
       float secondsLeft = (float)(3000.0f - minutes) / 1000.0f;
 
       if (secondsLeft < 0)
-      {
-        RandomItemBtn.interactable = true;
-        return;
-      }
+        return true;
+      
+      return false;
     }
+
     private void GetItem()
     {
       NameText.text = "Character Name: " + GetItemName();

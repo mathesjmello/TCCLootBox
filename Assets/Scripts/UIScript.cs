@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class UIScript : RandomItemGenerator
 {
-	 public Text NameText;
+   public float msToWait = 5000.0f;
+
+   public Text NameText;
    public Text DescriptionText;
    public Text PowerText;
    public Text DimensionText;
@@ -21,6 +23,10 @@ public class UIScript : RandomItemGenerator
       RandomItemBtn.onClick.AddListener(GetItem);
      	// Debug.Log(GetItemName()); 
       lastClickBtn = ulong.Parse(PlayerPrefs.GetString("LastClickBtn"));
+
+      if(!BtnReady()) {
+        RandomItemBtn.interactable = false;
+      } 
     }
 
     // Update is called once per frame
@@ -36,7 +42,7 @@ public class UIScript : RandomItemGenerator
 
       ulong difference = ((ulong)DateTime.Now.Ticks - lastClickBtn);
       ulong minutes = difference / TimeSpan.TicksPerMillisecond;
-      float secondsLeft = (float)(3000.0f - minutes) / 1000.0f;
+      float secondsLeft = (float)(msToWait - minutes) / 1000.0f;
 
       string r = "";
       // Horas
@@ -49,7 +55,7 @@ public class UIScript : RandomItemGenerator
       ulong difference = ((ulong)DateTime.Now.Ticks - lastClickBtn);
       ulong minutes = difference / TimeSpan.TicksPerMillisecond;
       // Debug.Log(DateTime.Now.Ticks);
-      float secondsLeft = (float)(3000.0f - minutes) / 1000.0f;
+      float secondsLeft = (float)(msToWait - minutes) / 1000.0f;
 
       if (secondsLeft < 0)
         return true;

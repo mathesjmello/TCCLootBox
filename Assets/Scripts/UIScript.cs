@@ -51,6 +51,7 @@ public class UIScript : RandomItemGenerator
     public void BtnClick() {
       lastClickBtn = (ulong)DateTime.Now.Ticks;
       PlayerPrefs.SetString("lastClickBtn", lastClickBtn.ToString());
+      // PlayerPrefs.SetString("lastClickBtn", DateTime.Now.Ticks.ToString());
       RandomItemBtn.interactable = false;
     }
 }

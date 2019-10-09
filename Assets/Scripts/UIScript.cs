@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UIScript : RandomItemGenerator
 {
-   public float msToWait = 5000.0f;
+   public float msToWait = 2000.0f;
 
    public Text NameText;
    public Text DescriptionText;
@@ -40,14 +40,19 @@ public class UIScript : RandomItemGenerator
           return;
       }
 
-      ulong difference = ((ulong)DateTime.Now.Ticks - lastClickBtn);
-      ulong minutes = difference / TimeSpan.TicksPerMillisecond;
-      float secondsLeft = (float)(msToWait - minutes) / 1000.0f;
+      // ulong difference = ((ulong)DateTime.Now.Ticks - lastClickBtn);
+      // ulong minutes = difference / TimeSpan.TicksPerMillisecond;
+      // float secondsLeft = (float)(msToWait - minutes) / 1000.0f;
 
-      string r = "";
-      // Horas
-      r += ((int)secondsLeft % 60).ToString("0") + "s";
-      btnTimer.text = r;
+      // string r = "";
+      // // Horas
+      // r += ((int)secondsLeft / 3600).ToString() + "h ";
+      // secondsLeft -= ((int)secondsLeft / 3600 ) * 3600;
+      // // Minutos
+      // r += ((int)secondsLeft / 60).ToString("00") + "m ";
+      // // Segundos
+      // r += (secondsLeft % 60).ToString("00") + "s";
+      // btnTimer.text = r;
 
     }
 
@@ -58,7 +63,10 @@ public class UIScript : RandomItemGenerator
       float secondsLeft = (float)(msToWait - minutes) / 1000.0f;
 
       if (secondsLeft < 0)
+      {
+        btnTimer.text = "Pronto!";
         return true;
+      }
       
       return false;
     }

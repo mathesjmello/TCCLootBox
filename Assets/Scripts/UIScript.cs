@@ -29,6 +29,14 @@ public class UIScript : RandomItemGenerator
         ulong difference = ((ulong)System.DateTime.Now.Ticks - lastClickBtn);
         ulong minutes = difference / System.TimeSpan.TicksPerMillisecond;
         // Debug.Log(System.DateTime.Now.Ticks);
+
+        float secondsLeft = (3000 - m) / 1000;
+
+        if (secondsLeft < 0)
+        {
+          RandomItemBtn.interactable = true;
+          return;
+        }
       }   
     }
 

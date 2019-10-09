@@ -18,8 +18,8 @@ public class UIScript : RandomItemGenerator
     void Start()
     {	
       RandomItemBtn.onClick.AddListener(GetItem);
-     	// Debug.Log(GetItemName());
-      lastClickBtn = ulong.Parse(PlayerPrefs.GetString("lastClickBtn"));
+     	// Debug.Log(GetItemName()); 
+      lastClickBtn = ulong.Parse(PlayerPrefs.GetString("LastClickBtn"));
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class UIScript : RandomItemGenerator
 
     public void BtnClick() {
       lastClickBtn = (ulong)DateTime.Now.Ticks;
-      PlayerPrefs.SetString("lastClickBtn", lastClickBtn.ToString());
+      PlayerPrefs.SetString("LastClickBtn", lastClickBtn.ToString());
       // PlayerPrefs.SetString("lastClickBtn", DateTime.Now.Ticks.ToString());
       RandomItemBtn.interactable = false;
     }

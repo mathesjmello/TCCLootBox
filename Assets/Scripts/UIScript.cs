@@ -27,6 +27,7 @@ public class UIScript : RandomItemGenerator
       if (!RandomItemBtn.IsInteractable())
       {
         ulong difference = ((ulong)System.DateTime.Now.Ticks - lastClickBtn);
+        ulong minutes = difference / System.TimeSpan.TicksPerMillisecond;
         // Debug.Log(System.DateTime.Now.Ticks);
       }   
     }
@@ -41,7 +42,7 @@ public class UIScript : RandomItemGenerator
 
     public void BtnClick() {
       lastClickBtn = (ulong)System.DateTime.Now.Ticks;
-      // PlayerPrefs.SetString("lastClickBtn", lastClickBtn.ToString());
+      PlayerPrefs.SetString("lastClickBtn", lastClickBtn.ToString());
       RandomItemBtn.interactable = false;
     }
 }

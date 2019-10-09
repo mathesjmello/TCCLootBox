@@ -29,7 +29,7 @@ public class UIScript : RandomItemGenerator
         ulong difference = ((ulong)System.DateTime.Now.Ticks - lastClickBtn);
         ulong minutes = difference / System.TimeSpan.TicksPerMillisecond;
         // Debug.Log(System.DateTime.Now.Ticks);
-        float secondsLeft = (float)(3000.0f - m) / 1000.0f;
+        float secondsLeft = (float)(3000.0f - minutes) / 1000.0f;
 
         if (secondsLeft < 0)
         {

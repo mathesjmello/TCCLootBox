@@ -9,15 +9,19 @@ public class TileScript : MonoBehaviour
     public bool target = false;
     public bool selectable = false;
 
-    public List<List> proximityList = new List<Tile>();
+    public List<TileScript> proximityList = new List<TileScript>();
 
-    // Start is called before the first frame update
+    // Breadth First Search (BFS)
+    public bool visited = false;
+    public TileScript parent = null;
+		public int distance = 0;
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
     	if(currentTile)
@@ -33,6 +37,33 @@ public class TileScript : MonoBehaviour
     	else {
     		GetComponent<Renderer>().material.color = Color.white;	
     	}
+    }
+
+    public void Reset() 
+    {
+    	proximityList.Clear();
+
+    	currentTile = false;
+    	target = false;
+    	selectable= false;
+
+    	visited = false;
+    	parent = null;
+    	distance = 0;
+    }
+
+    public void FindNear(float jumpHeight)
+    {
+    	Reset();
+    	CheckTile(Vector3.forward, jumpHeight);
+    	CheckTile(-Vector3.forward), jumpHeight;
+    	CheckTile(Vector3.right, jumpHeight);
+    	CheckTile(-	Vector3.right, jumpHeight);
+
+    }
+
+    public void CheckTile(Vector3 direction)
+    {
 
     }
 }

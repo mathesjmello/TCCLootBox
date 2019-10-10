@@ -68,7 +68,7 @@ public class TileScript : MonoBehaviour
 
     	foreach (Collider item in colliders)
     	{
-    		Tile tile = item.GetComponent<Tile>();
+    		TileScript tile = item.GetComponent<TileScript>();
     		if ( tile != null && tile.walkable )
     		{
     			RaycastHit hit;

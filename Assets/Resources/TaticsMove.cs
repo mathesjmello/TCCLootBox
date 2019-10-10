@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TaticsMove : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     protected void Init()
     {
-    	
+
     }
 }

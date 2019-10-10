@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TileScript : MonoBehaviour
 {
+    public bool walkable = true;
     public bool currentTile = false;
     public bool target = false;
     public bool selectable = false;
+
+    public List<List> proximityList = new List<Tile>();
 
     // Start is called before the first frame update
     void Start()

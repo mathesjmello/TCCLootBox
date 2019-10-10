@@ -56,14 +56,15 @@ public class TileScript : MonoBehaviour
     {
     	Reset();
     	CheckTile(Vector3.forward, jumpHeight);
-    	CheckTile(-Vector3.forward), jumpHeight;
+    	CheckTile(-Vector3.forward, jumpHeight);
     	CheckTile(Vector3.right, jumpHeight);
     	CheckTile(-	Vector3.right, jumpHeight);
 
     }
 
-    public void CheckTile(Vector3 direction)
+    public void CheckTile(Vector3 direction, float jumpHeight)
     {
-
+    	Vector3 jumpLimit = new Vector3();
+    	Collider[] colliders = Physics.OverlapBox(transform.position + direction, jumpLimit);
     }
 }

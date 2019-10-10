@@ -7,9 +7,9 @@ public class MenuScript
 {
     // Start is called before the first frame update
     [MenuItem("Tools/Assing Tile Material")]
-    public void AssingTileMaterial()
+    public static void AssingTileMaterial()
     {
-    	GameObject[] tiles = GameObject.GameObject.FindGameObjectWithTag("Tile");
+    	GameObject[] tiles = GameObject.FindGameObjectsWithTag("Tile");
     	Material material = Resources.Load<Material>("Tile");
 
     	foreach (GameObject t in tiles)

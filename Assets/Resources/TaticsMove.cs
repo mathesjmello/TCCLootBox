@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : TacticsMove
+public class TaticsMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    protected void Init()
     {
-     	Init();   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    	
     }
 }

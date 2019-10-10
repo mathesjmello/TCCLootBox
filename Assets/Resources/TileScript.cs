@@ -17,7 +17,7 @@ public class TileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	if(current)
+    	if(currentTile)
     	{
     		GetComponent<Renderer>().material.color = Color.magenta;
     	}

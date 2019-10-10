@@ -15,6 +15,19 @@ public class MenuScript
     	foreach (GameObject t in tiles)
     	{
     		t.GetComponent<Renderer>().material = material;
+    		Debug.Log("Material Added!");
     	}
     }
+
+    [MenuItem("Tools/Assing Tile Script")]
+		public static void AssingTileScript()
+    {
+    	GameObject[] tiles = GameObject.FindGameObjectsWithTag("Tile");
+
+    	foreach (GameObject t in tiles)
+    	{
+    		t.AddComponent<TileScript>();
+    		Debug.Log("Script Added!");
+    	}
+    }    
 }

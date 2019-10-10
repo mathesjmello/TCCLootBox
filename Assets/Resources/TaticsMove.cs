@@ -69,7 +69,24 @@ public class TaticsMove : MonoBehaviour
 
     	while (process.Count > 0)
     	{
+    		TileScript t = process.Dequeue();
 
+    		selectableTiles.Add(t);
+    		t.selectable = true;
+
+    		if (t.distance < move) 
+    		{
+    			foreach (TileScript tile in t.proximityList)
+    			{
+	    			if(!tile.visited)
+	    			{
+	    				tile.parent = t;
+	    				tile.visited = true;
+	    				tile.distance = 1 + t.distance;
+	    				process.Enqueue(tile);
+	    			}
+    			}
+    		}
     	}
     }
 }

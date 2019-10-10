@@ -59,12 +59,24 @@ public class TileScript : MonoBehaviour
     	CheckTile(-Vector3.forward, jumpHeight);
     	CheckTile(Vector3.right, jumpHeight);
     	CheckTile(-	Vector3.right, jumpHeight);
-
     }
 
     public void CheckTile(Vector3 direction, float jumpHeight)
     {
-    	Vector3 jumpLimit = new Vector3();
+    	Vector3 jumpLimit = new Vector3(0.25f, (1 + jumpHeight) / 2.0f, 0.25f);
     	Collider[] colliders = Physics.OverlapBox(transform.position + direction, jumpLimit);
+
+    	foreach (Collider item in colliders)
+    	{
+    		Tile tile = item.GetComponent<Tile>();
+    		if ( tile != null && tile.walkable )
+    		{
+    			RaycastHit hit;
+    			if (Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1))
+    			{
+    				proximityList.Add(tile);	
+    			}
+    		}
+    	}
     }
 }

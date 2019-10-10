@@ -23,6 +23,53 @@ public class TaticsMove : MonoBehaviour
     {
     	tiles = GameObject.FindGameObjectsWithTag("Tile");
 
-    	halfHeight = 
+    	halfHeight = GetComponent<Collider>().bounds.extents.y;
+    }
+
+    public void CurrentTile()
+    {
+    	currentTile = GetTargetTile(gameObject);
+    	currentTile.currentTile = true;
+    }
+
+    public TileScript GetTargetTile (GameObject target)
+    {
+    	RaycastHit hit;
+    	TileScript tile = null;
+
+			if (Physics.Raycast(target.transform.position, -Vector3.up, out hit, 1))
+			{
+				tile = hit.collider.GetComponent<TileScript>();	
+			}
+
+			return tile;
+    }
+
+    public void ComputeProximityList()
+    {
+    	// tiles = GameObject.FindGameObjectsWithTag("Tile");
+
+    	foreach (GameObject tile in tiles)
+    	{
+    		TileScript t = tile.GetComponent<TileScript>();
+    		t.FindNear(jumpHeight);
+    	}
+    }
+
+    public void FindSelectableTiles() 
+    {
+    	ComputeProximityList();
+    	CurrentTile();
+
+    	Queue<TileScript> process = new Queue<TileScript>();
+
+    	process.Enqueue(currentTile);
+    	currentTile.visited = true;
+    	// currentTile.parent = ?? leave as null
+
+    	while (process.Count > 0)
+    	{
+
+    	}
     }
 }

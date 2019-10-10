@@ -28,11 +28,14 @@ public class TileScript : MonoBehaviour
     	{
     		GetComponent<Renderer>().material.color = Color.magenta;
     	}
-    	else if (target) {
-    		GetComponent<Renderer>().material.color = Color.green;
-    	}
-    	else if (selectable) {
+    	else if(selectable)
+    	{
     		GetComponent<Renderer>().material.color = Color.red;
+    		Debug.Log("Tile Vermelha");
+    	}
+    	else if(target)
+    	{
+    		GetComponent<Renderer>().material.color = Color.green;
     	}
     	else {
     		GetComponent<Renderer>().material.color = Color.white;	
@@ -45,7 +48,7 @@ public class TileScript : MonoBehaviour
 
     	currentTile = false;
     	target = false;
-    	selectable= false;
+    	selectable = false;
 
     	visited = false;
     	parent = null;

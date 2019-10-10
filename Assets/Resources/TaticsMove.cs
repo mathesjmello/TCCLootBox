@@ -10,8 +10,8 @@ public class TaticsMove : MonoBehaviour
     Stack<TileScript> path = new Stack<TileScript>();
     TileScript currentTile;
 
-    public int move = 3;
-    public float jumpHeight = 2;
+    public int move = 1;
+    public float jumpHeight = 1;
     public float moveSpeed = 2;
 
     Vector3 velocity = new Vector3();
@@ -30,9 +30,10 @@ public class TaticsMove : MonoBehaviour
     {
     	currentTile = GetTargetTile(gameObject);
     	currentTile.currentTile = true;
+    	currentTile.selectable = false;
     }
 
-    public TileScript GetTargetTile (GameObject target)
+    public TileScript GetTargetTile(GameObject target)
     {
     	RaycastHit hit;
     	TileScript tile = null;
@@ -73,6 +74,7 @@ public class TaticsMove : MonoBehaviour
 
     		selectableTiles.Add(t);
     		t.selectable = true;
+    		// Debug.Log("Tile Entrou");
 
     		if (t.distance < move) 
     		{

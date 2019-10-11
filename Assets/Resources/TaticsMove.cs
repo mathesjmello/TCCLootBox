@@ -46,14 +46,14 @@ public class TaticsMove : MonoBehaviour
 			return tile;
     }
 
-    public void ComputeProximityList()
+    public void ComputeProximityList(float jumpHeight, Tile target)
     {
     	// tiles = GameObject.FindGameObjectsWithTag("Tile");
 
     	foreach (GameObject tile in tiles)
     	{
     		Tile t = tile.GetComponent<Tile>();
-    		t.FindNear(jumpHeight);
+    		t.FindNear(jumpHeight, target);
     	}
     }
 

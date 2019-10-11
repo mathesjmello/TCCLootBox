@@ -14,8 +14,7 @@ public class Tile : MonoBehaviour
     // Breadth First Search (BFS)
     public bool visited = false;
     public Tile parent = null;
-		public int distance = 0;
-
+	public int distance = 0;
 
     void Start()
     {
@@ -31,7 +30,6 @@ public class Tile : MonoBehaviour
     	else if(selectable)
     	{
     		GetComponent<Renderer>().material.color = Color.red;
-    		Debug.Log("Tile Vermelha");
     	}
     	else if(target)
     	{
@@ -55,16 +53,16 @@ public class Tile : MonoBehaviour
     	distance = 0;
     }
 
-    public void FindNear(float jumpHeight)
+    public void FindNear(float jumpHeight, Tile target)
     {
     	Reset();
-    	CheckTile(Vector3.forward, jumpHeight);
-    	CheckTile(-Vector3.forward, jumpHeight);
-    	CheckTile(Vector3.right, jumpHeight);
-    	CheckTile(-	Vector3.right, jumpHeight);
+    	CheckTile(Vector3.forward, jumpHeight, target);
+    	CheckTile(-Vector3.forward, jumpHeight, target);
+    	CheckTile(Vector3.right, jumpHeight, target);
+    	CheckTile(-	Vector3.right, jumpHeight, target);
     }
 
-    public void CheckTile(Vector3 direction, float jumpHeight)
+    public void CheckTile(Vector3 direction, float jumpHeight, Tile target)
     {
     	Vector3 jumpLimit = new Vector3(0.25f, (1 + jumpHeight) / 2.0f, 0.25f);
     	Collider[] colliders = Physics.OverlapBox(transform.position + direction, jumpLimit);
@@ -75,7 +73,8 @@ public class Tile : MonoBehaviour
     		if ( tile != null && tile.walkable )
     		{
     			RaycastHit hit;
-    			if (Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1))
+                
+    			if (!Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1) || (tile == target))
     			{
     				proximityList.Add(tile);	
     			}

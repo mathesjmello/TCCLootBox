@@ -31,6 +31,19 @@ public class PlayerMove : TaticsMove
 
     		RaycastHit hit;
     		if (Physics.Raycast(ray, out hit))
+    		{
+    			if(hit.collider.tag == "Tile")
+    			{
+    				Tile t = hit.collider.GetComponent<Tile>();
+    				Debug.Log("Tile Clicada");
+
+    				if (t.selectable) // Move target
+    				{
+    					t.target = true;
+    					moving = true;
+    				}
+    			}
+    		}
     	}
     }
 

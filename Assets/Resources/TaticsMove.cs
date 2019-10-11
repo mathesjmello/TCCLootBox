@@ -11,7 +11,7 @@ public class TaticsMove : MonoBehaviour
     Tile currentTile;
 
     public bool moving = false;
-    public int move = 1;
+    public int move = 3;
     public float jumpHeight = 1;
     public float moveSpeed = 2;
 

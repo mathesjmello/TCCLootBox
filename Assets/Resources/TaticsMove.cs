@@ -26,7 +26,7 @@ public class TaticsMove : MonoBehaviour
     	halfHeight = GetComponent<Collider>().bounds.extents.y;
     }
 
-    public void CurrentTile()
+    public void GetCurrentTile()
     {
     	currentTile = GetTargetTile(gameObject);
     	currentTile.current = true;
@@ -60,7 +60,7 @@ public class TaticsMove : MonoBehaviour
     public void FindSelectableTiles() 
     {
     	ComputeProximityList();
-    	CurrentTile();
+    	GetCurrentTile();
 
     	Queue<Tile> process = new Queue<Tile>();
 

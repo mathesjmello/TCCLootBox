@@ -29,11 +29,11 @@ public class Tile : MonoBehaviour
     	}
     	else if(selectable)
     	{
-    		GetComponent<Renderer>().material.color = Color.red;
+    		GetComponent<Renderer>().material.color = Color.green;
     	}
     	else if(target)
     	{
-    		GetComponent<Renderer>().material.color = Color.green;
+    		GetComponent<Renderer>().material.color = Color.red;
     	}
     	else {
     		GetComponent<Renderer>().material.color = Color.white;	
@@ -73,7 +73,7 @@ public class Tile : MonoBehaviour
     		if ( tile != null && tile.walkable )
     		{
     			RaycastHit hit;
-                
+
     			if (!Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1) || (tile == target))
     			{
     				proximityList.Add(tile);	

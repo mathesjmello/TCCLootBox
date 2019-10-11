@@ -26,7 +26,7 @@ public class MenuScript
 
     	foreach (GameObject t in tiles)
     	{
-    		t.AddComponent<TileScript>();
+    		t.AddComponent<Tile>();
     		Debug.Log("Script Added!");
     	}
     }    

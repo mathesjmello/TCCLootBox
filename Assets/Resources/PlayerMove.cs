@@ -13,6 +13,26 @@ public class PlayerMove : TaticsMove
     // Update is called once per frame
     void Update()
     {
-    	FindSelectableTiles();
+    	if (!moving)
+    	{
+  			FindSelectableTiles();
+  			CheckMouse();
+    	}
+    	else
+    	{
+
+    	}
     }
+    void CheckMouse()
+    {
+    	if (Input.GetMouseButtonUp(0))
+    	{
+    		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+    		RaycastHit hit;
+    		if (Physics.Raycast(ray, out hit))
+    	}
+    }
+
 }
+

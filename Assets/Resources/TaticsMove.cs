@@ -59,7 +59,7 @@ public class TaticsMove : MonoBehaviour
 
     public void FindSelectableTiles() 
     {
-    	ComputeProximityList();
+    	ComputeProximityList(jumpHeight, null);
     	GetCurrentTile();
 
     	Queue<Tile> process = new Queue<Tile>();

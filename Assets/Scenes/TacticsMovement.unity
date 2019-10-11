@@ -3511,7 +3511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953a00e2a4a8a4b86bc5328dd7cab6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: 1
+  moving: 0
+  move: 2
   jumpHeight: 2
   moveSpeed: 2
 --- !u!1 &1226359269
@@ -3627,6 +3628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953a00e2a4a8a4b86bc5328dd7cab6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moving: 0
   move: 1
   jumpHeight: 1
   moveSpeed: 2

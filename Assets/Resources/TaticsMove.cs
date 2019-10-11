@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TaticsMove : MonoBehaviour
 {
-    List<TileScript> selectableTiles = new List<TileScript>();
+    List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
 
-    Stack<TileScript> path = new Stack<TileScript>();
-    TileScript currentTile;
+    Stack<Tile> path = new Stack<Tile>();
+    Tile currentTile;
 
     public int move = 1;
     public float jumpHeight = 1;
@@ -29,18 +29,18 @@ public class TaticsMove : MonoBehaviour
     public void CurrentTile()
     {
     	currentTile = GetTargetTile(gameObject);
-    	currentTile.currentTile = true;
+    	currentTile.current = true;
     	currentTile.selectable = false;
     }
 
-    public TileScript GetTargetTile(GameObject target)
+    public Tile GetTargetTile(GameObject target)
     {
     	RaycastHit hit;
-    	TileScript tile = null;
+    	Tile tile = null;
 
 			if (Physics.Raycast(target.transform.position, -Vector3.up, out hit, 1))
 			{
-				tile = hit.collider.GetComponent<TileScript>();	
+				tile = hit.collider.GetComponent<Tile>();	
 			}
 
 			return tile;
@@ -52,7 +52,7 @@ public class TaticsMove : MonoBehaviour
 
     	foreach (GameObject tile in tiles)
     	{
-    		TileScript t = tile.GetComponent<TileScript>();
+    		Tile t = tile.GetComponent<Tile>();
     		t.FindNear(jumpHeight);
     	}
     }
@@ -62,7 +62,7 @@ public class TaticsMove : MonoBehaviour
     	ComputeProximityList();
     	CurrentTile();
 
-    	Queue<TileScript> process = new Queue<TileScript>();
+    	Queue<Tile> process = new Queue<Tile>();
 
     	process.Enqueue(currentTile);
     	currentTile.visited = true;
@@ -70,7 +70,7 @@ public class TaticsMove : MonoBehaviour
 
     	while (process.Count > 0)
     	{
-    		TileScript t = process.Dequeue();
+    		Tile t = process.Dequeue();
 
     		selectableTiles.Add(t);
     		t.selectable = true;
@@ -78,7 +78,7 @@ public class TaticsMove : MonoBehaviour
 
     		if (t.distance < move) 
     		{
-    			foreach (TileScript tile in t.proximityList)
+    			foreach (Tile tile in t.proximityList)
     			{
 	    			if(!tile.visited)
 	    			{

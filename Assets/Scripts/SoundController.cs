@@ -30,6 +30,12 @@ public class SoundController : MonoBehaviour
         SfxSlider.minValue = -60;
         DialogSlider.maxValue = 1;
         DialogSlider.minValue = -60;
+        
+        Persistence.LoadData();
+        masterVolume = PlayerPrefs.GetFloat("MasterV");
+        musicVolume = PlayerPrefs.GetFloat("MusicV");
+        sfxVolume = PlayerPrefs.GetFloat("SfxV");
+        dialogVolume = PlayerPrefs.GetFloat("DialogV");
     }
 
     public void UpdateMasterVolume()
@@ -59,5 +65,19 @@ public class SoundController : MonoBehaviour
         MasterMixer.SetFloat("SfxV", sfxVolume);
 
         MasterMixer.SetFloat("DialogV", dialogVolume);
+    }
+
+    public void ConfirmChanges()
+    
+    {        
+        Persistence.SaveData();
+    }
+
+    public void Undo()
+    {
+        masterVolume = PlayerPrefs.GetFloat("MasterV");
+        musicVolume = PlayerPrefs.GetFloat("MusicV");
+        sfxVolume = PlayerPrefs.GetFloat("SfxV");
+        dialogVolume = PlayerPrefs.GetFloat("DialogV");
     }
 }

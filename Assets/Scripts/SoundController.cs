@@ -12,23 +12,52 @@ public class SoundController : MonoBehaviour
     public Slider MusicSlider;
     public Slider SfxSlider;
     public Slider DialogSlider;
-
-    // Start is called before the first frame update
     
+
+    float dialogVolume;
+    float masterVolume;
+    float musicVolume;
+    float sfxVolume;
+    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        MasterSlider.maxValue = 1;
+        MasterSlider.minValue = -60;
+        MusicSlider.maxValue = 1;
+        MusicSlider.minValue = -80;
+        SfxSlider.maxValue = 1;
+        SfxSlider.minValue = -60;
+        DialogSlider.maxValue = 1;
+        DialogSlider.minValue = -60;
+    }
+
     public void UpdateMasterVolume()
     {
-        MasterMixer.SetFloat("MasterV", MasterSlider.value * 20);
+        masterVolume = MasterSlider.value;
     }
-    public void UpdateMusicVolume(float sliderValue)
+    public void UpdateMusicVolume()
     {
-        MasterMixer.SetFloat("MusicaV", MusicSlider.value * 20);
+        musicVolume = MusicSlider.value;
     }
-    public void UpdateSfxVolume(float sliderValue)
+    public void UpdateSfxVolume()
     {
-        MasterMixer.SetFloat("SfxV", SfxSlider.value * 20);
+        sfxVolume = SfxSlider.value;
     }
-    public void UpdateDialogVolume(float sliderValue)
+    public void UpdateDialogVolume()
     {
-        MasterMixer.SetFloat("DialogV", DialogSlider.value * 20);
+        dialogVolume = DialogSlider.value;
+    }
+    
+    
+    void Update()
+    {
+        MasterMixer.SetFloat("MasterV", masterVolume);
+
+        MasterMixer.SetFloat("MusicaV", musicVolume);
+        
+        MasterMixer.SetFloat("SfxV", sfxVolume);
+
+        MasterMixer.SetFloat("DialogV", dialogVolume);
     }
 }

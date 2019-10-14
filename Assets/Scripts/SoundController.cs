@@ -31,11 +31,15 @@ public class SoundController : MonoBehaviour
         DialogSlider.maxValue = 1;
         DialogSlider.minValue = -60;
         
-        Persistence.LoadData();
         masterVolume = PlayerPrefs.GetFloat("MasterV");
         musicVolume = PlayerPrefs.GetFloat("MusicV");
         sfxVolume = PlayerPrefs.GetFloat("SfxV");
         dialogVolume = PlayerPrefs.GetFloat("DialogV");
+
+        MasterSlider.value = masterVolume;
+        MusicSlider.value = musicVolume;
+        SfxSlider.value = sfxVolume;
+        DialogSlider.value = dialogVolume;
     }
 
     public void UpdateMasterVolume()
@@ -69,8 +73,10 @@ public class SoundController : MonoBehaviour
 
     public void ConfirmChanges()
     
-    {        
-        Persistence.SaveData();
+    {   PlayerPrefs.SetFloat("MasterV", masterVolume);
+        PlayerPrefs.SetFloat("MusicV", musicVolume);
+        PlayerPrefs.SetFloat("SfxV", sfxVolume);
+        PlayerPrefs.SetFloat("DialogV", dialogVolume);
     }
 
     public void Undo()

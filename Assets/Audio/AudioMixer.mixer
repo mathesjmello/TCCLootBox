@@ -50,7 +50,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 8dcb18c4fcf8b9c4ab12573b90965aca
-    name: MyExposedParam
+    name: DialogV
   - guid: dbb93dd5db42cfe4ca25901cee7598e1
     name: MasterV
   - guid: 176d60e052de1074aba05cb738059093

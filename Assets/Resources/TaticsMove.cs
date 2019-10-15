@@ -20,6 +20,8 @@ public class TaticsMove : MonoBehaviour
 
     float halfHeight = 0;
 
+    public Tile actualTargetTile;
+
     protected void Init()
     {
     	tiles = GameObject.FindGameObjectsWithTag("Tile");
@@ -100,13 +102,15 @@ public class TaticsMove : MonoBehaviour
     	moving = true;
 
     	Tile next = tile;
-    	while (next != null){
+    	while (next != null)
+    	{
     		path.Push(next);
     		next = next.parent;
     	}
     }
 
     public void Move() {
+    	
     	if (path.Count > 0)
     	{
     		Tile t = path.Peek();
@@ -124,21 +128,27 @@ public class TaticsMove : MonoBehaviour
     			  // Implementar o pulo
     			}
     			else {
-    				CalculateHeading(target);
+    				CalculatePointVector(target);
             SetHorizotalVelocity();
     			}
 
     			//Locomoção
-          transform.forward = heading;
+          transform.forward = pointVector;
           transform.position += velocity * Time.deltaTime;
-    		} 
+    		} else {
+    			transform.position = target;
+    			path.Pop();
+    		}
+    	} 
     	else
   		{
   			RemoveSelectableTiles();
   			moving = false;
+
+  			// Mudar a Rodada ou Terminar o turno;
   		}
     }
-	}
+	
     protected void RemoveSelectableTiles()
     {
       if (currentTile != null)
@@ -155,5 +165,14 @@ public class TaticsMove : MonoBehaviour
       selectableTiles.Clear();
     }
 
+    void CalculatePointVector(Vector3 target)
+    {
+    	pointVector = target - transform.position;
+    	pointVector.Normalize();
+    }
 
+    void SetHorizotalVelocity()
+    {
+    	velocity = pointVector * moveSpeed;
+    }
 }

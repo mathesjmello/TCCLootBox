@@ -92,4 +92,68 @@ public class TaticsMove : MonoBehaviour
     		}
     	}
     }
+
+    public void MoveToTile(Tile tile)
+    {
+    	path.Clear();
+    	tile.target = true;
+    	moving = true;
+
+    	Tile next = tile;
+    	while (next != null){
+    		path.Push(next);
+    		next = next.parent;
+    	}
+    }
+
+    public void Move() {
+    	if (path.Count > 0)
+    	{
+    		Tile t = path.Peek();
+    		Vector3 target = t.transform.position;
+
+    		// Calcula a unidade da posição em cima da Tile alvo 'target'
+    		target.y += halfHeight + t.GetComponent<Collider>().bounds.extents.y;
+
+    		if (Vector3.Distance(transform.position, target) >= 0.05f)
+    		{
+    			bool jump = transform.position.y != target.y;
+
+    			if (jump)
+    			{
+    			  // Implementar o pulo
+    			}
+    			else {
+    				CalculateHeading(target);
+            SetHorizotalVelocity();
+    			}
+
+    			//Locomoção
+          transform.forward = heading;
+          transform.position += velocity * Time.deltaTime;
+    		} 
+    	else
+  		{
+  			RemoveSelectableTiles();
+  			moving = false;
+  		}
+    }
+	}
+    protected void RemoveSelectableTiles()
+    {
+      if (currentTile != null)
+      {
+          currentTile.current = false;
+          currentTile = null;
+      }
+
+      foreach (Tile tile in selectableTiles)
+      {
+          tile.Reset();
+      }
+
+      selectableTiles.Clear();
+    }
+
+
 }

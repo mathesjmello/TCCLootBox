@@ -13,6 +13,7 @@ public class RoundControl : MonoBehaviour
     public List<GameObject> CharList;
     public Button ActionButton;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class RoundControl : MonoBehaviour
             var currentEnimy = Enimy.Create(new Vector3(7, Random.Range(-2, 2)), Quaternion.identity);
             CharList.Add(currentEnimy);
         }
-        var player = FindObjectOfType<Player>().gameObject;
+        var player = FindObjectOfType<PlayerMove>().gameObject; // Mudei por causa da outra cena '<Player>()''
         CharList.Add(player);
         CharList.Sort((a, b) => -1* a.GetComponent<IPreparable>().Iniciativa.CompareTo(b.GetComponent<IPreparable>().Iniciativa));  
         

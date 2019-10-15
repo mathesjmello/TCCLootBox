@@ -4409,7 +4409,7 @@ MonoBehaviour:
   NumberEnimigs: 0
   Enimy: {fileID: 5454517904676933446, guid: 3f774697bc2b5c2439fb67443f494642, type: 3}
   CharList: []
-  ActionButton: {fileID: 0}
+  ActionButton: {fileID: 267644768}
 --- !u!4 &1328292410
 Transform:
   m_ObjectHideFlags: 0

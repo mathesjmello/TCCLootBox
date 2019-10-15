@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TaticsMove : MonoBehaviour
 {
-    List<Tile> selectableTiles = new List<Tile>();
+	protected List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
 
     Stack<Tile> path = new Stack<Tile>();

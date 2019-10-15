@@ -20,7 +20,14 @@ public class PlayerMove : TaticsMove
     	}
     	else
     	{
-
+		    foreach (var tiles in selectableTiles)
+		    {
+			    if (tiles.target)
+			    {
+				    transform.position = tiles.transform.position + new Vector3(0,1.1f,0);
+				    moving = false;
+			    }
+		    }
     	}
     }
     void CheckMouse()
@@ -34,7 +41,7 @@ public class PlayerMove : TaticsMove
     		{
     			if(hit.collider.tag == "Tile")
     			{
-    				Tile t = hit.collider.GetComponent<Tile>();
+    				var t = hit.collider.GetComponent<Tile>();
     				Debug.Log("Tile Clicada");
 
     				if (t.selectable) // Move target

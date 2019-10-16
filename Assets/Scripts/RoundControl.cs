@@ -24,7 +24,7 @@ public class RoundControl : MonoBehaviour
             var currentEnimy = Enimy.Create(new Vector3(7, Random.Range(-2, 2)), Quaternion.identity);
             CharList.Add(currentEnimy);
         }
-        var player = FindObjectOfType<PlayerMove>().gameObject; // Mudei por causa da outra cena '<Player>()''
+        var player = FindObjectOfType<Player>().gameObject; // Mudei por causa da outra cena '<Player>()''
         CharList.Add(player);
         CharList.Sort((a, b) => -1* a.GetComponent<IPreparable>().Iniciativa.CompareTo(b.GetComponent<IPreparable>().Iniciativa));  
         

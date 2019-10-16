@@ -47,6 +47,7 @@ public class TaticsMove : MonoBehaviour
 			}
 
 			return tile;
+			tile.selectable = true;
     }
 
     public void ComputeProximityList(float jumpHeight, Tile target)
@@ -98,7 +99,6 @@ public class TaticsMove : MonoBehaviour
     public void MoveToTile(Tile tile)
     {
     	path.Clear();
-    	tile.target = true;
     	moving = true;
 
     	Tile next = tile;

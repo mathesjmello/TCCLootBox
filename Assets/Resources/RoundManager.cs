@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    static Dictionary<string, List<TacticsMove>> units = new Dictionary<string, List<TacticsMove>>(); 
+    
 }

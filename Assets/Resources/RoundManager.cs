@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoundManager : MonoBehaviour
 {
     static Dictionary<string, List<TaticsMove>> units = new Dictionary<string, List<TaticsMove>>(); 
-    static Queue<string> turnkey = new Queue<string>();
+    static Queue<string> turnKey = new Queue<string>();
     static Queue<TaticsMove> turnTeam = new Queue<TaticsMove>();
 
 
@@ -18,7 +18,7 @@ public class RoundManager : MonoBehaviour
     }
     static void InitTeamTurnQueue()
     {
-    	List<TaticsMove> teamList = units[turnkey.Peek()];
+    	List<TaticsMove> teamList = units[turnKey.Peek()];
 
     	foreach ( TaticsMove unit in teamList )
     	{
@@ -28,7 +28,7 @@ public class RoundManager : MonoBehaviour
     	StartTurn();
     }
 
-    static void StartTurn()
+    public static void StartTurn()
     {
     	if (turnTeam.Count > 0)
     	{
@@ -36,10 +36,44 @@ public class RoundManager : MonoBehaviour
     	}
     }
 
-    static void EndTurn()
+    public static void EndTurn()
     {
     	TaticsMove unit = turnTeam.Dequeue();
     	unit.EndTurn();
+
+    	if (turnTeam.Count > 0)
+    	{
+    		StartTurn();
+    	}
+    	else
+    	{
+    		string team = turnKey.Dequeue();
+    		turnKey.Enqueue(team);
+    		InitTeamTurnQueue();
+    	}
     }
-    
+
+    public static void AddUnit(TaticsMove unit)
+    {
+    	List<TaticsMove> list;
+
+    	if (!unit.ContainsKey(unit.tag))
+    	{
+    		list = new List<TaticsMove>();
+    		units[unit.tag] = list;
+
+    		if (!turnKey.Contains(unit.tag))
+    		{
+    			turnKey.Enqueue(unit.tag);
+    		}
+    	}
+    	else
+    	{
+    		list = units[unit.tag];
+    	}
+    	
+    	list.Add(unit);
+    }
+
+
 }

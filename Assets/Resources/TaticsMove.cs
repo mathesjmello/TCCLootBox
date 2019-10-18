@@ -27,6 +27,8 @@ public class TaticsMove : MonoBehaviour
     	tiles = GameObject.FindGameObjectsWithTag("Tile");
 
     	halfHeight = GetComponent<Collider>().bounds.extents.y;
+
+        RoundManager.AddUnit(this); // Init the Round
     }
 
     public void GetCurrentTile()
@@ -146,6 +148,7 @@ public class TaticsMove : MonoBehaviour
   			moving = false;
 
   			// Mudar a Rodada ou Terminar o turno;
+            RoundManager.EndTurn();
   		}
     }
 	
@@ -178,11 +181,11 @@ public class TaticsMove : MonoBehaviour
 
     public void BeginTurn()
     {
-
+        turn = true;
     }
 
     public void EndTurn()
     {
-
-    }
+        turn = false;
+    }   
 }

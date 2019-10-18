@@ -57,7 +57,7 @@ public class RoundManager : MonoBehaviour
     {
     	List<TaticsMove> list;
 
-    	if (!unit.ContainsKey(unit.tag))
+    	if (!units.ContainsKey(unit.tag))
     	{
     		list = new List<TaticsMove>();
     		units[unit.tag] = list;

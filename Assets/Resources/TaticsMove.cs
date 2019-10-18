@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class TaticsMove : MonoBehaviour
 {
-	protected List<Tile> selectableTiles = new List<Tile>();
+	public bool turn = false;
+    
+    protected List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
 
     Stack<Tile> path = new Stack<Tile>();

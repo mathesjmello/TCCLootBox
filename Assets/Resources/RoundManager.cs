@@ -8,7 +8,6 @@ public class RoundManager : MonoBehaviour
     static Queue<string> turnKey = new Queue<string>();
     static Queue<TaticsMove> turnTeam = new Queue<TaticsMove>();
 
-
     void Update()
     {
     	if (turnTeam.Count == 0)
@@ -20,7 +19,7 @@ public class RoundManager : MonoBehaviour
     {
     	List<TaticsMove> teamList = units[turnKey.Peek()];
 
-    	foreach ( TaticsMove unit in teamList )
+    	foreach (TaticsMove unit in teamList)
     	{
     		turnTeam.Enqueue(unit);
     	}
@@ -74,6 +73,4 @@ public class RoundManager : MonoBehaviour
     	
     	list.Add(unit);
     }
-
-
 }

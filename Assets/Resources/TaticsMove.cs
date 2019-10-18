@@ -5,7 +5,7 @@ using UnityEngine;
 public class TaticsMove : MonoBehaviour
 {
 	public bool turn = false;
-    
+
     protected List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
 
@@ -133,12 +133,12 @@ public class TaticsMove : MonoBehaviour
     			}
     			else {
     				CalculatePointVector(target);
-            SetHorizotalVelocity();
+                    SetHorizotalVelocity();
     			}
 
     			//Locomoção
-          transform.forward = pointVector;
-          transform.position += velocity * Time.deltaTime;
+                transform.forward = pointVector;
+                transform.position += velocity * Time.deltaTime;
     		} else {
     			transform.position = target;
     			path.Pop();

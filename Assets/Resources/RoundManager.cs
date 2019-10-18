@@ -24,6 +24,22 @@ public class RoundManager : MonoBehaviour
     	{
     		turnTeam.Enqueue(unit);
     	}
+
+    	StartTurn();
+    }
+
+    static void StartTurn()
+    {
+    	if (turnTeam.Count > 0)
+    	{
+    		turnTeam.Peek().BeginTurn();
+    	}
+    }
+
+    static void EndTurn()
+    {
+    	TaticsMove unit = turnTeam.Dequeue();
+    	unit.EndTurn();
     }
     
 }

@@ -175,4 +175,14 @@ public class TaticsMove : MonoBehaviour
     {
     	velocity = pointVector * moveSpeed;
     }
+
+    public void BeginTurn()
+    {
+
+    }
+
+    public void EndTurn()
+    {
+
+    }
 }

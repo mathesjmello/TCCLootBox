@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class TaticsMove : MonoBehaviour
 {
-	protected List<Tile> selectableTiles = new List<Tile>();
+	public bool turn = false;
+
+    protected List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
 
     Stack<Tile> path = new Stack<Tile>();
@@ -27,6 +29,8 @@ public class TaticsMove : MonoBehaviour
     	tiles = GameObject.FindGameObjectsWithTag("Tile");
 
     	halfHeight = GetComponent<Collider>().bounds.extents.y;
+
+        RoundManager.AddUnit(this); // Init the Round
     }
 
     public void GetCurrentTile()
@@ -47,6 +51,7 @@ public class TaticsMove : MonoBehaviour
 			}
 
 			return tile;
+			tile.selectable = true;
     }
 
     public void ComputeProximityList(float jumpHeight, Tile target)
@@ -98,7 +103,6 @@ public class TaticsMove : MonoBehaviour
     public void MoveToTile(Tile tile)
     {
     	path.Clear();
-    	tile.target = true;
     	moving = true;
 
     	Tile next = tile;
@@ -129,12 +133,12 @@ public class TaticsMove : MonoBehaviour
     			}
     			else {
     				CalculatePointVector(target);
-            SetHorizotalVelocity();
+                    SetHorizotalVelocity();
     			}
 
     			//Locomoção
-          transform.forward = pointVector;
-          transform.position += velocity * Time.deltaTime;
+                transform.forward = pointVector;
+                transform.position += velocity * Time.deltaTime;
     		} else {
     			transform.position = target;
     			path.Pop();
@@ -146,6 +150,7 @@ public class TaticsMove : MonoBehaviour
   			moving = false;
 
   			// Mudar a Rodada ou Terminar o turno;
+            RoundManager.EndTurn();
   		}
     }
 	
@@ -175,4 +180,14 @@ public class TaticsMove : MonoBehaviour
     {
     	velocity = pointVector * moveSpeed;
     }
+
+    public void BeginTurn()
+    {
+        turn = true;
+    }
+
+    public void EndTurn()
+    {
+        turn = false;
+    }   
 }

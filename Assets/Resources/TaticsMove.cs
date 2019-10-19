@@ -197,7 +197,7 @@ public class TaticsMove : MonoBehaviour
         return lowest;
     }
 
-    protected Tile FindEndTile(Tile target)
+    protected Tile FindEndTile(Tile t)
     {
         Stack<Tile> tempPath = new Stack<Tile>(); // Temp Cost for all the map
 
@@ -207,6 +207,19 @@ public class TaticsMove : MonoBehaviour
             tempPath.Push(next);
             next = next.parent;
         }
+
+        if (tempPath.Count <= move)
+        {
+            return t.parent;
+        }
+
+        Tile endTile = null;
+        for (int i = 0; i <= move; i++)
+        {
+            endTile = tempPath.Pop();
+        }
+
+        return endTile;
     }
 
     protected void FindPath(Tile target)

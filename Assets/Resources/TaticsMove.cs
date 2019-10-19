@@ -227,7 +227,30 @@ public class TaticsMove : MonoBehaviour
             {
                 if (closedList.Contains(tile))
                 {
+                    // Do nothing, already processed
+                }
+                else if (openList.Contains(tile))
+                {
+                    // On openList, but not close to player
+                    float tempG = t.g + Vector3.Distance(tile.transform.position, t.transform.position); // Temporary cost for A*
 
+                    if (tempG < tile.g) //If tempG is faster than g Cost
+                    {
+                        tile.parent = t;
+                        tile.g = tempG;
+                        tile.f = tile.g + tile.h;
+                    }
+                }   
+                else
+                {
+                    // First time see the tile
+                    tile.parent = t;
+
+                    tile.g = t.g + Vector3.Distance(tile.transform.position, t.transform.position);
+                    tile.h = Vector3.Distance(tile.transform.position, target.transform.position);
+                    tile.f = tile.g + tile.h;
+
+                    openList.Add(tile);
                 }
             }
         }

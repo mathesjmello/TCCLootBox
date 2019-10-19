@@ -54,7 +54,7 @@ public class TaticsMove : MonoBehaviour
 			tile.selectable = true;
     }
 
-    public void ComputeProximityList(Tile target)
+    public void ComputeProximityList(float jumpHeight, Tile target)
     {
     	// tiles = GameObject.FindGameObjectsWithTag("Tile");
 
@@ -183,7 +183,7 @@ public class TaticsMove : MonoBehaviour
 
     protected void FindPath(Tile target)
     {
-        ComputeProximityList(target);
+        ComputeProximityList(jumpHeight, target);
     }
 
     public void BeginTurn()

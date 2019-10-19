@@ -184,6 +184,15 @@ public class TaticsMove : MonoBehaviour
     protected void FindPath(Tile target)
     {
         ComputeProximityList(jumpHeight, target);
+        GetCurrentTile();
+
+        // 
+        List<Tile> openList = new List<Tile>(); // Tiles that're not processed yet
+        List<Tile> closedList = new List<Tile>(); // Tiles that're already processed
+
+        openList.Add(currentTile);
+        // currentTile.parent = ??
+        
     }
 
     public void BeginTurn()

@@ -197,6 +197,18 @@ public class TaticsMove : MonoBehaviour
         return lowest;
     }
 
+    protected Tile FindEndTile(Tile target)
+    {
+        Stack<Tile> tempPath = new Stack<Tile>(); // Temp Cost for all the map
+
+        Tile next = t.parent;
+        while (next != null)
+        {
+            tempPath.Push(next);
+            next = next.parent;
+        }
+    }
+
     protected void FindPath(Tile target)
     {
         ComputeProximityList(jumpHeight, target);
@@ -213,13 +225,15 @@ public class TaticsMove : MonoBehaviour
 
         while (openList.Count > 0)
         {
-            Tile t = FindLowestF(openList); //Find the low F Cost  
+            Tile t = FindLowestF(openList); //Find the low F Cost for A*
 
             closedList.Add(t); 
 
             if (t == target) // WE FIND THE PATH HERE!
             {
-                // Add more functions for this block
+                // Stop A* from count tile next enemy
+                actualTargetTile = FindEndTile(t);
+                MoveToTile(actualTargetTile);
                 return;
             }
 
@@ -234,7 +248,7 @@ public class TaticsMove : MonoBehaviour
                     // On openList, but not close to player
                     float tempG = t.g + Vector3.Distance(tile.transform.position, t.transform.position); // Temporary cost for A*
 
-                    if (tempG < tile.g) //If tempG is faster than g Cost
+                    if (tempG < tile.g) // If tempG is faster than g Cost
                     {
                         tile.parent = t;
                         tile.g = tempG;

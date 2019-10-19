@@ -16,6 +16,11 @@ public class Tile : MonoBehaviour
     public Tile parent = null;
 	public int distance = 0;
 
+    //For A*
+    public float f = 0;
+    public float g = 0;
+    public float h = 0;
+
     void Start()
     {
         

@@ -20,7 +20,7 @@ public class NPCMove : TaticsMove
         }
         if (!moving)
     	{
-  			FindNearestTarget()
+  			FindNearestTarget();
   			FindSelectableTiles(); // Still show the movement from NPC
   			CalculatePath();
     	}

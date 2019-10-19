@@ -181,6 +181,22 @@ public class TaticsMove : MonoBehaviour
     	velocity = pointVector * moveSpeed;
     }
 
+    protected Tile FindLowestF(List<Tile> list)
+    {
+        Tile lowest = list[0]; // Get the first member for lowest Array
+
+        foreach (Tile t in list)
+        {
+            if (t.f < lowest.f)
+            {
+                lowest = t;
+            }
+        }
+
+        list.Remove(lowest);
+        return lowest;
+    }
+
     protected void FindPath(Tile target)
     {
         ComputeProximityList(jumpHeight, target);
@@ -192,7 +208,31 @@ public class TaticsMove : MonoBehaviour
 
         openList.Add(currentTile);
         // currentTile.parent = ??
-        
+        currentTile.h = Vector3.Distance(currentTile.transform.position, target.transform.position);
+        currentTile.f = currentTile.h;
+
+        while (openList.Count > 0)
+        {
+            Tile t = FindLowestF(openList); //Find the low F Cost  
+
+            closedList.Add(t); 
+
+            if (t == target) // WE FIND THE PATH HERE!
+            {
+                // Add more functions for this block
+                return;
+            }
+
+            foreach (Tile tile in t.proximityList)
+            {
+                if (closedList.Contains(tile))
+                {
+
+                }
+            }
+        }
+        // TODO - What to do if there's no path on target file?
+        Debug.Log("Path not found");
     }
 
     public void BeginTurn()

@@ -54,7 +54,7 @@ public class TaticsMove : MonoBehaviour
 			tile.selectable = true;
     }
 
-    public void ComputeProximityList(float jumpHeight, Tile target)
+    public void ComputeProximityList(Tile target)
     {
     	// tiles = GameObject.FindGameObjectsWithTag("Tile");
 
@@ -179,6 +179,11 @@ public class TaticsMove : MonoBehaviour
     void SetHorizotalVelocity()
     {
     	velocity = pointVector * moveSpeed;
+    }
+
+    protected void FindPath(Tile target)
+    {
+        ComputeProximityList(target);
     }
 
     public void BeginTurn()

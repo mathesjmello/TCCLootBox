@@ -33,7 +33,7 @@ public class NPCMove : TaticsMove
     void CalculatePath() 
     {
     	Tile targetTile = GetTargetTile(target);
-    	// FindPath(targetTile); Perform A*
+    	FindPath(targetTile); // Perform A*
     }
 
     void FindNearestTarget()
@@ -55,6 +55,6 @@ public class NPCMove : TaticsMove
     		}
     	}
 
-    	target = nearest; 
+    	target = nearest;
     }
 }

@@ -3931,7 +3931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turn: 0
   moving: 0
-  move: 3
+  move: 1
   jumpHeight: 1
   moveSpeed: 2
   actualTargetTile: {fileID: 0}

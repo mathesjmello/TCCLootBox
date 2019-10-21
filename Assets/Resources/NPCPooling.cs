@@ -17,20 +17,32 @@ public class NPCPooling : MonoBehaviour
 
     void Start()
     {
-				poolDictionary = new Dictionary<string, Queue<GameObject>>();
+    	poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-				foreach (Pool pool in pools)
-				{
-					Queue<GameObject> objectPool = new Queue<GameObject>();
+    	foreach (Pool pool in pools)
+    	{
+    		Queue<GameObject> objectPool = new Queue<GameObject>();
 
-					for (int i = 0; i < pool.size; i++)
-					{
-						
-					}
-				}
+    		for (int i = 0; i < pool.size; i++)
+    		{
+    			GameObject obj = Instantiate(pool.prefab);
+    			obj.SetActive(false);
+    			objectPool.Enqueue(obj);
+    		}
+
+    		poolDictionary.Add(pool.tag, objectPool);
+    	}
     }
 
-    // Update is called once per frame
+    public void SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
+    {
+    	GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+
+    	objectToSpawn.SetActive(true);
+    	objectToSpawn.transform.position = position;
+    	objectToSpawn.transform.rotation = rotation;
+    }
+    
     void Update()
     {
         

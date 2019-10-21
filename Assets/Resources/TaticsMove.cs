@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class TaticsMove : MonoBehaviour
 {
-	protected List<Tile> selectableTiles = new List<Tile>();
+	public bool turn = false;
+
+    protected List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
 
     Stack<Tile> path = new Stack<Tile>();
@@ -27,6 +29,8 @@ public class TaticsMove : MonoBehaviour
     	tiles = GameObject.FindGameObjectsWithTag("Tile");
 
     	halfHeight = GetComponent<Collider>().bounds.extents.y;
+
+        RoundManager.AddUnit(this); // Init the Round
     }
 
     public void GetCurrentTile()
@@ -129,12 +133,12 @@ public class TaticsMove : MonoBehaviour
     			}
     			else {
     				CalculatePointVector(target);
-            SetHorizotalVelocity();
+                    SetHorizotalVelocity();
     			}
 
     			//Locomoção
-          transform.forward = pointVector;
-          transform.position += velocity * Time.deltaTime;
+                transform.forward = pointVector;
+                transform.position += velocity * Time.deltaTime;
     		} else {
     			transform.position = target;
     			path.Pop();
@@ -146,6 +150,7 @@ public class TaticsMove : MonoBehaviour
   			moving = false;
 
   			// Mudar a Rodada ou Terminar o turno;
+            RoundManager.EndTurn();
   		}
     }
 	
@@ -175,4 +180,118 @@ public class TaticsMove : MonoBehaviour
     {
     	velocity = pointVector * moveSpeed;
     }
+
+    protected Tile FindLowestF(List<Tile> list)
+    {
+        Tile lowest = list[0]; // Get the first member for lowest Array
+
+        foreach (Tile t in list)
+        {
+            if (t.f < lowest.f)
+            {
+                lowest = t;
+            }
+        }
+
+        list.Remove(lowest);
+        return lowest;
+    }
+
+    protected Tile FindEndTile(Tile t)
+    {
+        Stack<Tile> tempPath = new Stack<Tile>(); // Temp Cost for all the map
+
+        Tile next = t.parent;
+        while (next != null)
+        {
+            tempPath.Push(next);
+            next = next.parent;
+        }
+
+        if (tempPath.Count <= move)
+        {
+            return t.parent;
+        }
+
+        Tile endTile = null;
+        for (int i = 0; i <= move; i++)
+        {
+            endTile = tempPath.Pop();
+        }
+
+        return endTile;
+    }
+
+    protected void FindPath(Tile target)
+    {
+        ComputeProximityList(jumpHeight, target);
+        GetCurrentTile();
+
+        // 
+        List<Tile> openList = new List<Tile>(); // Tiles that're not processed yet
+        List<Tile> closedList = new List<Tile>(); // Tiles that're already processed
+
+        openList.Add(currentTile);
+        // currentTile.parent = ??
+        currentTile.h = Vector3.Distance(currentTile.transform.position, target.transform.position);
+        currentTile.f = currentTile.h;
+
+        while (openList.Count > 0)
+        {
+            Tile t = FindLowestF(openList); //Find the low F Cost for A*
+
+            closedList.Add(t); 
+
+            if (t == target) // WE FIND THE PATH HERE!
+            {
+                // Stop A* from count tile next enemy
+                actualTargetTile = FindEndTile(t);
+                MoveToTile(actualTargetTile);
+                return;
+            }
+
+            foreach (Tile tile in t.proximityList)
+            {
+                if (closedList.Contains(tile))
+                {
+                    // Do nothing, already processed
+                }
+                else if (openList.Contains(tile))
+                {
+                    // On openList, but not close to player
+                    float tempG = t.g + Vector3.Distance(tile.transform.position, t.transform.position); // Temporary cost for A*
+
+                    if (tempG < tile.g) // If tempG is faster than g Cost
+                    {
+                        tile.parent = t;
+                        tile.g = tempG;
+                        tile.f = tile.g + tile.h;
+                    }
+                }   
+                else
+                {
+                    // First time see the tile
+                    tile.parent = t;
+
+                    tile.g = t.g + Vector3.Distance(tile.transform.position, t.transform.position);
+                    tile.h = Vector3.Distance(tile.transform.position, target.transform.position);
+                    tile.f = tile.g + tile.h;
+
+                    openList.Add(tile);
+                }
+            }
+        }
+        // TODO - What to do if there's no path on target file?
+        Debug.Log("Path not found");
+    }
+
+    public void BeginTurn()
+    {
+        turn = true;
+    }
+
+    public void EndTurn()
+    {
+        turn = false;
+    }   
 }

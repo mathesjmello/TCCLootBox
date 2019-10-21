@@ -13,7 +13,11 @@ public class PlayerMove : TaticsMove
     // Update is called once per frame
     void Update()
     {
-    	if (!moving)
+    	if(!turn)
+        {
+            return;
+        }
+        if (!moving)
     	{
   			FindSelectableTiles();
   			CheckMouse();

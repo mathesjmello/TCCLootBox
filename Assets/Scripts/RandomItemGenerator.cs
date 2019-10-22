@@ -86,7 +86,18 @@ public class RandomItemGenerator : MonoBehaviour
 		"Photokinesis"
 	};
 
-	public string GetItemName() {
+    int[] LootBoxAction = new int[] {
+        1,
+        2
+    };
+
+    public int GetLootAction(){
+        int LootIndex = Random.Range(0, LootBoxAction.Length);
+        int LootResult = LootBoxAction[LootIndex];
+        return (LootResult);
+    }
+
+    public string GetItemName() {
 		int nameIndex = Random.Range(0, itemName.Length);
 		string nameResult = itemName[nameIndex];
 		return (nameResult);

@@ -31,6 +31,24 @@ public class ItemControl : MonoBehaviour
         	resultsChecked = false;
         }
 
-        if (rows[0].rowStopped && rows[1].rowStopped)
+        if (rows[0].rowStopped && rows[1].rowStopped && !resultsChecked)
+        {
+        	CheckResults();
+        	prizeText.enable = true;
+        	prizeText.Text = "Seu item " + prizeValue;
+        }
+    }
+
+    private void OnMouseDown()
+    {
+    	if (rows[0].rowStopped && rows[1].rowStopped)
+    	{
+    		StartCoroutine("PullHandle");
+    	}
+    }
+
+    private IEnumerator PullHandle()
+    {
+    	
     }
 }

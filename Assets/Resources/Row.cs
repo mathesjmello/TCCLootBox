@@ -35,8 +35,53 @@ public class Row : MonoBehaviour
     		}
 
     		transform.position = new Vector2(transform.position.x, transform.position.y - 0.25f);
+    		yield return new WaitForSeconds(timeInterval);
     	}
+
+    	randomValue = Random.Range(60, 100);
+
+    	switch (randomValue % 3)
+    	{
+    		case 1:
+    			randomValue += 2;
+    			break;
+    		case 2:
+    			randomValue += 1;
+    			break;
+    	}
+
+    	for (int i = 0; i < randomValue; i++)
+    	{
+    		if (transform.position.y <= -3.5f)
+    		{
+    			transform.position = new Vector2(transform.position.x, 1.75f);
+    		}
+
+    		transform.position = new Vector2(transform.position.x, transform.position.y - 0.25f);
+
+    		if (i > Mathf.RoundToInt(randomValue * 0.25f))
+    		{
+    			timeInterval = 0.05f;
+    		}
+    		if (i > Mathf.RoundToInt(randomValue * 0.5f))
+    		{
+    			timeInterval = 0.1f;	
+    		}
+    		if (i > Mathf.RoundToInt(randomValue * 0.75f))
+    		{
+    			timeInterval = 0.15f;
+    		}
+    		if (i > Mathf.RoundToInt(randomValue * 0.95f))
+    		{
+    			timeInterval = 0.2f;	
+    		}
+
+    		yield return new WaitForSeconds(timeInterval);
+    	}	
+
+
     }
+
     void Update()
     {
         

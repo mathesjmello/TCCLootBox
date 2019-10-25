@@ -79,7 +79,45 @@ public class Row : MonoBehaviour
     		yield return new WaitForSeconds(timeInterval);
     	}	
 
+    	if (transform.position.y == -3.5f)
+    	{
+    		stoppedSlot = "Diamond";
+    	}
+    	else if (transform.position.y == -2.75f)
+    	{
+    		stoppedSlot = "Crown";
+    	}
+    	else if (transform.position.y == -2f)
+    	{
+    		stoppedSlot = "Melon";
+    	}
+    	else if (transform.position.y == -1.25f)
+    	{
+    		stoppedSlot = "Bar";
+    	}
+    	else if (transform.position.y == -0.5f)
+    	{
+    		stoppedSlot = "Seven";
+    	}
+    	else if (transform.position.y == 0.25f)
+    	{
+    		stoppedSlot = "Cherry";
+    	}
+    	else if (transform.position.y == 1f)
+    	{
+    		stoppedSlot = "Lemon";
+    	}
+    	else if (transform.position.y == 1.75f)
+    	{
+    		stoppedSlot = "Diamond";
+    	}
 
+    	rowStopped = true;
+    }
+
+    private void OnDestroy()
+    {
+    	
     }
 
     void Update()

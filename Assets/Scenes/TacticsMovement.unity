@@ -4742,7 +4742,7 @@ Transform:
   m_GameObject: {fileID: 1354098470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.63, y: 7.34, z: 2.59}
-  m_LocalScale: {x: 0.45707667, y: 0.45707667, z: 0.45707667}
+  m_LocalScale: {x: 0.97201926, y: 0.97201926, z: 0.97201926}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -6772,7 +6772,7 @@ PrefabInstance:
     - target: {fileID: 8541888220010364024, guid: 8885349236ba34e9692ce22877c65a91,
         type: 3}
       propertyPath: m_Name
-      value: Slot
+      value: Slot1
       objectReference: {fileID: 0}
     - target: {fileID: 9013443147297164048, guid: 8885349236ba34e9692ce22877c65a91,
         type: 3}
@@ -6829,5 +6829,63 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2659450329874110309, guid: 8885349236ba34e9692ce22877c65a91,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8885349236ba34e9692ce22877c65a91, type: 3}
+--- !u!1 &815143753875084688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8541888220010364024, guid: 8885349236ba34e9692ce22877c65a91,
+    type: 3}
+  m_PrefabInstance: {fileID: 815143753875084687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!331 &815143753875084689
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815143753875084688}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_MaskAlphaCutoff: 0.2
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0

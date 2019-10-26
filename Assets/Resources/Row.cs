@@ -117,7 +117,7 @@ public class Row : MonoBehaviour
 
     private void OnDestroy()
     {
-    	
+    	GameControl.HandlePulled -= StartRotating;
     }
 
     void Update()

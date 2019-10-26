@@ -47,8 +47,18 @@ public class ItemControl : MonoBehaviour
     	}
     }
 
+    // Transform Handle in-game
     private IEnumerator PullHandle()
     {
-    	
+    	for (int i = 0; i < 15; i += 5)
+    	{
+    		// Call button function
+    		handle.Rotate(0f, 0f, -i);
+    		yield return new WaitForSeconds(0.1f);
+    	}	
+
+    	HandlePulled();
+
+    	for 
     }
 }

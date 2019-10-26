@@ -59,6 +59,45 @@ public class ItemControl : MonoBehaviour
 
     	HandlePulled();
 
-    	for 
+    	for (int i = 0; i < 15; i += 5)
+    	{
+    		// Call button function
+    		handle.Rotate(0f, 0f, -i);
+    		yield return new WaitForSeconds(0.1f);
+    	}	
+    }
+
+    private void CheckResults()
+    {
+    	if (rows[0].stoppedSlot == "Diamond" && rows[1].stoppedSlot == "Diamond" )
+    	{
+    		prizeValue = 200;
+    	}
+    	else if (rows[0].stoppedSlot == "Crown" && rows[1].stoppedSlot == "Crown" )
+    	{
+    		prizeValue = 400;
+    	}
+    	else if (rows[0].stoppedSlot == "Melon" && rows[1].stoppedSlot == "Melon" )
+    	{
+    		prizeValue = 600;
+    	}
+    	else if (rows[0].stoppedSlot == "Bar" && rows[1].stoppedSlot == "Bar" )
+    	{
+    		prizeValue = 800;
+    	}
+    	else if (rows[0].stoppedSlot == "Seven" && rows[1].stoppedSlot == "Seven" )
+    	{
+    		prizeValue = 1500;
+    	}
+    	else if (rows[0].stoppedSlot == "Cherry" && rows[1].stoppedSlot == "Cherry" )
+    	{
+    		prizeValue = 3000;
+    	}
+    	else if (rows[0].stoppedSlot == "Lemon" && rows[1].stoppedSlot == "Lemon" )
+    	{
+    		prizeValue = 1500;
+    	}
+
+    	resultsChecked = true;
     }
 }

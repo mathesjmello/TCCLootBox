@@ -13,17 +13,17 @@ public class Row : MonoBehaviour
     void Start()
     {
         rowStopped = true;
-        // ItemControl.HandlePulled += StartRotating;
+        ItemControl.HandlePulled += StartRotating;
     }
 
     // Update is called once per frame
-    private void StartRotating()
+    public void StartRotating()
     {
     	stoppedSlot = "";
     	StartCoroutine("Rotate");
     }
 
-    private IEnumerator Rotate()
+    public IEnumerator Rotate()
     {
     	rowStopped = false;
     	timeInterval = 0.025f;
@@ -117,7 +117,7 @@ public class Row : MonoBehaviour
 
     private void OnDestroy()
     {
-    	// ItemControl.HandlePulled -= StartRotating;
+    	ItemControl.HandlePulled -= StartRotating;
     }
 
     void Update()

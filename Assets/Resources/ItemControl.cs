@@ -6,7 +6,7 @@ using System;
 
 public class ItemControl : MonoBehaviour
 {
-    // public static event Action HandlePulled = delegate { };
+    public static event Action HandlePulled = delegate { };
     
     [SerializeField]
     private Text prizeText;
@@ -57,7 +57,7 @@ public class ItemControl : MonoBehaviour
     		yield return new WaitForSeconds(0.1f);
     	}	
 
-    	// HandlePulled();
+    	HandlePulled();
 
     	// for (int i = 0; i < 15; i += 5)
     	// {

@@ -119,5 +119,5 @@ public class Row : MonoBehaviour
     {
     	ItemControl.HandlePulled -= StartRotating;
     }
-
+x
 }

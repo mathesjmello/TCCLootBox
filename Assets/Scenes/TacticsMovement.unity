@@ -421,7 +421,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 267644769}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &267644769
@@ -500,7 +511,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prizeText: {fileID: 0}
-  rows: []
+  rows:
+  - {fileID: 1354098473}
+  - {fileID: 1511247883}
+  - {fileID: 0}
 --- !u!1 &273894200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4711,7 +4725,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1328292410}
   - component: {fileID: 1328292409}
-  - component: {fileID: 1328292411}
   m_Layer: 0
   m_Name: RoundController
   m_TagString: Untagged
@@ -4746,20 +4759,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1328292411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328292408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54ad59a292c542c9adec14a913e96b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prizeText: {fileID: 0}
-  rows: []
 --- !u!1 &1354098470
 GameObject:
   m_ObjectHideFlags: 0

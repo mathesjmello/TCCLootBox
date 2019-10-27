@@ -350,8 +350,10 @@ GameObject:
   - component: {fileID: 267644770}
   - component: {fileID: 267644769}
   - component: {fileID: 267644768}
+  - component: {fileID: 267644772}
+  - component: {fileID: 267644771}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ItemController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,7 +404,7 @@ MonoBehaviour:
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -459,6 +461,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267644766}
   m_CullTransparentMesh: 0
+--- !u!61 &267644771
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267644766}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.973957, y: 0.19076157}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 88.345894, y: 59.117302}
+  m_EdgeRadius: 0
+--- !u!114 &267644772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267644766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54ad59a292c542c9adec14a913e96b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prizeText: {fileID: 0}
+  rows: []
 --- !u!1 &273894200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4716,6 +4758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54ad59a292c542c9adec14a913e96b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prizeText: {fileID: 0}
+  rows: []
 --- !u!1 &1354098470
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,6 +4770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354098471}
   - component: {fileID: 1354098472}
+  - component: {fileID: 1354098473}
   m_Layer: 0
   m_Name: Row1
   m_TagString: Untagged
@@ -4795,6 +4840,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1354098473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354098470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f749a58e0854170a7fddd790224e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rowStopped: 0
+  stoppedSlot: 
 --- !u!1 &1441958023
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,6 +4979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1511247882}
   - component: {fileID: 1511247881}
+  - component: {fileID: 1511247883}
   m_Layer: 0
   m_Name: Row2
   m_TagString: Untagged
@@ -4989,6 +5049,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1511247883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511247880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f749a58e0854170a7fddd790224e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rowStopped: 0
+  stoppedSlot: 
 --- !u!1 &1530954988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5268,7 +5342,7 @@ GameObject:
   - component: {fileID: 1547413463}
   - component: {fileID: 1547413462}
   m_Layer: 5
-  m_Name: Text
+  m_Name: prizeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6511,7 +6585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Round Controller
+  m_Text: Item Controller
 --- !u!222 &1775785311
 CanvasRenderer:
   m_ObjectHideFlags: 0

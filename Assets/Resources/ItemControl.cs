@@ -6,7 +6,7 @@ using System;
 
 public class ItemControl : MonoBehaviour
 {
-    public static event Action HandlePulled = delegate { };
+    // public static event Action HandlePulled = delegate { };
     
     [SerializeField]
     private Text prizeText;
@@ -26,16 +26,16 @@ public class ItemControl : MonoBehaviour
     {
         if (!rows[0].rowStopped || !rows[1].rowStopped)
         {
-        	prizeValue = 0;
-        	prizeText.enable = false;
+        	// prizeValue = 0;
+        	// prizeText.enable = false;
         	resultsChecked = false;
         }
 
         if (rows[0].rowStopped && rows[1].rowStopped && !resultsChecked)
         {
         	CheckResults();
-        	prizeText.enable = true;
-        	prizeText.Text = "Seu item " + prizeValue;
+        	// prizeText.enable = true;
+        	// prizeText.Text = "Seu item " + prizeValue;
         }
     }
 
@@ -53,18 +53,18 @@ public class ItemControl : MonoBehaviour
     	for (int i = 0; i < 15; i += 5)
     	{
     		// Call button function
-    		handle.Rotate(0f, 0f, -i);
+    		// handle.Rotate(0f, 0f, -i);
     		yield return new WaitForSeconds(0.1f);
     	}	
 
-    	HandlePulled();
+    	// HandlePulled();
 
-    	for (int i = 0; i < 15; i += 5)
-    	{
-    		// Call button function
-    		handle.Rotate(0f, 0f, -i);
-    		yield return new WaitForSeconds(0.1f);
-    	}	
+    	// for (int i = 0; i < 15; i += 5)
+    	// {
+    	// 	// Call button function
+    	// 	// handle.Rotate(0f, 0f, -i);
+    	// 	yield return new WaitForSeconds(0.1f);
+    	// }	
     }
 
     private void CheckResults()

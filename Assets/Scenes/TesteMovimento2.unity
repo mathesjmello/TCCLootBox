@@ -191,7 +191,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: fe370ec28813f0645823ce1b0a3d33e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -210,8 +210,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47243163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.51, y: 1.5, z: -61.467186}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5, y: -11.17, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20626,6 +20626,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &833198040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8807280879773641859, guid: 93145bfa5e9e5e348a196ba9a79e059e,
+    type: 3}
+  m_PrefabInstance: {fileID: 541112608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &833198043
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833198040}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.035037015, y: 0.4833988}
+  serializedVersion: 2
+  m_Radius: 1.2007397
 --- !u!1 &1013800809
 GameObject:
   m_ObjectHideFlags: 0
@@ -25090,6 +25112,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 541112608}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &1939224643
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939224638}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.20517682}
+  serializedVersion: 2
+  m_Radius: 0.29675883
 --- !u!1 &1997318913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8807280880288373649, guid: 93145bfa5e9e5e348a196ba9a79e059e,

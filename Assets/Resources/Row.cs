@@ -21,10 +21,13 @@ public class Row : MonoBehaviour
     {
     	stoppedSlot = "";
     	StartCoroutine("Rotate");
+    	Debug.Log("Start Rotate");
     }
 
     public IEnumerator Rotate()
     {
+    	Debug.Log("Rotate Method");
+    	
     	rowStopped = false;
     	timeInterval = 0.025f;
 

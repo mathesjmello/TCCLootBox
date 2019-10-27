@@ -39,17 +39,20 @@ public class ItemControl : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
     	if (rows[0].rowStopped && rows[1].rowStopped)
     	{
     		StartCoroutine("PullHandle");
+    		Debug.Log("Started Coroutine");
     	}
     }
 
     // Transform Handle in-game
     private IEnumerator PullHandle()
     {
+    	Debug.Log("Method PullHandle!");
+
     	for (int i = 0; i < 15; i += 5)
     	{
     		// Call button function

@@ -16,6 +16,9 @@ public class UIScript : RandomItemGenerator
    public Text btnTimer;
    public Button RandomItemBtn;
 
+    public int LootAction;
+    public int LootID;
+
    private ulong lastClickBtn;
   
     void Start()
@@ -32,6 +35,7 @@ public class UIScript : RandomItemGenerator
     // Update is called once per frame
     void Update()
     {
+        LootID = LootAction;
       if (!RandomItemBtn.IsInteractable())
       {
         if (BtnReady())  
@@ -77,6 +81,8 @@ public class UIScript : RandomItemGenerator
       DescriptionText.text = "Your item " + GetItemDescription();
       PowerText.text = "Power: " + GetItemPower();
       DimensionText.text = "Round: " + GetItemDimension();
+      LootAction = GetLootAction();
+        Debug.Log(LootAction);
 
       lastClickBtn = (ulong)DateTime.Now.Ticks;
       PlayerPrefs.SetString("LastClickBtn", lastClickBtn.ToString());

@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class PlayerMove : TaticsMove
 {
+
+    private GameObject ItemGen;
+    UIScript UIScript;
+    private int LootGen;
+
     // Start is called before the first frame update
+    private void Awake()
+    {
+        ItemGen = GameObject.Find("BatlleUI");
+    }
     void Start()
     {
+        UIScript = ItemGen.GetComponent<UIScript>();
      	Init();   
     }
 
     // Update is called once per frame
     void Update()
     {
+        LootGen = UIScript.LootID;
     	if(!turn)
         {
             return;
@@ -49,7 +60,7 @@ public class PlayerMove : TaticsMove
     				Tile t = hit.collider.GetComponent<Tile>();
     				Debug.Log("Tile Clicada");
 
-    				if (t.selectable) // Move target
+    				if (t.selectable && LootGen == 1) // Move target
     				{
     					// t.target = true;
     					// moving = true;

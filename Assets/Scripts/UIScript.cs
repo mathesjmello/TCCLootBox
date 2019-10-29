@@ -81,8 +81,8 @@ public class UIScript : RandomItemGenerator
       DescriptionText.text = "Your item " + GetItemDescription();
       PowerText.text = "Power: " + GetItemPower();
       DimensionText.text = "Round: " + GetItemDimension();
-      LootAction = GetLootAction();
-        Debug.Log(LootAction);
+      //LootAction = GetLootAction();
+      //  Debug.Log(LootAction);
 
       lastClickBtn = (ulong)DateTime.Now.Ticks;
       PlayerPrefs.SetString("LastClickBtn", lastClickBtn.ToString());

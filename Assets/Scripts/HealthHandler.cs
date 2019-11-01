@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CodeMonkey;
 
 public class HealthHandler : MonoBehaviour
 {
@@ -9,5 +10,9 @@ public class HealthHandler : MonoBehaviour
     {
         HealthSystem healthSystem = new HealthSystem(100);
     }
-    
+
+    CMDebug.ButtonUI(new Vector2(100,100), "damage", () => {
+    	healthSystem.Damage(10);
+    	Debug.Log("Damaged: "+healthSystem.GetHealth());
+  	});
 }

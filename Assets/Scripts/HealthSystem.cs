@@ -8,7 +8,7 @@ public class HealthSystem
     // Start is called before the first frame update
     public HealthSystem(int health) 
     {
-    	this.health = health
+    	this.health = health;
     } 
     
     public int GetHealth() {

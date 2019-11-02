@@ -9,7 +9,8 @@ public class HealthHandler : MonoBehaviour
     private void Start()
     {
       HealthSystem healthSystem = new HealthSystem(100);
-   
+   		
+   		
     	CMDebug.ButtonUI(new Vector2(100,100), "damage", () => {
     		healthSystem.Damage(10);
     		Debug.Log("Damaged: "+healthSystem.GetHealth());

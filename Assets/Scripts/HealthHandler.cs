@@ -5,12 +5,16 @@ using CodeMonkey;
 
 public class HealthHandler : MonoBehaviour
 {
-    public HealthBar healthBar;
+    // public HealthBar healthBar;
+	public Transform HealthBar;
 
     // Start is called before the first frame update
     private void Start()
     {
       HealthSystem healthSystem = new HealthSystem(100);
+   		
+   		Transform healthBarTransform = Instantiate(HealthBar, new Vector3(0, 10), Quaternion.identity);
+   		HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
    		healthBar.Setup(healthSystem);	
 
     	CMDebug.ButtonUI(new Vector2(100,100), "damage", () => {

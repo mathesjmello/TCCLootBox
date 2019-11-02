@@ -5113,6 +5113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328292410}
+  - component: {fileID: 1328292409}
   m_Layer: 0
   m_Name: RoundController
   m_TagString: Untagged
@@ -5120,6 +5121,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1328292409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328292408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb86984f704243779e941c188db05fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1353994142}
 --- !u!4 &1328292410
 Transform:
   m_ObjectHideFlags: 0
@@ -5143,6 +5157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1353994141}
+  - component: {fileID: 1353994142}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -5158,7 +5173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353994140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.200044, y: 7.232835, z: -0.7790958}
+  m_LocalPosition: {x: 4.56, y: 7.232835, z: -0.7790958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1839177572}
@@ -5166,6 +5181,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1353994142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353994140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd9af358467043dab653560f794e9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441958023
 GameObject:
   m_ObjectHideFlags: 0

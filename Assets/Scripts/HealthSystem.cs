@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class HealthSystem 
 {
+    public event EventHandler OnHealthChange;
     public int health;
     public int healthMax;
     // Start is called before the first frame update
@@ -24,11 +26,13 @@ public class HealthSystem
     {
     	health -= damageAmount;
     	if (health < 0) health = 0;
+    	if (OnHealthChange != null) OnHealthChange(this, EventArgs.Empty);
     }
 
     public void Heal(int healAmount) {
     	health += healAmount;
     	if (health > healthMax) health = healthMax;
+    	if (OnHealthChange != null) OnHealthChange(this, EventArgs.Empty);
     }
 
 }

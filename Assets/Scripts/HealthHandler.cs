@@ -6,7 +6,7 @@ using CodeMonkey;
 public class HealthHandler : MonoBehaviour
 {
     // public HealthBar healthBar;
-	public Transform HealthBar;
+	public Transform HealthBarPrefab;
 
     // Start is called before the first frame update
     private void Start()

@@ -13,7 +13,8 @@ public class HealthHandler : MonoBehaviour
     {
       HealthSystem healthSystem = new HealthSystem(100);
    		
-   		Transform healthBarTransform = Instantiate(HealthBar, new Vector3(0, 10), Quaternion.identity);
+   		Transform healthBarTransform = Instantiate(HealthBarPrefab, new Vector3(0, 10), Quaternion.identity);
+   		
    		HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
    		healthBar.Setup(healthSystem);	
 

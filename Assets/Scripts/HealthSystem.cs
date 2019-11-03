@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class HealthSystem 
+public class HealthSystem : MonoBehaviour
 {
     public event EventHandler OnHealthChange;
     public int health;

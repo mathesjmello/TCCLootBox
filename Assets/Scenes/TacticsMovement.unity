@@ -3934,6 +3934,7 @@ GameObject:
   - component: {fileID: 1196131988}
   - component: {fileID: 1196131987}
   - component: {fileID: 1196131991}
+  - component: {fileID: 1196131992}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4032,6 +4033,20 @@ MonoBehaviour:
   jumpHeight: 2
   moveSpeed: 2
   actualTargetTile: {fileID: 0}
+--- !u!114 &1196131992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196131986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fb74a415064468a947ac11ae6185f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthMax: 100
 --- !u!4 &1204925345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4095417012592435691, guid: 065ba23d0ef10460d8c2aa89747d5bdf,
@@ -7145,6 +7160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613629440555881999, guid: 2ae753bf1a8e24713b65b24bc5b7ab91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7613629440555881998, guid: 2ae753bf1a8e24713b65b24bc5b7ab91,
         type: 3}

@@ -12,6 +12,7 @@ public class TaticsMove : MonoBehaviour
     Stack<Tile> path = new Stack<Tile>();
     Tile currentTile;
 
+	
     public bool moving = false;
     public int move = 3;
     public float jumpHeight = 1;
@@ -26,8 +27,10 @@ public class TaticsMove : MonoBehaviour
 
 	
 	public int LootGenTest;
+
 	
-    protected void Init()
+
+	protected void Init()
     {
     	tiles = GameObject.FindGameObjectsWithTag("Tile");
 
@@ -258,6 +261,7 @@ public class TaticsMove : MonoBehaviour
                 if (closedList.Contains(tile))
                 {
                     // Do nothing, already processed
+	                
                 }
                 else if (openList.Contains(tile))
                 {
@@ -295,6 +299,15 @@ public class TaticsMove : MonoBehaviour
 	    if (LootGenTest == 1)
 	    {	    
 		    FindSelectableTiles();
+	    }
+
+	    if (LootGenTest == 2)
+	    {
+		    var enimi = FindObjectsOfType<Damage>();
+		    foreach (var objDamage in enimi)
+		    {
+			    objDamage.DistCheck();
+		    }
 	    }
         turn = true;
     }

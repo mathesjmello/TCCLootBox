@@ -37,34 +37,27 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerMove.LootGenTest == 2)
-        {
-            selectable = true;
-        }
-        else
-        {
-            selectable = false;
-        }
-        if (tempLife == 0)
-        {
-            Debug.Log("Morreu");
-        }
         Attack();
-        DistCheck();
     }
 
     void Attack()
     {
-        if (selected == true && distTotal < 6)
+        if (playerMove.LootGenTest == 2 && distTotal < 6)
         {
+            selectable = true;
             if (Input.GetMouseButtonDown(0))
             {
                 tempLife -= 20;
+                if (tempLife == 0)
+                {
+                    Debug.Log("Morreu");
+                }
+                RoundManager.EndTurn();
             }
         }
     }
 
-    void DistCheck()
+    public void DistCheck()
     {
         distX = (player.transform.position.x - transform.position.x)/1;
         distZ = (player.transform.position.z - transform.position.z)/1;
@@ -89,7 +82,6 @@ public class Damage : MonoBehaviour
         DX = distX * PositivizadorX;
         DZ = distZ * PositivizadorZ;
         distTotal = DX + DZ;
-        Debug.Log(distTotal);
     }
 
     private void OnMouseEnter()

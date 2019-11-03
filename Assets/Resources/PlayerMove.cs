@@ -9,7 +9,7 @@ public class PlayerMove : TaticsMove
     //private GameObject ItemGen;
     //UIScript UIScript;
     //private int LootGen;
-    public int LootGenTest = 1;
+    //public int LootGenTest;
 
     // Start is called before the first frame update
     private void Awake()
@@ -26,26 +26,17 @@ public class PlayerMove : TaticsMove
     void Update()
     {
         //LootGen = UIScript.LootID;
-        LootTest();
+	    LootTest();
         if (!turn)
         {
             return;
         }
         if (!moving)
         {
-            FindSelectableTiles();
             CheckMouse();
         }
         else
         {
-            // foreach (var tiles in selectableTiles)
-            // {
-            //  if (tiles.target)
-            //  {
-            //   transform.position = tiles.transform.position + new Vector3(0,1.1f,0);
-            //   moving = false;
-            //  }
-            // }
             Move();
         }
     }
@@ -54,8 +45,8 @@ public class PlayerMove : TaticsMove
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            LootGenTest = Random.Range(1, 3);
-            Debug.Log(LootGenTest);
+	        LootGenTest = 1;
+	        FindSelectableTiles();
         }
     }
 

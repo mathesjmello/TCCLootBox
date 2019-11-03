@@ -24,6 +24,9 @@ public class TaticsMove : MonoBehaviour
 
     public Tile actualTargetTile;
 
+	
+	public int LootGenTest;
+	
     protected void Init()
     {
     	tiles = GameObject.FindGameObjectsWithTag("Tile");
@@ -287,10 +290,17 @@ public class TaticsMove : MonoBehaviour
 
     public void BeginTurn()
     {
+	    LootGenTest = Random.Range(1, 3);
+	    Debug.Log(LootGenTest);
+	    if (LootGenTest == 1)
+	    {	    
+		    FindSelectableTiles();
+	    }
         turn = true;
     }
 
-    public void EndTurn()
+
+	public void EndTurn()
     {
         turn = false;
     }   

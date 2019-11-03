@@ -9,7 +9,7 @@ public class PlayerMove : TaticsMove
     //private GameObject ItemGen;
     //UIScript UIScript;
     //private int LootGen;
-    private int LootGenTest = 1;
+    public int LootGenTest = 1;
 
     // Start is called before the first frame update
     private void Awake()

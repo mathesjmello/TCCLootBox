@@ -6,6 +6,7 @@ using System;
 public class HealthSystem : MonoBehaviour
 {
     public event EventHandler OnHealthChange;
+    
     public int health;
     public int healthMax;
     // Start is called before the first frame update

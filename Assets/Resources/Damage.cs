@@ -55,7 +55,7 @@ public class Damage : MonoBehaviour
                 tempLife -= 20;
                 if (tempLife == 0)
                 {
-                    Debug.Log("Morreu");
+                    Destroy(this);
                 }
                 RoundManager.EndTurn();
             }

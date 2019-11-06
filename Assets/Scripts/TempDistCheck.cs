@@ -1,0 +1,121 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TempDistCheck : MonoBehaviour
+{
+
+    public GameObject coll01;
+    public GameObject coll02;
+    public GameObject coll03;
+    public GameObject coll04;
+
+    private GameObject player;
+
+    private float distX;
+    private float distZ;
+    private float distTotal;
+    private float PositivizadorX;
+    private float PositivizadorZ;
+    private float DX;
+    private float DZ;
+
+    public float hitTime;
+
+    public bool canHit;
+    public int hitCount;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        player = GameObject.Find("Player");
+        canHit = true;
+        hitCount = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        DistCheck();
+        if (distTotal <= 1.5f && canHit == true)
+        {
+            TestDamage();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            canHit = true;
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            hitCount = 0;
+        }
+
+        //hitTime = Time.DeltaTime;
+
+            /*if (distTotal <= 1)
+            {
+                if(hitTime >= 2)
+                {
+                    coll01.SetActive(true);
+                    coll02.SetActive(true);
+                    coll03.SetActive(true);
+                    coll04.SetActive(true);
+                }
+            }
+            else
+            {
+                coll01.SetActive(false);
+                coll02.SetActive(false);
+                coll03.SetActive(false);
+                coll04.SetActive(false);
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                coll01.SetActive(false);
+                coll02.SetActive(false);
+                coll03.SetActive(false);
+                coll04.SetActive(false);
+                hitTime = 0;
+            }*/
+    }
+
+    private void TestDamage()
+    {
+        hitCount++;
+        canHit = false;
+        if (hitCount == 3)
+        {
+            Destroy(player);
+        }
+    }
+
+    public void DistCheck()
+    {
+        distX = (player.transform.position.x - transform.position.x) / 1;
+        distZ = (player.transform.position.z - transform.position.z) / 1;
+
+        if (distX < 0)
+        {
+            PositivizadorX = -1f;
+        }
+        else
+        {
+            PositivizadorX = 1f;
+        }
+
+        if (distZ < 0)
+        {
+            PositivizadorZ = -1f;
+        }
+        else
+        {
+            PositivizadorZ = 1f;
+        }
+        DX = distX * PositivizadorX;
+        DZ = distZ * PositivizadorZ;
+        distTotal = DX + DZ;
+    }
+
+}

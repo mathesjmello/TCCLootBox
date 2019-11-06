@@ -20,7 +20,7 @@ public class BauTeste : MonoBehaviour
     {
         if (theCollision.gameObject.tag == "Player")
         {
-            Application.LoadLevel("LootboxTest");
+            Application.LoadLevel("TacticsMovement");
             gameObject.SetActive(false);
         }
     }

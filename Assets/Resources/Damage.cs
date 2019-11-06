@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +17,11 @@ public class Damage : MonoBehaviour
     private float PositivizadorZ;
     private float DX;
     private float DZ;
+
+    public GameObject coll01;
+    public GameObject coll02;
+    public GameObject coll03;
+    public GameObject coll04;
 
     bool selectable = false;
     bool selected = false;

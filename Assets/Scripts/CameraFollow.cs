@@ -18,6 +18,6 @@ public class CameraFollow : MonoBehaviour
     {
         cameraPos = new Vector3(Player.position.x, Player.position.y, -10f);
         transform.position = Vector3.SmoothDamp(gameObject.transform.position, cameraPos, ref velocity, delay);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -12.5f, 14.5f), Mathf.Clamp(transform.position.y, -21f, 11f), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -14.9f, 16.91574f), Mathf.Clamp(transform.position.y, -23.5f, 12.46843f), transform.position.z);
     }
 }

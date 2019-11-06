@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: c007a10eb2222274bac722515aa649bb
+guid: 6f7daa23ca0b96542a0c5f8342f72d09
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4521365962966524561
-    second: 2f12444b2c57c664bc30adf89816435e_0
+      213: 7290582053875832290
+    second: coisas para colocar_0
   - first:
-      213: 257935130987993951
-    second: 2f12444b2c57c664bc30adf89816435e_1
+      213: 4596832257642508659
+    second: coisas para colocar_1
   - first:
-      213: 7798617951259668903
-    second: 2f12444b2c57c664bc30adf89816435e_2
+      213: -6181255538652183757
+    second: coisas para colocar_2
   - first:
-      213: -4498887118959165458
-    second: 2f12444b2c57c664bc30adf89816435e_3
+      213: -4361661321573896269
+    second: coisas para colocar_3
+  - first:
+      213: 8900042080587045151
+    second: coisas para colocar_4
+  - first:
+      213: -8086439235743800387
+    second: coisas para colocar_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -43,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -57,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -73,7 +79,7 @@ TextureImporter:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -84,7 +90,7 @@ TextureImporter:
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -96,33 +102,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2f12444b2c57c664bc30adf89816435e_0
+      name: coisas para colocar_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 321
-        width: 63
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ccdef29325c5f8f4e8c37aa9869cdfeb
-      internalID: 4521365962966524561
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2f12444b2c57c664bc30adf89816435e_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 159
-        width: 65
+        x: 14
+        y: 174
+        width: 62
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,20 +116,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 207f97bcbd45c3747b49307c87aeafb0
-      internalID: 257935130987993951
+      spriteID: 44ef0958982d81041a05bf1295ffc54f
+      internalID: 7290582053875832290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2f12444b2c57c664bc30adf89816435e_2
+      name: coisas para colocar_1
       rect:
         serializedVersion: 2
-        x: 383
-        y: 383
-        width: 66
-        height: 65
+        x: 151
+        y: 175
+        width: 58
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e14a2c275df098a47a5839f11dfde979
-      internalID: 7798617951259668903
+      spriteID: 68ef2424ba2345c418a51196a23648cb
+      internalID: 4596832257642508659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2f12444b2c57c664bc30adf89816435e_3
+      name: coisas para colocar_2
       rect:
         serializedVersion: 2
-        x: 63
-        y: 225
-        width: 65
-        height: 63
+        x: 44
+        y: 106
+        width: 54
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +158,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54feee036dfbb6a4c9ef8e9b78aa9d17
-      internalID: -4498887118959165458
+      spriteID: f6bca8eef9a8a544a80076c148dfaf49
+      internalID: -6181255538652183757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coisas para colocar_3
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 93
+        width: 62
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7fc74af44b9da45ba1d18d55d8ee04
+      internalID: -4361661321573896269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coisas para colocar_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 13
+        width: 103
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb289f55348fb26428eb3353875cfe8e
+      internalID: 8900042080587045151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coisas para colocar_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 17
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0143028e3bbc94d4591825d7dab2b0cf
+      internalID: -8086439235743800387
       vertices: []
       indices: 
       edges: []
@@ -182,7 +230,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8243cd7b529a1624f99abf50734997f5
+    spriteID: 5d8cfb4752a43f34a9a9f380b02044c8
     internalID: 0
     vertices: []
     indices: 

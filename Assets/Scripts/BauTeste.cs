@@ -16,13 +16,12 @@ public class BauTeste : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter(Collider theCollision) // C#, type first, name in second
+    void OnTriggerEnter2D(Collider2D theCollision) // C#, type first, name in second
     {
         if (theCollision.gameObject.tag == "Player")
-        // By using {}, the condition apply to that entire scope, instead of the next line.
         {
-            Application.LoadLevel("TacticsMovement");
-
+            Application.LoadLevel("LootboxTest");
+            gameObject.SetActive(false);
         }
     }
 }

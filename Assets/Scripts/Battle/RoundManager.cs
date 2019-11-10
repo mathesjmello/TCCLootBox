@@ -6,7 +6,7 @@ public class RoundManager : MonoBehaviour
 {
     static Dictionary<string, List<TaticsMove>> units = new Dictionary<string, List<TaticsMove>>(); 
     static Queue<string> turnKey = new Queue<string>();
-    static Queue<TaticsMove> turnTeam = new Queue<TaticsMove>();
+    public static Queue<TaticsMove> turnTeam = new Queue<TaticsMove>();
 
     void Update()
     {
@@ -31,6 +31,10 @@ public class RoundManager : MonoBehaviour
     {
     	if (turnTeam.Count > 0)
     	{
+		    if (turnTeam.Peek().gameObject.GetComponent<PlayerMove>())
+		    {
+			    return;
+		    }
     		turnTeam.Peek().BeginTurn();
     	}
     }

@@ -17,6 +17,7 @@ namespace DefaultNamespace.Battle
         private void RunLoot()
         {
             player.BeginTurn();
+            Destroy(transform.gameObject);
         }
 
         public void GetActualPlayer()

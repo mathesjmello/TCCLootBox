@@ -50,12 +50,12 @@ public class Damage : MonoBehaviour
         if (playerMove.LootGenTest == 2 && distTotal < 6)
         {
             selectable = true;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0)&& Selection.activeSelf)
             {
                 tempLife -= 20;
                 if (tempLife == 0)
                 {
-                    Destroy(this);
+                    Destroy(gameObject);
                 }
                 RoundManager.EndTurn();
             }

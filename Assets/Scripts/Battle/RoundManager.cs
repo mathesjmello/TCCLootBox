@@ -43,7 +43,7 @@ public class RoundManager : MonoBehaviour
     {
     	TaticsMove unit = turnTeam.Dequeue();
     	unit.EndTurn();
-
+		Debug.Log("cabou");
     	if (turnTeam.Count > 0)
     	{
     		StartTurn();

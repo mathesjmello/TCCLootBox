@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TempDistCheck : MonoBehaviour
 {
@@ -25,12 +26,15 @@ public class TempDistCheck : MonoBehaviour
     public bool canHit;
     public int hitCount;
 
+    public Button SkipButton;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         canHit = true;
         hitCount = 0;
+        SkipButton.onClick.AddListener(SkipTurn);
     }
 
     // Update is called once per frame
@@ -42,10 +46,10 @@ public class TempDistCheck : MonoBehaviour
             TestDamage();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             canHit = true;
-        }
+        }*/
         if (Input.GetMouseButtonDown(1))
         {
             hitCount = 0;
@@ -79,6 +83,12 @@ public class TempDistCheck : MonoBehaviour
                 coll04.SetActive(false);
                 hitTime = 0;
             }*/
+    }
+
+    private void SkipTurn()
+    {
+        canHit = true;
+
     }
 
     private void TestDamage()

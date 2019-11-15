@@ -8,6 +8,15 @@ public class LoadQuests : MonoBehaviour
     void Start()
     {
      	TextAsset questdata = Resources.Load<TextAsset>("../DB/csv/quests");
+
+     	string[] data = questdata.text.Split(new char[] { '\n' });
+
+     	for (int i = 1; i < data.Length -1; i++){
+     		string[] row = data[i].Split(new char[] { ',' });
+     		Quest q = new Quest();
+     		q.id = row[0];
+     		int.TryParse(row[0] out q.id);
+     	}
     }
 
     // Update is called once per frame

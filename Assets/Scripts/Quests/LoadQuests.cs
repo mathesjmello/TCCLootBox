@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LoadQuests : MonoBehaviour
 {
-    // Start is called before the first frame update
+    List<Quest> quests = new List<Quest>();
+
     void Start()
     {
      	TextAsset questdata = Resources.Load<TextAsset>("../DB/csv/quests");
@@ -15,19 +16,27 @@ public class LoadQuests : MonoBehaviour
      		
      		string[] row = data[i].Split(new char[] { ',' });
      		
-     		Quest q = new Quest();
+     		if (row[1] != "")
+     		{
+     			Quest q = new Quest();
      		
-     		q.id = row[0];
-     		int.TryParse(row[0] out q.id);
-     		q.name = row[1];
-     		q.npc = row[2];
-     		q.desc = row[3];
+	     		q.id = row[0];
+	     		int.TryParse(row[0] out q.id);
+	     		q.name = row[1];
+	     		q.npc = row[2];
+	     		q.desc = row[3];
 
-     		int.TryParse(row[4] out q.status);
-     		q.rewards = row[5];
-     		q.task = row[6];
-     		int.TryParse(row[7], out q.parent);
+	     		int.TryParse(row[4] out q.status);
+	     		q.rewards = row[5];
+	     		q.task = row[6];
+	     		int.TryParse(row[7], out q.parent);
 
+	     		quest.Add(q);
+     		}
+     	}
+
+     	foreach (Quest q in quests) {
+     		// Debug.Log(q.name);
      	}
     }
 

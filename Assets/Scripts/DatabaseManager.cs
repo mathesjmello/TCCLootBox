@@ -3,7 +3,7 @@ using System.Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mono.Data.Sqlite;
+// using Mono.Data.Sqlite; // Get error reference for SQLite Submodule
 
 public class DatabaseManager : MonoBehaviour
 {

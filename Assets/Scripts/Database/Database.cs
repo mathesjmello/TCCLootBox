@@ -6,7 +6,7 @@ public class Database : MonoBehaviour
 {
     public Sprite[] sprites; // Place some sprites for items
 
-    public static List<Item> itemList = new List<Item>();
+    public static List<Item> itemList = new List<Item>(); // 
 
     // Making Database seed
     void Start()

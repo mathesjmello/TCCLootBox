@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Database : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Sprite[] sprites; // Place some sprites for items
+
+    public static List<Item> itemList = new List<Item>();
+
+    // Making Database seed
     void Start()
-    {
-        
+    {	
+    	// Item i0 = new Item();
+    	// i0.name = "";
+    	// i0.type = Item.Type.equip;
+    	// i0.sprite = sprites[0]; 	   
+    	// itemList.Add(i0);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         

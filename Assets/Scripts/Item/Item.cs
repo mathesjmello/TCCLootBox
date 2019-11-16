@@ -8,11 +8,9 @@ public class Item : MonoBehaviour
 	  public string description; // If they're any
 	  public int quantity;	
 	  public int price;	 
-	  public string sprite; // Item's sprite
+	  public Sprite sprite; // Item's sprite
 	  public enum Type {weapon, consumable, equip, potion, heal};	 
 	  public int on_sale; // 0 - 1 (On Sale or Not)
-		
-		public Sprite sprite;    
     
     void Start()
     {

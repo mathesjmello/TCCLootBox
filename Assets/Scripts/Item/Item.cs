@@ -11,7 +11,7 @@ public class Item : MonoBehaviour
 	  public Sprite sprite; // Item's sprite
 	  public enum Type {weapon, consumable, equip, potion, heal};	 
 	  public Type type;
-	  public int on_sale; // 0 - 1 (On Sale or Not)
+	  public bool on_sale; // 0 - 1 (On Sale or Not)
     
     void Start()
     {

@@ -20,23 +20,23 @@ public class LoadQuests : MonoBehaviour
      		{
      			Quest q = new Quest();
      		
-	     		q.id = row[0];
-	     		int.TryParse(row[0] out q.id);
+	     		
+	     		int.TryParse(row[0], out q.id);
 	     		q.name = row[1];
 	     		q.npc = row[2];
 	     		q.desc = row[3];
 
-	     		int.TryParse(row[4] out q.status);
+	     		int.TryParse(row[4], out q.status);
 	     		q.rewards = row[5];
 	     		q.task = row[6];
 	     		int.TryParse(row[7], out q.parent);
 
-	     		quest.Add(q);
+	     		quests.Add(q);
      		}
      	}
 
      	foreach (Quest q in quests) {
-     		// Debug.Log(q.name);
+     		Debug.Log(q.name);
      	}
     }
 
@@ -45,4 +45,11 @@ public class LoadQuests : MonoBehaviour
     {
         
     }
+
+    // public void GetQuestInfo(List<Quest> q) {
+    // // 	foreach (Quest q in quests) {
+    // //  		// Debug.Log(q.name);
+    // //  	}
+    // // }
+    // }
 }

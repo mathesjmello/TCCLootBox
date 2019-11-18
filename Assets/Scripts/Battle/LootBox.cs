@@ -19,7 +19,7 @@ namespace DefaultNamespace.Battle
 
         private void RunLoot()
         {
-            var index = Random.Range(1, 2);
+            var index = Random.Range(1, 3);
             var loot = Instantiate(PrefabLoots,Vector3.zero,Quaternion.identity,PainelLootBox.transform);
             loot.GetComponent<Loot>().TipeLoot = index;
             Destroy(transform.gameObject);

@@ -14,7 +14,7 @@ public class TempPlayerHp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerHealth = 2;
+        PlayerHealth = 100;
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class TempPlayerHp : MonoBehaviour
             PlayerHealth--;
             if (PlayerHealth <= 0)
             {
-                Destroy(this);
+                Destroy(gameObject);
             }
         }
     }

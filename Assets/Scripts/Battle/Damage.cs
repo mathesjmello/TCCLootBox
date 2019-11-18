@@ -52,7 +52,7 @@ public class Damage : MonoBehaviour
             selectable = true;
             if (Input.GetMouseButtonDown(0)&& Selection.activeSelf)
             {
-                tempLife -= 20;
+                tempLife -= playerMove.HitForce;
                 if (tempLife == 0)
                 {
                     Destroy(gameObject);

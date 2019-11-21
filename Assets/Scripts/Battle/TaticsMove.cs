@@ -12,7 +12,7 @@ public class TaticsMove : MonoBehaviour
     Stack<Tile> path = new Stack<Tile>();
     Tile currentTile;
 
-	
+	public int HitForce; 
     public bool moving = false;
     public int move = 3;
     public float jumpHeight = 1;
@@ -294,7 +294,7 @@ public class TaticsMove : MonoBehaviour
 
     public void BeginTurn()
     {
-	    LootGenTest = Random.Range(1, 3);
+	   // LootGenTest = Random.Range(1, 3);
 	    Debug.Log(LootGenTest);
 	    if (LootGenTest == 1)
 	    {	    

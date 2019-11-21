@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Damage : MonoBehaviour
 {
 
     public GameObject Selection;
     private GameObject player;
+    public Image LifeBar;
     PlayerMove playerMove;
 
     private float distX;
@@ -26,10 +28,11 @@ public class Damage : MonoBehaviour
     bool selectable = false;
     bool selected = false;
 
-    int tempLife;
+    float tempLife;
 
     private void Awake()
     {
+        
         player = GameObject.Find("Player");
         playerMove = player.GetComponent<PlayerMove>();
     }
@@ -52,11 +55,15 @@ public class Damage : MonoBehaviour
             selectable = true;
             if (Input.GetMouseButtonDown(0)&& Selection.activeSelf)
             {
-                tempLife -= 20;
-                if (tempLife == 0)
+                tempLife -= playerMove.HitForce*10;
+                float barra = tempLife / 100;
+                Debug.Log(barra);
+                LifeBar.fillAmount = barra;
+                if (tempLife <= 0)
                 {
                     Destroy(gameObject);
                 }
+                playerMove.LootGenTest = 0;
                 RoundManager.EndTurn();
             }
         }

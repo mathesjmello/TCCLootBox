@@ -5,31 +5,48 @@ using UnityEngine;
 
 public class NPCMove : TaticsMove
 {
+    private GameObject NPC;
     GameObject target;
+    public Animator GS;
+    TempDistCheck tempDistCheck;
     // Start is called before the first frame update
     void Start()
     {
-    	Init();    
+        NPC = GameObject.Find("NPC");
+        tempDistCheck = NPC.GetComponent<TempDistCheck>();
+        Init();
     }
 
     // Update is called once per frame
     void Update()
     {
-    	if(!turn)
+        if (!turn)
         {
             return;
         }
         if (!moving)
-    	{
-  			FindNearestTarget();
-  			FindSelectableTiles(); // Still show the movement from NPC
-  			CalculatePath();
+        {
+            FindNearestTarget();
+            FindSelectableTiles(); // Still show the movement from NPC
+            CalculatePath();
             actualTargetTile.target = true;
-    	}
-    	else
-    	{
-		    Move();
-    	}
+        }
+        else
+        {
+            if (tempDistCheck.distTotal >= 1.5f)
+            {
+                StartCoroutine("MoveAnim");
+            }
+
+            Move();
+        }
+    }
+
+    IEnumerator MoveAnim()
+    {
+        GS.SetTrigger("Move");
+        yield return new WaitForSeconds(0.9f);
+        GS.ResetTrigger("Move");
     }
 
     void CalculatePath() 

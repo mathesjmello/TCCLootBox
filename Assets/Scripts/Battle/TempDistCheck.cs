@@ -15,7 +15,7 @@ public class TempDistCheck : MonoBehaviour
 
     private float distX;
     private float distZ;
-    private float distTotal;
+    public float distTotal;
     private float PositivizadorX;
     private float PositivizadorZ;
     private float DX;
@@ -27,6 +27,8 @@ public class TempDistCheck : MonoBehaviour
     public int hitCount;
 
     public Button SkipButton;
+
+    public Animator GS;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,7 @@ public class TempDistCheck : MonoBehaviour
         if (distTotal <= 1.5f && canHit == true)
         {
             TestDamage();
+            GS.ResetTrigger("Attack");
         }
 
         /*if (Input.GetMouseButtonDown(0))
@@ -93,6 +96,7 @@ public class TempDistCheck : MonoBehaviour
 
     private void TestDamage()
     {
+        GS.SetTrigger("Attack");
         hitCount++;
         canHit = false;
         if (hitCount == 3)

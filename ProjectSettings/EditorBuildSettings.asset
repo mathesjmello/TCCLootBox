@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prolog.unity
     guid: 324abfde6028898409637289f646afce
+  - enabled: 1
+    path: Assets/Scenes/Guilda.unity
+    guid: e90aa8fad59be0d42abf19d84cc5419f
   m_configObjects: {}

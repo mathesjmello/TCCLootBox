@@ -7,13 +7,21 @@ public class OptionsMenu : MonoBehaviour
 {
     public GameObject MenuPainel, OptionsPainel, SoundPainel;
 
-    public Button SoundButton, OptionsButton;
+    public Button SoundButton, OptionsButton, BackButton;
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(gameObject);
         SoundButton.onClick.AddListener(OpenSound);
         OptionsButton.onClick.AddListener(OpenOptions);
+        BackButton.onClick.AddListener(OpenMenu);
+    }
+
+    private void OpenMenu()
+    {
+        OptionsPainel.SetActive(false);
+        SoundPainel.SetActive(false);
+        MenuPainel.SetActive(true);
     }
 
     private void OpenOptions()
@@ -28,12 +36,20 @@ public class OptionsMenu : MonoBehaviour
         MenuPainel.SetActive(false);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            MenuPainel.SetActive(!MenuPainel.activeSelf);
+            if (!OptionsPainel.activeSelf && !SoundPainel.activeSelf)
+            {
+                MenuPainel.SetActive(!MenuPainel.activeSelf);
+            }
         }
     }
 }

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 9ced1b609878672488fe93770f80d30f
+  - enabled: 1
+    path: Assets/Scenes/Prolog.unity
+    guid: 324abfde6028898409637289f646afce
   m_configObjects: {}

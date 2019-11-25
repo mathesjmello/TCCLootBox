@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LootboxTest.unity
     guid: d91fe08dc5073354e9a08f68e542c4e0
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 9ced1b609878672488fe93770f80d30f
   m_configObjects: {}

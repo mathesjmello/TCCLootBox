@@ -16,6 +16,10 @@ public class Dialogo : MonoBehaviour
     public TextMeshProUGUI textoMensagem;
     public string[] texto;
     public int limitText;
+    public int NivelMissao;
+    public int NivelEntrando;
+    public bool Vitoria = false;
+
     //public float timer = 0;
     public static bool estaFalando = false;
     [SerializeField]
@@ -41,7 +45,8 @@ public class Dialogo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (podeFalar)
+       
+            if (podeFalar)
         {
             //img.SetActive(false);
             //img = imgs[linhaAtual];
@@ -91,40 +96,46 @@ public class Dialogo : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if (jaComecaFalando)
+        
+            if (collision.gameObject.CompareTag("Player"))
             {
-                podeFalar = true;
-                Habilitar();
-            }
-            else if (!jaComecaFalando && Input.GetKeyUp(KeyCode.E))
-            {
+                if (jaComecaFalando)
+                {
+                    podeFalar = true;
+                    Habilitar();
+                }
+                else if (!jaComecaFalando && Input.GetKeyUp(KeyCode.E))
+                {
 
-                podeFalar = true;
-                Habilitar();
+                    podeFalar = true;
+                    Habilitar();
 
+                }
             }
-        }
+        
 
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if (jaComecaFalando)
-            {
-                podeFalar = true;
-                Habilitar();
-            }
-            else if (!jaComecaFalando && Input.GetKeyUp(KeyCode.E))
-            {
+        
 
-                podeFalar = true;
-                Habilitar();
 
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                if (jaComecaFalando)
+                {
+                    podeFalar = true;
+                    Habilitar();
+                }
+                else if (!jaComecaFalando && Input.GetKeyUp(KeyCode.E))
+                {
+
+                    podeFalar = true;
+                    Habilitar();
+
+                }
             }
-        }
+        
     }
 
     void Habilitar()
@@ -136,12 +147,21 @@ public class Dialogo : MonoBehaviour
     }
     void Desabilitar()
     {
-        panelBox.SetActive(false);
-        estaFalando = false;
-        Missao.SetActive(true);
-        PlayerPrefs.SetInt("Missao", 1);
-        Interrogaçao.SetActive(false);
-        Conversa.SetActive(false);
+        if (Vitoria == true)
+        {
+            PlayerPrefs.SetInt("Missao", 0);
+            PlayerPrefs.SetInt("SlimesMortos", 0);
+
+        }
+        if (Vitoria == false)
+        {
+            panelBox.SetActive(false);
+            estaFalando = false;
+            Missao.SetActive(true);
+            PlayerPrefs.SetInt("Missao", NivelEntrando);
+            Interrogaçao.SetActive(false);
+            Conversa.SetActive(false);
+        }
 
     }
     public void ativaSprite()

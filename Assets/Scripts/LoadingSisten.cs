@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LoadingSisten : MonoBehaviour
 {
-    AsyncOperation operaçao;
+    static AsyncOperation operaçao;
 
     public Slider barraDeLoading;
 
@@ -46,7 +46,7 @@ public class LoadingSisten : MonoBehaviour
         }
     }
 
-    public void LoadLevel(string sceneIndex)
+    public static void LoadLevel(string sceneIndex)
     {
         operaçao = SceneManager.LoadSceneAsync(sceneIndex);
         

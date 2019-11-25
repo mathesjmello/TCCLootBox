@@ -10,6 +10,7 @@ public class Damage : MonoBehaviour
     private GameObject player;
     public Image LifeBar;
     PlayerMove playerMove;
+    public Animator PlayerAnim;
 
     private float distX;
     private float distZ;
@@ -55,6 +56,7 @@ public class Damage : MonoBehaviour
             selectable = true;
             if (Input.GetMouseButtonDown(0)&& Selection.activeSelf)
             {
+                PlayerAnim.SetTrigger("Attack");
                 tempLife -= playerMove.HitForce*10;
                 float barra = tempLife / 100;
                 Debug.Log(barra);

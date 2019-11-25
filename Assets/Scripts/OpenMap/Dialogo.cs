@@ -6,6 +6,10 @@ using TMPro;
 public class Dialogo : MonoBehaviour
 {
     public GameObject panelBox;
+    public GameObject Maga;
+    public GameObject Missao;
+    public GameObject Interrogaçao;
+    public GameObject Conversa;
     public bool podeFalar = false;
     [SerializeField]
     private int linhaAtual;
@@ -42,8 +46,7 @@ public class Dialogo : MonoBehaviour
             //img.SetActive(false);
             //img = imgs[linhaAtual];
             estaFalando = true;
-            if (img != imgs[linhaAtual])
-            {
+            
 
                 img.SetActive(false);
                 img = imgs[linhaAtual];
@@ -51,21 +54,35 @@ public class Dialogo : MonoBehaviour
                 {
                     img.SetActive(true);
                 }
-            }
+            
 
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 //img.SetActive(false);
+                if (linhaAtual >= limitText)
+                {
+                    
+                    Desabilitar();
+                    podeFalar = false;
+                    linhaAtual = 0;
+
+                }
                 linhaAtual++;
                 textoMensagem.text = texto[linhaAtual].ToString();
                 // img.SetActive(true);
-                if (linhaAtual >= limitText)
-                {
-                    linhaAtual = 0;
-                    Desabilitar();
-                    podeFalar = false;
+               
+            }
+            if (linhaAtual == 40)
+            {
+                //img.SetActive(false);
+                Maga.SetActive(true);
 
-                }
+            }
+            if (linhaAtual >= 43)
+            {
+                //img.SetActive(false);
+                Maga.SetActive(false);
+
             }
         }
         teste = estaFalando;
@@ -81,7 +98,7 @@ public class Dialogo : MonoBehaviour
                 podeFalar = true;
                 Habilitar();
             }
-            else if (!jaComecaFalando && Input.GetKeyDown(KeyCode.Z))
+            else if (!jaComecaFalando && Input.GetKeyUp(KeyCode.E))
             {
 
                 podeFalar = true;
@@ -100,7 +117,7 @@ public class Dialogo : MonoBehaviour
                 podeFalar = true;
                 Habilitar();
             }
-            else if (!jaComecaFalando && Input.GetKeyDown(KeyCode.Z))
+            else if (!jaComecaFalando && Input.GetKeyUp(KeyCode.E))
             {
 
                 podeFalar = true;
@@ -121,7 +138,11 @@ public class Dialogo : MonoBehaviour
     {
         panelBox.SetActive(false);
         estaFalando = false;
-      
+        Missao.SetActive(true);
+        PlayerPrefs.SetInt("Missao", 1);
+        Interrogaçao.SetActive(false);
+        Conversa.SetActive(false);
+
     }
     public void ativaSprite()
     {

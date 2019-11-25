@@ -20,6 +20,7 @@ public class BauTeste : MonoBehaviour
     {
         if (theCollision.gameObject.tag == "Player")
         {
+            PlayerPrefs.SetInt("indexSpam",2);
             Application.LoadLevel("LoadingScene");
             gameObject.SetActive(false);
         }

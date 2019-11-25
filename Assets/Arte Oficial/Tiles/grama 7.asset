@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: grama 7
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 1c5e5eee927f5454a95ba9523b88ea7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31232f2ce80ffd449b02d3d48da602ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -2946,6 +2946,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3889825052890228149}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &954975165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954975164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace73cb3f9602dc409d821bd0ea6b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SwordProjectPrefab: {fileID: 3195549671065338961, guid: 77287bbefb5cf74438748a6aa9c51440,
+    type: 3}
 --- !u!95 &954975168
 Animator:
   serializedVersion: 3
@@ -6947,6 +6961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectileSword
       objectReference: {fileID: 0}
+    - target: {fileID: 3195549671065338961, guid: 77287bbefb5cf74438748a6aa9c51440,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3195549671065338960, guid: 77287bbefb5cf74438748a6aa9c51440,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7067,6 +7086,11 @@ PrefabInstance:
       propertyPath: Enemie
       value: 
       objectReference: {fileID: 1510335758}
+    - target: {fileID: 3195549671065338965, guid: 77287bbefb5cf74438748a6aa9c51440,
+        type: 3}
+      propertyPath: lerpPct
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77287bbefb5cf74438748a6aa9c51440, type: 3}
 --- !u!1001 &3889825052890228149

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LoadingSisten : MonoBehaviour
 {
     static AsyncOperation operaçao;
-
+    public bool Anima;
     public Slider barraDeLoading;
 
     // Use this for initialization
@@ -20,7 +20,7 @@ public class LoadingSisten : MonoBehaviour
 
     void Update()
     {
-        barraDeLoading.value = 1 - Mathf.Clamp01(operaçao.progress/.9f);
+       barraDeLoading.value = 1 - Mathf.Clamp01(operaçao.progress/.9f);
         print(operaçao.progress);
 
 
@@ -29,21 +29,27 @@ public class LoadingSisten : MonoBehaviour
 
     IEnumerator LevelLoad()
     {
-        operaçao = SceneManager.LoadSceneAsync("TacticsMovement");
-        operaçao.allowSceneActivation = false;
+        
+            operaçao = SceneManager.LoadSceneAsync("TacticsMovement");
+            operaçao.allowSceneActivation = false;
 
-        while (!operaçao.isDone)
-        {
-            
-            if (operaçao.progress <= 0.9f)
+            while (!operaçao.isDone)
             {
-                // barraDeLoading.value = 0;
-                operaçao.allowSceneActivation = true;
+            
+                if (operaçao.progress <= 0.9f)
+                {
+                    // barraDeLoading.value = 0;
+                    if (Anima)
+                    {
+                        operaçao.allowSceneActivation = true;
+                    }
+
+                    yield return null;
+                }
+            
                 yield return null;
             }
-            
-            yield return null;
-        }
+        
     }
 
     public static void LoadLevel(string sceneIndex)
@@ -65,5 +71,10 @@ public class LoadingSisten : MonoBehaviour
             yield return null;
 
         }
+    }
+
+    public void AnimaEvent()
+    {
+        Anima = true;
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerMove : TaticsMove
 {
 
+    public Animator PlayerAnim;
+
     //private GameObject ItemGen;
     //UIScript UIScript;
     //private int LootGen;
@@ -29,6 +31,7 @@ public class PlayerMove : TaticsMove
 	    LootTest();
         if (!turn)
         {
+            PlayerAnim.SetBool("Walk", false);
             return;
         }
         if (!moving)
@@ -38,6 +41,7 @@ public class PlayerMove : TaticsMove
         else
         {
             Move();
+            PlayerAnim.SetBool("Walk", true);
         }
     }
 

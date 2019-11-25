@@ -46,7 +46,7 @@ public class TempDistCheck : MonoBehaviour
         if (distTotal <= 1.5f && canHit == true)
         {
             TestDamage();
-            GS.ResetTrigger("Attack");
+            //GS.ResetTrigger("Attack");
         }
 
         /*if (Input.GetMouseButtonDown(0))

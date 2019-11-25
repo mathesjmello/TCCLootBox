@@ -32,6 +32,8 @@ public class ProjectileSword : MonoBehaviour
         else if (lerpPct >= 1.0f)
         {
             Destroy(gameObject);
+            //gameObject.SetActive(false);
+            //lerpPct = 0.0f;
         }
         //transform.Translate(Mathf.Lerp(transform.position.x, enemie.transform.position.x, t), 0, Mathf.Lerp(transform.position.z, enemie.transform.position.z, t));
 

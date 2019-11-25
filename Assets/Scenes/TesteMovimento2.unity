@@ -20327,6 +20327,88 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &391088765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 391088766}
+  m_Layer: 0
+  m_Name: Slime2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &391088766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391088765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.09, y: 54.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 421856528}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &421856526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421856528}
+  - component: {fileID: 421856527}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &421856527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421856526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e409619728c1cd14e826f45b169dbbf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Locais:
+  - {fileID: 744959314}
+  - {fileID: 1096884302}
+  - {fileID: 391088765}
+  - {fileID: 1423956242}
+--- !u!4 &421856528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421856526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.894918, y: -41.679337, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 744959315}
+  - {fileID: 1423956243}
+  - {fileID: 391088766}
+  - {fileID: 1096884303}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &422552470
 GameObject:
   m_ObjectHideFlags: 0
@@ -20605,7 +20687,7 @@ PrefabInstance:
     - target: {fileID: 8807280881275964255, guid: 93145bfa5e9e5e348a196ba9a79e059e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -44.98
+      value: -44.55
       objectReference: {fileID: 0}
     - target: {fileID: 8807280881275964255, guid: 93145bfa5e9e5e348a196ba9a79e059e,
         type: 3}
@@ -20849,7 +20931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676778571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.994263, y: -18.808434, z: 79.421295}
+  m_LocalPosition: {x: 21.994263, y: -18.593433, z: 79.421295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1787756675}
@@ -21784,9 +21866,9 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 0, y: -23, z: 0}
     second:
-      m_TileIndex: 25
-      m_TileSpriteIndex: 4294967295
-      m_TileMatrixIndex: 3
+      m_TileIndex: 2
+      m_TileSpriteIndex: 23
+      m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
@@ -23570,7 +23652,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 508207678430c5844a7d13edc58783d0, type: 2}
   - m_RefCount: 24
     m_Data: {fileID: 11400000, guid: 44ecab17ddfb93b41972f188aba7a03d, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 69a88d06d4975f84ca5fd11a110500e0, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 77a13bf66d4e3764e9893cb1095f799f, type: 2}
@@ -23616,8 +23698,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 4972e4338a3b149489f2cd429f0c8b03, type: 2}
   - m_RefCount: 24
     m_Data: {fileID: 11400000, guid: 447cceb3a354bc54c8fdc0542485fb61, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 0b98cc25f5a654944888275a62e7eb37, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b9bed40047e7d3542b0ecffca12e0416, type: 2}
   - m_RefCount: 20
@@ -23674,7 +23756,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: fbc171841caabdb4eaebb00dcc13ef49, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: 6af9cf654d83a9c4f80ce998e4a8ade0, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: a2e91c815e4f9d64785a35343c1087f7, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 6c737c0f66e6c41449fb9f15f0f5a8eb, type: 3}
@@ -23725,25 +23807,25 @@ Tilemap:
       e31: NaN
       e32: 4.5905e-41
       e33: 0
-  - m_RefCount: 0
+  - m_RefCount: 1
     m_Data:
-      e00: 1.51279255e-27
-      e01: NaN
+      e00: -1
+      e01: 0
       e02: 0
-      e03: 1.512791e-27
-      e10: 1.54e-43
-      e11: NaN
-      e12: 7.34684e-40
-      e13: 1.54e-43
+      e03: 0
+      e10: 0
+      e11: -1
+      e12: 0
+      e13: 0
       e20: 0
-      e21: 3e-45
-      e22: -2136792
+      e21: 0
+      e22: 1
       e23: 0
       e30: 0
-      e31: 1.1e-44
-      e32: 4.5905e-41
-      e33: 0
-  - m_RefCount: 289
+      e31: 0
+      e32: 0
+      e33: 1
+  - m_RefCount: 288
     m_Data:
       e00: 1
       e01: 0
@@ -23795,6 +23877,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &744959314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744959315}
+  m_Layer: 0
+  m_Name: Frente da guilda
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &744959315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744959314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.05, y: 0.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 421856528}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &764360428
 GameObject:
   m_ObjectHideFlags: 0
@@ -23952,7 +24064,7 @@ GameObject:
   - component: {fileID: 784696668}
   - component: {fileID: 784696667}
   m_Layer: 0
-  m_Name: Slime1 (1)
+  m_Name: Slime2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25541,6 +25653,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1096884302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096884303}
+  m_Layer: 0
+  m_Name: Slime1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1096884303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096884302}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.1, y: 53.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 421856528}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1113517124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26207,7 +26349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133635526}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.077797, y: -24.30511, z: 27.687199}
+  m_LocalPosition: {x: 27.077797, y: -23.87511, z: 27.687199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1071016237}
@@ -26796,6 +26938,36 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!1 &1423956242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423956243}
+  m_Layer: 0
+  m_Name: Slime3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1423956243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423956242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.18, y: 52.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 421856528}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1429002482
 GameObject:
   m_ObjectHideFlags: 0
@@ -27490,7 +27662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1659136475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27821,7 +27993,7 @@ GameObject:
   - component: {fileID: 1870023315}
   - component: {fileID: 1870023314}
   m_Layer: 0
-  m_Name: Slime1 (2)
+  m_Name: Slime3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

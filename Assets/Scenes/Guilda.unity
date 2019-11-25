@@ -3192,7 +3192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &516791320
 Transform:
   m_ObjectHideFlags: 0
@@ -3290,8 +3290,9 @@ MonoBehaviour:
   - Ok....
   - Good Luck.
   limitText: 49
-  NivelMissao: 0
-  NivelEntrando: 1
+  NivelMissao: 1
+  NivelEntrando: 2
+  Vitoria: 0
   teste: 0
   jaComecaFalando: 0
   img: {fileID: 0}
@@ -3512,7 +3513,7 @@ PrefabInstance:
     - target: {fileID: 8807280881275964255, guid: 93145bfa5e9e5e348a196ba9a79e059e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.76
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 8807280881275964255, guid: 93145bfa5e9e5e348a196ba9a79e059e,
         type: 3}
@@ -4886,7 +4887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &826815470
 Transform:
   m_ObjectHideFlags: 0
@@ -4966,8 +4967,9 @@ MonoBehaviour:
   - SIS???!!!
   - "This can\u2019t be over without explanation!!!"
   limitText: 14
-  NivelMissao: 1
-  NivelEntrando: 2
+  NivelMissao: 2
+  NivelEntrando: 3
+  Vitoria: 0
   teste: 0
   jaComecaFalando: 0
   img: {fileID: 0}
@@ -6378,7 +6380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133635526}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.327798, y: 0.60525703, z: 27.687199}
+  m_LocalPosition: {x: 3.187798, y: 0.60525703, z: 27.687199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1071016237}
@@ -6653,7 +6655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcbedd2b6dc5034ca22d36045eca848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialogo1: {fileID: 0}
+  Dialogo1: {fileID: 516791319}
   Dialogo2: {fileID: 826815469}
 --- !u!4 &1197998090
 Transform:

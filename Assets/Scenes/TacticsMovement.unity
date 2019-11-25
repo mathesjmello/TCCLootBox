@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4423,7 +4423,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0ce0d8263aa9d3a48b5a6b6738d11445,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.207
+      value: 4.24
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0ce0d8263aa9d3a48b5a6b6738d11445,
         type: 3}

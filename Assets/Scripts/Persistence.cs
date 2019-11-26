@@ -8,6 +8,8 @@ public static class Persistence
     private static float _musicV = 1;
     private static float _sfxV = 1;
     private static float _dialogV = 1;
+    private static float _indexSpam = 0;
+    private static string _sceneName;
 
 
     public static void SaveData()

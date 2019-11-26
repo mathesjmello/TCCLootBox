@@ -27,7 +27,7 @@ public class Damage : MonoBehaviour
     public GameObject coll04;
 
     bool selectable = false;
-    bool selected = false;
+    public bool selected = false;
 
     float tempLife;
 

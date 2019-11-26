@@ -30,7 +30,7 @@ public class LoadingSisten : MonoBehaviour
     IEnumerator LevelLoad()
     {
         
-            operaçao = SceneManager.LoadSceneAsync("TacticsMovement");
+            operaçao = SceneManager.LoadSceneAsync(PlayerPrefs.GetString("_sceneName"));
             operaçao.allowSceneActivation = false;
 
             while (!operaçao.isDone)

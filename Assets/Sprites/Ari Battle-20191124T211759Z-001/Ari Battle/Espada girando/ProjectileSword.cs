@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileSword : MonoBehaviour
 {
 
-    public GameObject enemie;
+    public GameObject Enem;
     public Transform Player;
     public Transform Enemie;
 
@@ -17,26 +17,33 @@ public class ProjectileSword : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var player = FindObjectOfType<PlayerMove>();
+       Enem = FindObjectOfType<Damage>().gameObject;
         
+        Player = player.transform;
+        Enemie = Enem.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(Player.position, Enemie.position, lerpPct);
-
-        if (lerpPct < 1.0f)
+        if (Enem)
         {
-            lerpPct += 0.1f;
-        }
-        else if (lerpPct >= 1.0f)
-        {
-            Destroy(gameObject);
-            //gameObject.SetActive(false);
-            //lerpPct = 0.0f;
-        }
-        //transform.Translate(Mathf.Lerp(transform.position.x, enemie.transform.position.x, t), 0, Mathf.Lerp(transform.position.z, enemie.transform.position.z, t));
 
-        //t += 10000000000000000000 * Time.deltaTime;
+
+            transform.position = Vector3.Lerp(Player.position, Enemie.position, lerpPct);
+
+            if (lerpPct < 1.0f)
+            {
+                lerpPct += 0.1f;
+            }
+            else if (lerpPct >= 1.0f)
+            {
+                Destroy(gameObject);
+            }
+            //transform.Translate(Mathf.Lerp(transform.position.x, enemie.transform.position.x, t), 0, Mathf.Lerp(transform.position.z, enemie.transform.position.z, t));
+
+            //t += 10000000000000000000 * Time.deltaTime;
+        }
     }
 }

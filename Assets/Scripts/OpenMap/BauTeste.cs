@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BauTeste : MonoBehaviour
 {
+    public string NextCenaName;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class BauTeste : MonoBehaviour
     {
         if (theCollision.gameObject.tag == "Player")
         {
+            PlayerPrefs.SetInt("indexSpam",2);
+            PlayerPrefs.SetString("_sceneName", NextCenaName);
             Application.LoadLevel("LoadingScene");
             gameObject.SetActive(false);
         }

@@ -19,6 +19,7 @@ public class ChangeScene : MonoBehaviour
 
     public void NextScene()
     {
+        PlayerPrefs.SetString("_sceneName", NextCenaName);
         LoadingSisten.LoadLevel(NextCenaName);
     }
     

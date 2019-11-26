@@ -20328,6 +20328,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &385248353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385248354}
+  m_Layer: 0
+  m_Name: Slime2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &385248354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385248353}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.02, y: 51.71, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 421856528}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &421856526
 GameObject:
   m_ObjectHideFlags: 0
@@ -20361,7 +20391,9 @@ MonoBehaviour:
   - {fileID: 1423956242}
   - {fileID: 744959314}
   - {fileID: 1096884302}
-  Player: {fileID: 0}
+  - {fileID: 385248353}
+  - {fileID: 1663509530}
+  Player: {fileID: 1939224638}
 --- !u!4 &421856528
 Transform:
   m_ObjectHideFlags: 0
@@ -20376,6 +20408,8 @@ Transform:
   - {fileID: 744959315}
   - {fileID: 1423956243}
   - {fileID: 1096884303}
+  - {fileID: 385248354}
+  - {fileID: 1663509531}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23888,10 +23922,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 744959314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c210087906848974586c966de0628380, type: 3}
+  m_Script: {fileID: 11500000, guid: 611ff648cf4ff544d827fa375d21c75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NextCenaName: Guilda
+  Entrando: 1
 --- !u!61 &744959317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23905,7 +23940,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.080415726, y: 2.3722763}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -23916,7 +23951,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.0454102, y: 2.3670807}
   m_EdgeRadius: 0
 --- !u!1 &764360428
 GameObject:
@@ -24107,6 +24142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2225972504df84aae8ebe77880481d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Monstros: 3
+  NextCenaName: TacticsMovement
 --- !u!58 &784696668
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25674,7 +25711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1096884303}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: Slime1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25688,7 +25725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096884302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 53.37, z: 0}
+  m_LocalPosition: {x: -5.67, y: 53.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421856528}
@@ -27755,6 +27792,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1663509530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1663509531}
+  m_Layer: 0
+  m_Name: Slime3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1663509531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663509530}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.6, y: 54.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 421856528}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695835135
 GameObject:
   m_ObjectHideFlags: 0
@@ -27801,6 +27868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2225972504df84aae8ebe77880481d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Monstros: 2
+  NextCenaName: TacticsMovement
 --- !u!58 &1695835138
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28036,6 +28105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2225972504df84aae8ebe77880481d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Monstros: 4
+  NextCenaName: TacticsMovement
 --- !u!58 &1870023315
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28828,6 +28899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045555488}
+  - component: {fileID: 2045555489}
   m_Layer: 0
   m_Name: Inimigos
   m_TagString: Untagged
@@ -28852,6 +28924,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2045555489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045555487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c0ff41edd8c3c4aae1ab4ddf0eca52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slime1: {fileID: 1695835135}
+  Slime2: {fileID: 784696665}
+  Slime3: {fileID: 1870023312}
 --- !u!1 &2140704070
 GameObject:
   m_ObjectHideFlags: 0

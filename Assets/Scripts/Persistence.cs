@@ -9,7 +9,7 @@ public static class Persistence
     private static float _sfxV = 1;
     private static float _dialogV = 1;
     private static float _indexSpam = 0;
-    private static string _sceneName;
+    private static string _sceneName = "Prolog";
 
 
     public static void SaveData()
@@ -26,6 +26,16 @@ public static class Persistence
         _musicV = PlayerPrefs.GetFloat("MusicV");
         _sfxV = PlayerPrefs.GetFloat("SfxV");
         _dialogV = PlayerPrefs.GetFloat("DialogV");
+    }
+
+    public static void ResetGame()
+    {
+        PlayerPrefs.SetString("_sceneName",_sceneName);
+        PlayerPrefs.SetInt("indexSpam",0);
+        PlayerPrefs.SetInt("Monstro1", 0);
+        PlayerPrefs.SetInt("Monstro2", 0);
+        PlayerPrefs.SetInt("Monstro3", 0);
+        PlayerPrefs.SetInt("Missao", 0);
     }
     
 }

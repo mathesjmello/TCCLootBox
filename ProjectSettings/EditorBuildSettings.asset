@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TacticsMovement.unity
     guid: 693d36a2df1e64bb7a35589abd39688f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LootboxTest.unity
     guid: d91fe08dc5073354e9a08f68e542c4e0
   - enabled: 1
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Guilda.unity
     guid: e90aa8fad59be0d42abf19d84cc5419f
+  - enabled: 1
+    path: Assets/Scenes/MenuInicial.unity
+    guid: 5993e6ba45321024f8c8ed8c93991c7d
   m_configObjects: {}

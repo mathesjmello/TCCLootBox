@@ -29,5 +29,12 @@ public class ChangeScene : MonoBehaviour
         PlayerPrefs.SetString("_sceneName", NextCenaName);
         LoadingSisten.LoadLevel(NextCenaName);
     }
+
+    public void NewGame()
+    {
+        Persistence.ResetGame();
+        PlayerPrefs.SetString("_sceneName", NextCenaName);
+        LoadingSisten.LoadLevel(NextCenaName);
+    }
     
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Damage : MonoBehaviour
 {
 
+    public GameObject PainelVitoria;
     public GameObject Selection;
     private GameObject player;
     public Image LifeBar;
@@ -67,6 +68,7 @@ public class Damage : MonoBehaviour
                 if (tempLife <= 0)
                 {
                     Destroy(gameObject);
+                    PainelVitoria.SetActive(true);
                 }
                 playerMove.LootGenTest = 0;
                 RoundManager.EndTurn();

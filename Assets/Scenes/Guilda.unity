@@ -6678,6 +6678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogo1: {fileID: 516791319}
+  M: 0
   Dialogo2: {fileID: 826815469}
 --- !u!4 &1197998090
 Transform:
@@ -6707,7 +6708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573135310a974c04aacfeed2e90b09d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextCenaName: 
+  NextCenaName: Vitoria
 --- !u!1 &1254269665
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,7 +58,8 @@ public class Damage : MonoBehaviour
             if (Input.GetMouseButtonDown(0)&& Selection.activeSelf)
             {
                 PlayerAnim.SetTrigger("Attack");
-                GS.SetTrigger("Damage");
+                //GS.SetTrigger("Damage");
+                StartCoroutine("DamageAnim");
                 tempLife -= playerMove.HitForce*10;
                 float barra = tempLife / 100;
                 Debug.Log(barra);
@@ -71,6 +72,12 @@ public class Damage : MonoBehaviour
                 RoundManager.EndTurn();
             }
         }
+    }
+
+    IEnumerator DamageAnim()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GS.SetTrigger("Damage");
     }
 
     public void DistCheck()

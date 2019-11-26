@@ -5803,6 +5803,7 @@ MonoBehaviour:
   hitCount: 0
   SkipButton: {fileID: 1416505810}
   GS: {fileID: 4889621933968704882}
+  PlayerAnim: {fileID: 954975168}
 --- !u!1 &1666242983
 GameObject:
   m_ObjectHideFlags: 0
@@ -7209,6 +7210,11 @@ PrefabInstance:
       propertyPath: PlayerAnim
       value: 
       objectReference: {fileID: 954975168}
+    - target: {fileID: 4889621934937223168, guid: d68c92c07d3bb384997ab40b6d643c97,
+        type: 3}
+      propertyPath: GS
+      value: 
+      objectReference: {fileID: 4889621933968704882}
     - target: {fileID: 4889621934937223199, guid: d68c92c07d3bb384997ab40b6d643c97,
         type: 3}
       propertyPath: GS

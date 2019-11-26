@@ -29,6 +29,7 @@ public class TempDistCheck : MonoBehaviour
     public Button SkipButton;
 
     public Animator GS;
+    public Animator PlayerAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -97,6 +98,7 @@ public class TempDistCheck : MonoBehaviour
     private void TestDamage()
     {
         GS.SetTrigger("Attack");
+        PlayerAnim.SetTrigger("Damage");
         hitCount++;
         canHit = false;
         if (hitCount == 3)

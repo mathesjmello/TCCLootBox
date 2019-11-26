@@ -15,7 +15,7 @@ public class Mission : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("Missao", 0) == 2)
+        if (PlayerPrefs.GetInt("Missao") == 2)
         {
             missao.SetActive(true);
 

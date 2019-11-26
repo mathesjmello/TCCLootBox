@@ -12,6 +12,9 @@ public class GerenciadorDeSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+        //PlayerPrefs.SetInt("indexSpam",0);
         _indexSpam = PlayerPrefs.GetInt("indexSpam");
         Player.transform.position = Locais[_indexSpam].transform.position;
     }

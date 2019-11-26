@@ -17,13 +17,7 @@ public class Vitoria : MonoBehaviour
     {
         if(PlayerPrefs.GetInt("Missao") == 3)
         {
-            PlayerPrefs.SetInt("Missao", 0);
-            PlayerPrefs.SetInt("Monstro1", 0);
-            PlayerPrefs.SetInt("Monstro2", 0);
-            PlayerPrefs.SetInt("Monstro3", 0);
-
-            PlayerPrefs.SetInt("SlimesMortos", 0);
-            PlayerPrefs.SetInt("indexSpam", 0);
+            PlayerPrefs.DeleteAll();
             PlayerPrefs.SetString("_sceneName", NextCenaName);
             Application.LoadLevel("LoadingScene");
         }

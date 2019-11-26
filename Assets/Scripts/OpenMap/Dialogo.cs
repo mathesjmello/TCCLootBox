@@ -18,7 +18,6 @@ public class Dialogo : MonoBehaviour
     public int limitText;
     public int NivelMissao;
     public int NivelEntrando;
-    public bool Vitoria = false;
 
     //public float timer = 0;
     public static bool estaFalando = false;
@@ -147,21 +146,14 @@ public class Dialogo : MonoBehaviour
     }
     void Desabilitar()
     {
-        if (Vitoria == true)
-        {
-            PlayerPrefs.SetInt("Missao", 0);
-            PlayerPrefs.SetInt("SlimesMortos", 0);
 
-        }
-        if (Vitoria == false)
-        {
             panelBox.SetActive(false);
             estaFalando = false;
             Missao.SetActive(true);
             PlayerPrefs.SetInt("Missao", NivelEntrando);
             Interrogaçao.SetActive(false);
             Conversa.SetActive(false);
-        }
+        
 
     }
     public void ativaSprite()

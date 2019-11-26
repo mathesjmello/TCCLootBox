@@ -3292,7 +3292,6 @@ MonoBehaviour:
   limitText: 49
   NivelMissao: 1
   NivelEntrando: 2
-  Vitoria: 0
   teste: 0
   jaComecaFalando: 0
   img: {fileID: 0}
@@ -4969,7 +4968,6 @@ MonoBehaviour:
   limitText: 14
   NivelMissao: 2
   NivelEntrando: 3
-  Vitoria: 0
   teste: 0
   jaComecaFalando: 0
   img: {fileID: 0}
@@ -6636,6 +6634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1197998090}
   - component: {fileID: 1197998089}
+  - component: {fileID: 1197998091}
   m_Layer: 0
   m_Name: ControleCentral
   m_TagString: Untagged
@@ -6673,6 +6672,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1197998091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197998088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573135310a974c04aacfeed2e90b09d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextCenaName: 
 --- !u!1 &1254269665
 GameObject:
   m_ObjectHideFlags: 0
@@ -6683,6 +6695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1254269666}
   - component: {fileID: 1254269667}
+  - component: {fileID: 1254269668}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -6730,6 +6743,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9991493, y: 0.45501328}
   m_EdgeRadius: 0
+--- !u!114 &1254269668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254269665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611ff648cf4ff544d827fa375d21c75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextCenaName: TesteMovimento2
+  Entrando: 0
 --- !u!1 &1266191762
 GameObject:
   m_ObjectHideFlags: 0

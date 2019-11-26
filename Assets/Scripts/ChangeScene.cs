@@ -16,6 +16,13 @@ public class ChangeScene : MonoBehaviour
     {
         
     }
+    void OnTriggerEnter2D(Collider2D theCollision) // C#, type first, name in second
+    {
+        if (theCollision.gameObject.tag == "Player")
+        {
+            NextScene();
+        }
+    }
 
     public void NextScene()
     {

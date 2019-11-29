@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
     public GameObject MenuPainel, OptionsPainel, SoundPainel;
-
+    public static bool Pausa = false;
     public Button SoundButton, OptionsButton, BackButton;
     // Start is called before the first frame update
     void Start()
@@ -46,10 +46,19 @@ public class OptionsMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            
+         
             if (!OptionsPainel.activeSelf && !SoundPainel.activeSelf)
             {
+                
                 MenuPainel.SetActive(!MenuPainel.activeSelf);
+                if (Time.timeScale == 1.0f)
+                    Time.timeScale = 0.0f;
+                else
+                    Time.timeScale = 1.0f;
             }
+            
+            
         }
     }
 }

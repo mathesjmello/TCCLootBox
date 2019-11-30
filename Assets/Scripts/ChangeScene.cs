@@ -5,6 +5,8 @@ using UnityEngine;
 public class ChangeScene : MonoBehaviour
 {
     public string NextCenaName;
+    public string NovoJogo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +35,13 @@ public class ChangeScene : MonoBehaviour
     public void NewGame()
     {
         Persistence.ResetGame();
-        PlayerPrefs.SetString("_sceneName", NextCenaName);
+        PlayerPrefs.SetString("_sceneName", NovoJogo);
         LoadingSisten.LoadLevel(NextCenaName);
     }
-    
+   
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }

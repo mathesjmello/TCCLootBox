@@ -26,7 +26,7 @@ public class Entrega : MonoBehaviour
 
         }
 
-        if (PlayerPrefs.GetInt("SlimesMortos") == 1)
+        if (PlayerPrefs.GetInt("SlimesMortos") == 3)
         {
             Dialogo2.SetActive(true);
 

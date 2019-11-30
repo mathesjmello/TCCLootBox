@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TempDistCheck : MonoBehaviour
 {
+    public string NextCenaName;
+
 
     public GameObject coll01;
     public GameObject coll02;
@@ -103,7 +105,8 @@ public class TempDistCheck : MonoBehaviour
         canHit = false;
         if (hitCount == 3)
         {
-            Destroy(player);
+            PlayerPrefs.SetString("_sceneName", NextCenaName);
+            LoadingSisten.LoadLevel(NextCenaName);
         }
     }
 

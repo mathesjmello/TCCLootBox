@@ -5868,6 +5868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d570e71e90f1262488c3002d278684bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextCenaName: Derrota
   coll01: {fileID: 0}
   coll02: {fileID: 0}
   coll03: {fileID: 0}
@@ -7213,6 +7214,10 @@ PrefabInstance:
       propertyPath: coll04
       value: 
       objectReference: {fileID: 636479822}
+    - target: {fileID: 813663111, guid: 790e0d5ad2ae4404c8755295d629a12b, type: 3}
+      propertyPath: NextCenaName
+      value: Derrota
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 790e0d5ad2ae4404c8755295d629a12b, type: 3}
 --- !u!1001 &4889621933968704880
@@ -7414,6 +7419,11 @@ PrefabInstance:
       propertyPath: GS
       value: 
       objectReference: {fileID: 4889621933968704882}
+    - target: {fileID: 4889621934937223168, guid: d68c92c07d3bb384997ab40b6d643c97,
+        type: 3}
+      propertyPath: NextCenaName
+      value: TesteMovimento2
+      objectReference: {fileID: 0}
     - target: {fileID: 4889621934937223199, guid: d68c92c07d3bb384997ab40b6d643c97,
         type: 3}
       propertyPath: GS

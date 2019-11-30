@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TempPlayerHp : MonoBehaviour
 {
+    public string NextCenaName;
 
     public GameObject coll01;
     public GameObject coll02;
@@ -30,7 +31,8 @@ public class TempPlayerHp : MonoBehaviour
             PlayerHealth--;
             if (PlayerHealth <= 0)
             {
-                Destroy(gameObject);
+                PlayerPrefs.SetString("_sceneName", NextCenaName);
+                LoadingSisten.LoadLevel(NextCenaName);
             }
         }
     }

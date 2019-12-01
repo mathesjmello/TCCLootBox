@@ -9,23 +9,29 @@ namespace DefaultNamespace.Battle
         public int TipeLoot;
         private TaticsMove player;
         private int _rarit;
+
+        Image m_Image;
+        public Sprite Run_Sprite;
+        public Sprite Fight_Sprite;
+
+
         private void Start()
         {
             var text = transform.GetChild(0);
-            
+            m_Image = GetComponent<Image>();
             var botao = transform.GetComponent<Button>();
             botao.onClick.AddListener(SpendLoot);
             int prob = Random.Range(0, 100);
             SelectRarit(prob);
             player = RoundManager.turnTeam.Peek();
             if (TipeLoot == 1)
-            { 
-            botao.image.color = Color.green;
+            {
+                m_Image.sprite = Run_Sprite;
             }
             else
             {
-                
-                botao.image.color = Color.red;
+
+                m_Image.sprite = Fight_Sprite;
             }
             text.GetComponent<Text>().text = _rarit.ToString();
         }

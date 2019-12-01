@@ -14,6 +14,9 @@ public class Damage : MonoBehaviour
     public Animator PlayerAnim;
     public Animator GS;
 
+    public float TimeAnimation;
+    public bool Morte = false;
+
     private float distX;
     private float distZ;
     private float PEdist;
@@ -23,6 +26,7 @@ public class Damage : MonoBehaviour
     private float DX;
     private float DZ;
 
+    public int PontosMonstros;
     public GameObject coll01;
     public GameObject coll02;
     public GameObject coll03;
@@ -32,6 +36,7 @@ public class Damage : MonoBehaviour
     public bool selected = false;
 
     float tempLife;
+    public string NextCenaName;
 
     private void Awake()
     {
@@ -49,6 +54,21 @@ public class Damage : MonoBehaviour
     void Update()
     {
         Attack();
+
+        if (Morte == true)
+        {
+            TimeAnimation += Time.deltaTime;
+            if(TimeAnimation >= 0.7f)
+            {
+                PontosMonstros = PlayerPrefs.GetInt("SlimesMortos") + 1;
+                PlayerPrefs.SetInt("SlimesMortos", PontosMonstros);
+                PlayerPrefs.SetString("_sceneName", NextCenaName);
+                LoadingSisten.LoadLevel(NextCenaName);
+            }
+
+        }
+
+
     }
 
     void Attack()
@@ -67,8 +87,8 @@ public class Damage : MonoBehaviour
                 LifeBar.fillAmount = barra;
                 if (tempLife <= 0)
                 {
-                    Destroy(gameObject);
-                    PainelVitoria.SetActive(true);
+                    Morte = true;
+                    
                 }
                 playerMove.LootGenTest = 0;
                 RoundManager.EndTurn();

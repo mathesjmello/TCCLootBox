@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
     public GameObject MenuPainel, OptionsPainel, SoundPainel;
-
+    public static bool Pausa = false;
     public Button SoundButton, OptionsButton, BackButton;
+    public bool Menu = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,11 +45,23 @@ public class OptionsMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Menu == false)
         {
-            if (!OptionsPainel.activeSelf && !SoundPainel.activeSelf)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                MenuPainel.SetActive(!MenuPainel.activeSelf);
+
+
+                if (!OptionsPainel.activeSelf && !SoundPainel.activeSelf)
+                {
+
+                    MenuPainel.SetActive(!MenuPainel.activeSelf);
+                    if (Time.timeScale == 1.0f)
+                        Time.timeScale = 0.0f;
+                    else
+                        Time.timeScale = 1.0f;
+                }
+
+
             }
         }
     }

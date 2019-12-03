@@ -47,6 +47,7 @@ void Update()
 
     public void NewGame()
     {
+        PlayerPrefs.SetInt("Int", 0);
         Persistence.ResetGame();
         PlayerPrefs.SetString("_sceneName", NovoJogo);
         LoadingSisten.LoadLevel(NextCenaName);

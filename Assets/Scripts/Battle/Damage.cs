@@ -26,7 +26,6 @@ public class Damage : MonoBehaviour
     private float DX;
     private float DZ;
 
-    public int PontosMonstros;
     public GameObject coll01;
     public GameObject coll02;
     public GameObject coll03;
@@ -60,8 +59,8 @@ public class Damage : MonoBehaviour
             TimeAnimation += Time.deltaTime;
             if(TimeAnimation >= 0.7f)
             {
-                PontosMonstros = PlayerPrefs.GetInt("SlimesMortos") + 1;
-                PlayerPrefs.SetInt("SlimesMortos", PontosMonstros);
+                
+                PlayerPrefs.SetInt("SlimesMortos", 3);
                 PlayerPrefs.SetString("_sceneName", NextCenaName);
                 LoadingSisten.LoadLevel(NextCenaName);
             }

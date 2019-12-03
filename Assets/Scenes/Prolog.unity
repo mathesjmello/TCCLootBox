@@ -187,6 +187,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6958450943993583731, guid: ac6899f2b3776ce43a94f379bc0557c6,
+        type: 3}
+      propertyPath: m_TargetCamera
+      value: 
+      objectReference: {fileID: 1860356266}
+    - target: {fileID: 6958450943993583731, guid: ac6899f2b3776ce43a94f379bc0557c6,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 6319eeb095225794888595e1b5d16d66,
+        type: 3}
     - target: {fileID: 6958450945312753645, guid: ac6899f2b3776ce43a94f379bc0557c6,
         type: 3}
       propertyPath: m_Camera
@@ -197,11 +208,6 @@ PrefabInstance:
       propertyPath: NextCenaName
       value: TesteMovimento2
       objectReference: {fileID: 0}
-    - target: {fileID: 6958450943993583731, guid: ac6899f2b3776ce43a94f379bc0557c6,
-        type: 3}
-      propertyPath: m_TargetCamera
-      value: 
-      objectReference: {fileID: 1860356266}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac6899f2b3776ce43a94f379bc0557c6, type: 3}
 --- !u!1 &311409503

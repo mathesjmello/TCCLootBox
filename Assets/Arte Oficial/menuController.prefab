@@ -2798,7 +2798,6 @@ GameObject:
   - component: {fileID: 3754026645710052812}
   - component: {fileID: 3754026645710052814}
   - component: {fileID: 3754026645710052815}
-  - component: {fileID: 2247863316903818282}
   m_Layer: 5
   m_Name: MainPauseMenu
   m_TagString: Untagged
@@ -2865,25 +2864,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!95 &2247863316903818282
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3754026645710052813}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5710f9fccd83aca44beefcfe410b52cd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3754026646448477203
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,11 +3056,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuPainel: {fileID: 3754026645710052813}
-  OptionsPainel: {fileID: 3754026646448477203}
   SoundPainel: {fileID: 3754026645668922080}
+  CreditsPainel: {fileID: 0}
   SoundButton: {fileID: 2247863316780491011}
   OptionsButton: {fileID: 0}
   BackButton: {fileID: 2247863316014217345}
+  CreditButton: {fileID: 0}
+  Menu: 0
 --- !u!114 &6692137702985608177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3111,6 +3093,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextCenaName: MenuInicial
+  NovoJogo: 
+  timeStart: 0
+  time: 0
 --- !u!1 &4068232242299121953
 GameObject:
   m_ObjectHideFlags: 0

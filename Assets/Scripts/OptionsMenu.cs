@@ -62,7 +62,7 @@ public class OptionsMenu : MonoBehaviour
                         Time.timeScale = 1.0f;
                 }
 
-
+                
             }
         }
     }

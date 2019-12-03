@@ -8606,6 +8606,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be268c87f5d1f2b409c0fafe086e5aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2014521046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3754026645668922080, guid: da24e784fa09b4342b44042425bb8d53,
+    type: 3}
+  m_PrefabInstance: {fileID: 2247863317024524848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2014521048
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014521046}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5710f9fccd83aca44beefcfe410b52cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2024781091
 GameObject:
   m_ObjectHideFlags: 0
@@ -9004,6 +9029,26 @@ PrefabInstance:
     - target: {fileID: 3754026646790690609, guid: da24e784fa09b4342b44042425bb8d53,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754026646790690613, guid: da24e784fa09b4342b44042425bb8d53,
+        type: 3}
+      propertyPath: CreditButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754026646790690613, guid: da24e784fa09b4342b44042425bb8d53,
+        type: 3}
+      propertyPath: OptionsButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754026645710052813, guid: da24e784fa09b4342b44042425bb8d53,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754026646448477203, guid: da24e784fa09b4342b44042425bb8d53,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

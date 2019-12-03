@@ -24,6 +24,7 @@ namespace DefaultNamespace.Battle
             int prob = Random.Range(0, 100);
             SelectRarit(prob);
             player = RoundManager.turnTeam.Peek();
+            
             if (TipeLoot == 1)
             {
                 m_Image.sprite = Run_Sprite;

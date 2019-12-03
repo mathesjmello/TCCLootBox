@@ -11,7 +11,21 @@ public class ControleMonstros : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PlayerPrefs.GetInt("ConversaMonstros") == 0)
+        {
+            Slime1.SetActive(false);
+            Slime2.SetActive(false);
+            Slime3.SetActive(false);
+
+        }
+        if (PlayerPrefs.GetInt("ConversaMonstros") == 1)
+        {
+            Slime1.SetActive(true);
+            Slime2.SetActive(true);
+            Slime3.SetActive(true);
+
+        }
+
     }
 
     // Update is called once per frame

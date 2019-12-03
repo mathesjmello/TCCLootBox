@@ -20433,7 +20433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385248353}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.02, y: 51.71, z: 0}
+  m_LocalPosition: {x: -4.87, y: 52.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421856528}
@@ -20887,7 +20887,22 @@ PrefabInstance:
     - target: {fileID: 8807280879773641857, guid: 93145bfa5e9e5e348a196ba9a79e059e,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807280879773641857, guid: 93145bfa5e9e5e348a196ba9a79e059e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.08285751
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807280879773641857, guid: 93145bfa5e9e5e348a196ba9a79e059e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 2.0535626
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807280879773641857, guid: 93145bfa5e9e5e348a196ba9a79e059e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.23002052
       objectReference: {fileID: 0}
     - target: {fileID: 8807280880288373649, guid: 93145bfa5e9e5e348a196ba9a79e059e,
         type: 3}
@@ -24023,7 +24038,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744959314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.05, y: 0.58, z: 0}
+  m_LocalPosition: {x: 12.05, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421856528}
@@ -24056,7 +24071,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.080415726, y: 2.3722763}
+  m_Offset: {x: 0.080415726, y: 3.3295364}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -24067,7 +24082,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0454102, y: 2.3670807}
+  m_Size: {x: 2.0454102, y: 2.2607193}
   m_EdgeRadius: 0
 --- !u!1 &784696665
 GameObject:
@@ -24082,6 +24097,7 @@ GameObject:
   - component: {fileID: 784696669}
   - component: {fileID: 784696668}
   - component: {fileID: 784696667}
+  - component: {fileID: 784696671}
   m_Layer: 0
   m_Name: Slime2
   m_TagString: Untagged
@@ -24097,8 +24113,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784696665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.93, y: 9.65, z: 74.40642}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.83, y: 9.64, z: 74.40642}
+  m_LocalScale: {x: 0.746, y: 0.746, z: 0.746}
   m_Children: []
   m_Father: {fileID: 2045555488}
   m_RootOrder: 1
@@ -24130,9 +24146,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05362189, y: 0}
+  m_Offset: {x: -0.021478767, y: -1.0437895}
   serializedVersion: 2
-  m_Radius: 0.73842466
+  m_Radius: 1.4342431
 --- !u!50 &784696669
 Rigidbody2D:
   serializedVersion: 4
@@ -24191,8 +24207,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 8900042080587045151, guid: 6f7daa23ca0b96542a0c5f8342f72d09,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5b31c5607a76b54081d229db993c997, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24203,6 +24218,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &784696671
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784696665}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44fe38bbd853a6746b5e370308297525, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &794127013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24447,34 +24481,12 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
---- !u!1 &833198040 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8807280879773641859, guid: 93145bfa5e9e5e348a196ba9a79e059e,
-    type: 3}
-  m_PrefabInstance: {fileID: 541112608}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &833198041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8807280879773641858, guid: 93145bfa5e9e5e348a196ba9a79e059e,
     type: 3}
   m_PrefabInstance: {fileID: 541112608}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &833198043
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833198040}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.035037015, y: 0.4833988}
-  serializedVersion: 2
-  m_Radius: 1.2007397
 --- !u!1 &920445579
 GameObject:
   m_ObjectHideFlags: 0
@@ -25557,7 +25569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096884302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.67, y: 53.66, z: 0}
+  m_LocalPosition: {x: -3.99, y: 50.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421856528}
@@ -27347,7 +27359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663509530}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.6, y: 54.4, z: 0}
+  m_LocalPosition: {x: -2.98, y: 53.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421856528}
@@ -27366,6 +27378,7 @@ GameObject:
   - component: {fileID: 1695835139}
   - component: {fileID: 1695835138}
   - component: {fileID: 1695835137}
+  - component: {fileID: 1695835141}
   m_Layer: 0
   m_Name: Slime1
   m_TagString: Untagged
@@ -27381,8 +27394,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695835135}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.95, y: 8.652668, z: 74.40642}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.0399995, y: 8.32, z: 74.40642}
+  m_LocalScale: {x: 0.746, y: 0.746, z: 0.746}
   m_Children: []
   m_Father: {fileID: 2045555488}
   m_RootOrder: 0
@@ -27414,9 +27427,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05362189, y: 0}
+  m_Offset: {x: 0.091022044, y: -1.2640657}
   serializedVersion: 2
-  m_Radius: 0.73842466
+  m_Radius: 1.4588279
 --- !u!50 &1695835139
 Rigidbody2D:
   serializedVersion: 4
@@ -27475,8 +27488,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 8900042080587045151, guid: 6f7daa23ca0b96542a0c5f8342f72d09,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5b31c5607a76b54081d229db993c997, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27487,6 +27499,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1695835141
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695835135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44fe38bbd853a6746b5e370308297525, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1713417582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27603,6 +27634,7 @@ GameObject:
   - component: {fileID: 1870023316}
   - component: {fileID: 1870023315}
   - component: {fileID: 1870023314}
+  - component: {fileID: 1870023318}
   m_Layer: 0
   m_Name: Slime3
   m_TagString: Untagged
@@ -27618,8 +27650,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870023312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.93, y: 7.65, z: 74.40642}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.7709994, y: 6.18, z: 74.40642}
+  m_LocalScale: {x: 0.746, y: 0.746, z: 0.746}
   m_Children: []
   m_Father: {fileID: 2045555488}
   m_RootOrder: 2
@@ -27651,9 +27683,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05362189, y: 0}
+  m_Offset: {x: 0.042807322, y: -1.3432059}
   serializedVersion: 2
-  m_Radius: 0.73842466
+  m_Radius: 1.5183649
 --- !u!50 &1870023316
 Rigidbody2D:
   serializedVersion: 4
@@ -27712,8 +27744,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 8900042080587045151, guid: 6f7daa23ca0b96542a0c5f8342f72d09,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5b31c5607a76b54081d229db993c997, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27724,6 +27755,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1870023318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870023312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44fe38bbd853a6746b5e370308297525, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1901215459
 GameObject:
   m_ObjectHideFlags: 0
@@ -28011,12 +28061,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.20517682}
+  m_Offset: {x: 0, y: 0.3323306}
   serializedVersion: 2
-  m_Radius: 0.29675883
+  m_Radius: 0.6405841
 --- !u!1 &1990789060
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,7 +65,7 @@ public class Dialogo : MonoBehaviour
                 //img.SetActive(false);
                 if (linhaAtual >= limitText)
                 {
-                    
+                    Time.timeScale = 1f;
                     Desabilitar();
                     podeFalar = false;
                     linhaAtual = 0;
@@ -93,27 +93,7 @@ public class Dialogo : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                if (jaComecaFalando)
-                {
-                    podeFalar = true;
-                    Habilitar();
-                }
-                else if (!jaComecaFalando && Input.GetKeyUp(KeyCode.E))
-                {
-
-                    podeFalar = true;
-                    Habilitar();
-
-                }
-            }
-        
-
-    }
+    
     public void OnTriggerStay2D(Collider2D collision)
     {
         
@@ -123,13 +103,16 @@ public class Dialogo : MonoBehaviour
             {
                 if (jaComecaFalando)
                 {
-                    podeFalar = true;
+                Time.timeScale = 0f;
+
+                podeFalar = true;
                     Habilitar();
                 }
                 else if (!jaComecaFalando && Input.GetKeyUp(KeyCode.E))
                 {
+                Time.timeScale = 0f;
 
-                    podeFalar = true;
+                podeFalar = true;
                     Habilitar();
 
                 }
@@ -146,14 +129,14 @@ public class Dialogo : MonoBehaviour
     }
     void Desabilitar()
     {
-
-            panelBox.SetActive(false);
+        PlayerPrefs.SetInt("ConversaMonstros", 1);
+        panelBox.SetActive(false);
             estaFalando = false;
             Missao.SetActive(true);
             PlayerPrefs.SetInt("Missao", NivelEntrando);
             Interrogaçao.SetActive(false);
             Conversa.SetActive(false);
-        
+
 
     }
     public void ativaSprite()

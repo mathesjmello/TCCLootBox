@@ -3518,7 +3518,17 @@ PrefabInstance:
     - target: {fileID: 8807280879773641857, guid: 93145bfa5e9e5e348a196ba9a79e059e,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807280879773641857, guid: 93145bfa5e9e5e348a196ba9a79e059e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.32796344
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807280879773641857, guid: 93145bfa5e9e5e348a196ba9a79e059e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.9077593
       objectReference: {fileID: 0}
     - target: {fileID: 8807280880288373649, guid: 93145bfa5e9e5e348a196ba9a79e059e,
         type: 3}
@@ -3564,7 +3574,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 6080290028480668418, guid: 93145bfa5e9e5e348a196ba9a79e059e, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 93145bfa5e9e5e348a196ba9a79e059e, type: 3}
 --- !u!1 &550915334
 GameObject:
@@ -4828,34 +4839,12 @@ MonoBehaviour:
   - {fileID: 1882356324}
   conta: 0
   rodaCut: 0
---- !u!1 &833198040 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8807280879773641859, guid: 93145bfa5e9e5e348a196ba9a79e059e,
-    type: 3}
-  m_PrefabInstance: {fileID: 541112608}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &833198041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8807280879773641858, guid: 93145bfa5e9e5e348a196ba9a79e059e,
     type: 3}
   m_PrefabInstance: {fileID: 541112608}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &833198043
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833198040}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.035037015, y: 0.4833988}
-  serializedVersion: 2
-  m_Radius: 1.2007397
 --- !u!1 &852174369
 GameObject:
   m_ObjectHideFlags: 0
@@ -8134,12 +8123,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.20517682}
+  m_Offset: {x: 0, y: 0.3399215}
   serializedVersion: 2
-  m_Radius: 0.29675883
+  m_Radius: 0.6437906
 --- !u!1 &1943762405
 GameObject:
   m_ObjectHideFlags: 0

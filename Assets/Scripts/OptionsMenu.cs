@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public GameObject MenuPainel, OptionsPainel, SoundPainel;
+    public GameObject MenuPainel, OptionsPainel, SoundPainel, CreditsPainel;
     public static bool Pausa = false;
     public Button SoundButton, OptionsButton, BackButton;
     public bool Menu = false;
@@ -15,6 +15,7 @@ public class OptionsMenu : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         SoundButton.onClick.AddListener(OpenSound);
         OptionsButton.onClick.AddListener(OpenOptions);
+        CreditButton.onClick.AddListener(OpenCredits);
         BackButton.onClick.AddListener(OpenMenu);
     }
 
@@ -29,6 +30,14 @@ public class OptionsMenu : MonoBehaviour
     {
         OptionsPainel.SetActive(true);
         MenuPainel.SetActive(false);
+    }
+
+    private void OpenCredits()
+    {
+        CreditsPainel.SetActive(true);
+        MenuPainel.SetActive(false);
+        SoundPainel.SetActive(false);
+        OptionsPainel.SetActive(false);
     }
 
     private void OpenSound()

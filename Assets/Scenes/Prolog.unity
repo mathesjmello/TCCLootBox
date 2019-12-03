@@ -202,6 +202,22 @@ PrefabInstance:
       propertyPath: m_TargetCamera
       value: 
       objectReference: {fileID: 1860356266}
+    - target: {fileID: 6958450943993583731, guid: ac6899f2b3776ce43a94f379bc0557c6,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 4e03e0c50e1ca6f44b119ccca7e542eb,
+        type: 3}
+    - target: {fileID: 6958450943993583731, guid: ac6899f2b3776ce43a94f379bc0557c6,
+        type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.data[0]
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958450943993583731, guid: ac6899f2b3776ce43a94f379bc0557c6,
+        type: 3}
+      propertyPath: m_DirectAudioMutes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac6899f2b3776ce43a94f379bc0557c6, type: 3}
 --- !u!1 &311409503
@@ -286,7 +302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &914813855
 AudioSource:
   m_ObjectHideFlags: 0
@@ -414,7 +430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &991587754
 AudioSource:
   m_ObjectHideFlags: 0

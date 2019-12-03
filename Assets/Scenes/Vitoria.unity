@@ -491,6 +491,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextCenaName: MenuInicial
+  NovoJogo: 
+  timeStart: 0
+  time: 0
 --- !u!4 &253901893
 Transform:
   m_ObjectHideFlags: 0
@@ -984,8 +987,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -203, y: 434}
-  m_SizeDelta: {x: 1914.8, y: 914.3}
+  m_AnchoredPosition: {x: -63, y: 357}
+  m_SizeDelta: {x: 2492.9, y: 1190.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956725618
 MonoBehaviour:
@@ -1009,7 +1012,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 677739ef0013f344ba1bc68de0db2877, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1248,7 +1251,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 7b23139f10fd6ee44a3d26eff70aba68, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

@@ -8,6 +8,8 @@ public class PlayerMove : TaticsMove
 
     public Animator PlayerAnim;
 
+    
+
     //private GameObject ItemGen;
     //UIScript UIScript;
     //private int LootGen;
@@ -29,6 +31,7 @@ public class PlayerMove : TaticsMove
     {
         //LootGen = UIScript.LootID;
 	    LootTest();
+        TempReact();
         if (!turn)
         {
             PlayerAnim.SetBool("Walk", false);
@@ -51,6 +54,18 @@ public class PlayerMove : TaticsMove
         {
 	        LootGenTest = 1;
 	        FindSelectableTiles();
+        }
+    }
+
+    void TempReact()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            PlayerAnim.SetTrigger("PositiveReact");
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            PlayerAnim.SetTrigger("NegativeReact");
         }
     }
 

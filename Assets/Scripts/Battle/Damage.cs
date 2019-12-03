@@ -88,7 +88,8 @@ public class Damage : MonoBehaviour
                 if (tempLife <= 0)
                 {
                     Morte = true;
-                    
+                    GS.SetBool("Morto", true);
+
                 }
                 playerMove.LootGenTest = 0;
                 RoundManager.EndTurn();

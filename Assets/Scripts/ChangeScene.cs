@@ -8,7 +8,7 @@ public class ChangeScene : MonoBehaviour
     public string NextCenaName;
     public string NovoJogo;
     public float timeStart;
-    public string Credits;
+    
     public bool time = false;
     // Start is called before the first frame update
     void Start()

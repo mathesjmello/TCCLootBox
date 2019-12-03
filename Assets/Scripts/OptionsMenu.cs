@@ -7,7 +7,7 @@ public class OptionsMenu : MonoBehaviour
 {
     public GameObject MenuPainel, OptionsPainel, SoundPainel, CreditsPainel;
     public static bool Pausa = false;
-    public Button SoundButton, OptionsButton, BackButton;
+    public Button SoundButton, OptionsButton, BackButton, CreditButton;
     public bool Menu = false;
     // Start is called before the first frame update
     void Start()

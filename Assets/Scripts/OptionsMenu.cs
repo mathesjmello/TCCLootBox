@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public GameObject MenuPainel, OptionsPainel, SoundPainel, CreditsPainel;
+    public GameObject MenuPainel,  SoundPainel, CreditsPainel;
     public static bool Pausa = false;
     public Button SoundButton, OptionsButton, BackButton, CreditButton;
     public bool Menu = false;
@@ -14,30 +14,22 @@ public class OptionsMenu : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         SoundButton.onClick.AddListener(OpenSound);
-        OptionsButton.onClick.AddListener(OpenOptions);
-        CreditButton.onClick.AddListener(OpenCredits);
         BackButton.onClick.AddListener(OpenMenu);
     }
 
     private void OpenMenu()
     {
-        OptionsPainel.SetActive(false);
         SoundPainel.SetActive(false);
         MenuPainel.SetActive(true);
     }
 
-    private void OpenOptions()
-    {
-        OptionsPainel.SetActive(true);
-        MenuPainel.SetActive(false);
-    }
+    
 
     private void OpenCredits()
     {
         CreditsPainel.SetActive(true);
         MenuPainel.SetActive(false);
         SoundPainel.SetActive(false);
-        OptionsPainel.SetActive(false);
     }
 
     private void OpenSound()
@@ -60,7 +52,7 @@ public class OptionsMenu : MonoBehaviour
             {
 
 
-                if (!OptionsPainel.activeSelf && !SoundPainel.activeSelf)
+                if (!CreditsPainel.activeSelf && !SoundPainel.activeSelf)
                 {
 
                     MenuPainel.SetActive(!MenuPainel.activeSelf);

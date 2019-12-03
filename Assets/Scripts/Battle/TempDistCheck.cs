@@ -103,11 +103,18 @@ public class TempDistCheck : MonoBehaviour
         PlayerAnim.SetTrigger("Damage");
         hitCount++;
         canHit = false;
-        if (hitCount == 3)
+        if (hitCount == 5)
         {
-            PlayerPrefs.SetString("_sceneName", NextCenaName);
-            LoadingSisten.LoadLevel(NextCenaName);
+            StartCoroutine("DeathAnim");
         }
+    }
+
+    IEnumerator DeathAnim()
+    {
+        PlayerAnim.SetBool("Morto", true);
+        yield return new WaitForSeconds(2.0f);
+        PlayerPrefs.SetString("_sceneName", NextCenaName);
+        LoadingSisten.LoadLevel(NextCenaName);
     }
 
     public void DistCheck()

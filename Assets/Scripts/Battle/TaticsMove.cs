@@ -25,7 +25,6 @@ public class TaticsMove : MonoBehaviour
 
     public Tile actualTargetTile;
 
-	
 	public int LootGenTest;
 
 	

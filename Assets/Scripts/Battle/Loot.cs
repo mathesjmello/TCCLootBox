@@ -10,20 +10,25 @@ namespace DefaultNamespace.Battle
         private TaticsMove player;
         private int _rarit;
 
-        Image m_Image;
-        public Sprite Run_Sprite;
-        public Sprite Fight_Sprite;
+        Image m_Image;
+        public Sprite Run_Sprite;
+        public Sprite Fight_Sprite;
+
+        //private Animator PlayerAnim;
 
 
         private void Start()
         {
-            var text = transform.GetChild(0);
+            //PlayerAnim = gameObject.GetComponent<Animator>();
+
+            var text = transform.GetChild(0);
             m_Image = GetComponent<Image>();
             var botao = transform.GetComponent<Button>();
             botao.onClick.AddListener(SpendLoot);
             int prob = Random.Range(0, 100);
             SelectRarit(prob);
             player = RoundManager.turnTeam.Peek();
+            
             if (TipeLoot == 1)
             {
                 m_Image.sprite = Run_Sprite;
@@ -50,6 +55,7 @@ namespace DefaultNamespace.Battle
             if (prob>GoodDrop)
             {
                 _rarit = 4;
+                //PlayerAnim.SetTrigger("PositiveReact");
             }
             else if (prob>MidDrop)
             {
@@ -62,6 +68,7 @@ namespace DefaultNamespace.Battle
             else if (prob<=BadDrop)
             {
                 _rarit = 1;
+                //PlayerAnim.SetTrigger("NegativeReact");
             }
         }
     }

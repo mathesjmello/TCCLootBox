@@ -86,9 +86,10 @@ public class Damage : MonoBehaviour
                 Debug.Log(barra);
                 LifeBar.fillAmount = barra;
                 if (tempLife <= 0)
-                {
-                    Morte = true;
-                    
+                {
+                    Morte = true;
+                    GS.SetBool("Morto", true);
+
                 }
                 playerMove.LootGenTest = 0;
                 RoundManager.EndTurn();

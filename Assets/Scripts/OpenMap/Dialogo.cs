@@ -7,7 +7,6 @@ public class Dialogo : MonoBehaviour
 {
     public GameObject panelBox;
     public GameObject Maga;
-    public GameObject Missao;
     public GameObject Interrogaçao;
     public GameObject Conversa;
     public bool podeFalar = false;
@@ -132,7 +131,6 @@ public class Dialogo : MonoBehaviour
         PlayerPrefs.SetInt("ConversaMonstros", 1);
         panelBox.SetActive(false);
             estaFalando = false;
-            Missao.SetActive(true);
             PlayerPrefs.SetInt("Missao", NivelEntrando);
             Interrogaçao.SetActive(false);
             Conversa.SetActive(false);

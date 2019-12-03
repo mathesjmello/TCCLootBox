@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 186, y: -231.99998}
+  m_AnchoredPosition: {x: 273, y: -280}
   m_SizeDelta: {x: 247.3, y: 46.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &165861072
@@ -664,7 +664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c210087906848974586c966de0628380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuInicial: 
   NextCenaName: MenuInicial
   NovoJogo: 
   timeStart: 0
@@ -778,8 +777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 11, y: -54}
+  m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2556574221680473105
 CanvasRenderer:
@@ -810,11 +809,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 06dfc8a88d8b5a1458e024f8b6d24ca4, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -822,4 +821,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "MadHat Game Productions:\n\nOriginal Concept\n  Gabriela Pellegrini\n\nGame
+    Design & Research\n  Felipe Delgado\n  Igor Cardoso\n\nMap Design | Level | Scenario
+    Design\n  Vinius Nascimento \n  Gabriel Espindola\n\nArt | Dialogue | Story:\n
+    \ Gabriela Pellegrini\n  Gabriel 'Ferret Lover' \n\nProgramming | Audio | AI\n
+    \ Gabriel Espindola\n  Gabriel Schiavo\n  Matheus Junqueira"

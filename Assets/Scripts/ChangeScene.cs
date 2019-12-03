@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ChangeScene : MonoBehaviour
 {
+    public string MenuInicial;
     public string NextCenaName;
     public string NovoJogo;
     public float timeStart;
+    public string Credits;
     public bool time = false;
     // Start is called before the first frame update
     void Start()
@@ -55,6 +57,18 @@ void Update()
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void CreditScene()
+    {
+        PlayerPrefs.SetString("_sceneName", Credits);
+        LoadingSisten.LoadLevel(Credits);
+    }
+
+    public void MenuInicial()
+    {
+        PlayerPrefs.SetString("_sceneName", MenuInicial);
+        LoadingSisten.LoadLevel(MenuInicial);
     }
 
 }

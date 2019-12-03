@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeScene : MonoBehaviour
 {
-    public string menuInicial;
+
     public string NextCenaName;
     public string NovoJogo;
     public float timeStart;
@@ -63,12 +63,6 @@ void Update()
     {
         PlayerPrefs.SetString("_sceneName", Credits);
         LoadingSisten.LoadLevel(Credits);
-    }
-
-    public void MenuInicial()
-    {
-        PlayerPrefs.SetString("_sceneName", menuInicial);
-        LoadingSisten.LoadLevel(menuInicial);
     }
 
 }

@@ -1628,7 +1628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 358, y: -48}
+  m_AnchoredPosition: {x: 358, y: -79}
   m_SizeDelta: {x: 700, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &163377104259187966
@@ -1661,11 +1661,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e661b80924b1e3b4c8bc97ce27101579, type: 3}
-    m_FontSize: 2
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1674,7 +1674,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Level | Scenario Design\n  Vinius Nascimento \n  Gabriel Espindola\n\nArt
     | Dialogue | Story:\n  Gabriela Pellegrini\n  Gabriel 'Ferret Lover' \n\nProgramming
-    | Audio | AI\n  Gabriel Espindola\n  Gabriel Schiavo\n  Matheus Junqueira"
+    | Audio | AI\n  Gabriel Espindola\n  Gabriel Schiavo\n  Matheus Junqueira\n"
 --- !u!1 &2088087438600536872
 GameObject:
   m_ObjectHideFlags: 0

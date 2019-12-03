@@ -59,10 +59,4 @@ void Update()
         Application.Quit();
     }
 
-    public void CreditScene()
-    {
-        PlayerPrefs.SetString("_sceneName", Credits);
-        LoadingSisten.LoadLevel(Credits);
-    }
-
 }

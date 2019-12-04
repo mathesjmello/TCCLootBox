@@ -20968,7 +20968,7 @@ Transform:
   - {fileID: 385248354}
   - {fileID: 1663509531}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &422552470
 GameObject:
@@ -28519,7 +28519,7 @@ Transform:
   m_Children:
   - {fileID: 1500778533}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614073794
 GameObject:
@@ -28691,7 +28691,7 @@ RectTransform:
   - {fileID: 2017824253}
   - {fileID: 860627133}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -29333,7 +29333,7 @@ Transform:
   m_Children:
   - {fileID: 1116759904}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!213 &1929291905
 Sprite:
@@ -30033,7 +30033,7 @@ Transform:
   - {fileID: 1695835136}
   - {fileID: 784696666}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2045555489
 MonoBehaviour:
@@ -33074,7 +33074,7 @@ PrefabInstance:
     - target: {fileID: 8600994287900946218, guid: 06349577dc9cf554e8fb030b3804209d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8600994287900946218, guid: 06349577dc9cf554e8fb030b3804209d,
         type: 3}
@@ -33091,5 +33091,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8600994287900946219, guid: 06349577dc9cf554e8fb030b3804209d,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 284009262729596095, guid: 34843a3011af85944806d504764b821f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06349577dc9cf554e8fb030b3804209d, type: 3}

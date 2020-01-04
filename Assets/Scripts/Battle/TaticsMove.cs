@@ -142,7 +142,7 @@ public class TaticsMove : MonoBehaviour
     			}
 
     			//Locomoção
-                transform.forward = pointVector;
+                //transform.forward = pointVector;
                 transform.position += velocity * Time.deltaTime;
     		} else {
     			transform.position = target;

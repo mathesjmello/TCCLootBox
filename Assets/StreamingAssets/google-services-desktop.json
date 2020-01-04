@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "146632957029",
+    "firebase_url": "https://unity-database-b97f0.firebaseio.com",
+    "project_id": "unity-database-b97f0",
+    "storage_bucket": "unity-database-b97f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146632957029:android:d1a113d694b7020859fa8c",
+        "android_client_info": {
+          "package_name": "com.gbs0.rpgdatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146632957029-pvkbkir3ff06it5rv72ppjb0kfuceqph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt764BD7czhvvwyK8nYlUWnJAyJqAJwq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146632957029-pvkbkir3ff06it5rv72ppjb0kfuceqph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

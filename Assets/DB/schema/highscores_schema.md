@@ -1,0 +1,9 @@
+CREATE TABLE `highscores` (
+	`id` INTEGER PRIMARY KEY AUTOINCREMENT,
+	`player_id` INTEGER NOT NULL,
+	`player_name` VARCHAR NOT NULL,
+	`score` INTEGER NOT NULL,
+  `date` DATETIME NOT NULL DEFAULT CURRENT_DATE,
+	FOREIGN KEY(player_id) REFERENCES players(id),
+	FOREIGN KEY(player_name) REFERENCES players(name)
+);

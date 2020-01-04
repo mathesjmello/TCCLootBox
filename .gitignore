@@ -35,3 +35,14 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# JSON Service of Google Firebase
+Assets/Plugins/google-services.json
+
+# MP4 Video Files (100MB)
+*.mp4
+.mp4
+
+Assets/Arte Oficial/video/
+
+Assets/Arte Oficial/video.meta

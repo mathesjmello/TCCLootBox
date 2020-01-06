@@ -9,7 +9,7 @@ public partial class TaticsMove : MonoBehaviour
     protected List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
 
-    Stack<Tile> path = new Stack<Tile>();
+	protected Stack<Tile> path = new Stack<Tile>();
     Tile currentTile;
 
 	public int HitForce; 
@@ -18,10 +18,10 @@ public partial class TaticsMove : MonoBehaviour
     public float jumpHeight = 1;
     public float moveSpeed = 2;
 
-    Vector3 velocity = new Vector3();
+	protected Vector3 velocity = new Vector3();
     Vector3 pointVector = new Vector3();
 
-    float halfHeight = 0;
+	protected float halfHeight = 0;
 
     public Tile actualTargetTile;
 
@@ -118,7 +118,7 @@ public partial class TaticsMove : MonoBehaviour
     	}
     }
 
-    public void Move() {
+    public virtual void  Move() {
     	
     	if (path.Count > 0)
     	{
@@ -175,13 +175,13 @@ public partial class TaticsMove : MonoBehaviour
       selectableTiles.Clear();
     }
 
-    void CalculatePointVector(Vector3 target)
+	protected void CalculatePointVector(Vector3 target)
     {
     	pointVector = target - transform.position;
     	pointVector.Normalize();
     }
 
-    void SetHorizotalVelocity()
+	protected void SetHorizotalVelocity()
     {
     	velocity = pointVector * moveSpeed;
     }

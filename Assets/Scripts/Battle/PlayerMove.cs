@@ -30,8 +30,7 @@ public class PlayerMove : TaticsMove
     void Update()
     {
         //LootGen = UIScript.LootID;
-	    LootTest();
-        TempReact();
+        //TempReact();
         if (!turn)
         {
             PlayerAnim.SetBool("Walk", false);
@@ -40,6 +39,7 @@ public class PlayerMove : TaticsMove
         if (!moving)
         {
             CheckMouse();
+	        PlayerAnim.SetBool("Walk", false);
         }
         else
         {
@@ -48,26 +48,59 @@ public class PlayerMove : TaticsMove
         }
     }
 
-    void LootTest()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-	        LootGenTest = 1;
-	        FindSelectableTiles();
-        }
-    }
+	public override void  Move() {
+    	
+		if (path.Count > 0)
+		{
+			Tile t = path.Peek();
+			Vector3 target = t.transform.position;
 
-    void TempReact()
-    {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            PlayerAnim.SetTrigger("PositiveReact");
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            PlayerAnim.SetTrigger("NegativeReact");
-        }
-    }
+			// Calcula a unidade da posição em cima da Tile alvo 'target'
+			target.y += halfHeight + t.GetComponent<Collider>().bounds.extents.y;
+
+			if (Vector3.Distance(transform.position, target) >= 0.05f)
+			{
+				bool jump = transform.position.y != target.y;
+
+				if (jump)
+				{
+					// Implementar o pulo
+				}
+				else {
+					CalculatePointVector(target);
+					SetHorizotalVelocity();
+				}
+
+				//Locomoção
+				//transform.forward = pointVector;
+				transform.position += velocity * Time.deltaTime;
+			} else {
+				transform.position = target;
+				path.Pop();
+			}
+		} 
+		else
+		{
+			PlayerAnim.SetBool("Walk", false);
+			RemoveSelectableTiles();
+			moving = false;
+			
+			// Mudar a Rodada ou Terminar o turno;
+			//RoundManager.EndTurn();
+		}
+	}
+
+//    void TempReact()
+//    {
+//        if (Input.GetKeyDown(KeyCode.UpArrow))
+//        {
+//            PlayerAnim.SetTrigger("PositiveReact");
+//        }
+//        if (Input.GetKeyDown(KeyCode.DownArrow))
+//        {
+//            PlayerAnim.SetTrigger("NegativeReact");
+//        }
+//    }
 
     void CheckMouse()
     {

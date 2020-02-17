@@ -26,10 +26,6 @@ public class Damage : MonoBehaviour
     private float DX;
     private float DZ;
 
-    public GameObject coll01;
-    public GameObject coll02;
-    public GameObject coll03;
-    public GameObject coll04;
 
     bool selectable = false;
     public bool selected = false;
@@ -85,13 +81,17 @@ public class Damage : MonoBehaviour
                 Debug.Log(barra);
                 LifeBar.fillAmount = barra;
                 if (tempLife <= 0)
-                {
-                    Morte = true;
-                    GS.SetBool("Morto", true);
-
+                {
+
+                    Morte = true;
+
+                    GS.SetBool("Morto", true);
+
+
+
                 }
                 playerMove.LootGenTest = 0;
-                RoundManager.EndTurn();
+                //RoundManager.EndTurn();
             }
         }
     }

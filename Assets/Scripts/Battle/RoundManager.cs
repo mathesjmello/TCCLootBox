@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,13 @@ public class RoundManager : MonoBehaviour
     static Dictionary<string, List<TaticsMove>> units = new Dictionary<string, List<TaticsMove>>(); 
     static Queue<string> turnKey = new Queue<string>();
     public static Queue<TaticsMove> turnTeam = new Queue<TaticsMove>();
+    private static GameObject EnemyPainel;
+    public GameObject Painel;
+
+    private void Start()
+    {
+	    EnemyPainel = Painel;
+    }
 
     void Update()
     {
@@ -33,8 +41,11 @@ public class RoundManager : MonoBehaviour
     	{
 		    if (turnTeam.Peek().gameObject.GetComponent<PlayerMove>())
 		    {
+			    EnemyPainel.SetActive(false);
 			    return;
 		    }
+
+		    EnemyPainel.SetActive(true);
     		turnTeam.Peek().BeginTurn();
     	}
     }

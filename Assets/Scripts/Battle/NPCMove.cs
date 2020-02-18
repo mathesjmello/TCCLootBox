@@ -12,7 +12,7 @@ public class NPCMove : TaticsMove
     // Start is called before the first frame update
     void Start()
     {
-        NPC = GameObject.Find("NPC");
+	    NPC = gameObject;
         tempDistCheck = NPC.GetComponent<TempDistCheck>();
         Init();
     }

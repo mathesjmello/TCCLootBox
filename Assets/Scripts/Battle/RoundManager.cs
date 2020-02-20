@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
+	public static bool playerTurn;
     static Dictionary<string, List<TaticsMove>> units = new Dictionary<string, List<TaticsMove>>(); 
     static Queue<string> turnKey = new Queue<string>();
     public static Queue<TaticsMove> turnTeam = new Queue<TaticsMove>();
@@ -41,10 +42,12 @@ public class RoundManager : MonoBehaviour
     	{
 		    if (turnTeam.Peek().gameObject.GetComponent<PlayerMove>())
 		    {
+			    playerTurn = true;
 			    EnemyPainel.SetActive(false);
 			    return;
 		    }
 
+		    playerTurn = false;
 		    EnemyPainel.SetActive(true);
     		turnTeam.Peek().BeginTurn();
     	}

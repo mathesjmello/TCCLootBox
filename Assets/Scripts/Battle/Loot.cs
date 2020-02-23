@@ -9,21 +9,27 @@ namespace DefaultNamespace.Battle
         public int TipeLoot;
         private TaticsMove player;
         private int _rarit;
+        public Button botao;
+        Image m_Image;
 
-        Image m_Image;
-        public Sprite Run_Sprite;
-        public Sprite Fight_Sprite;
-
-        //private Animator PlayerAnim;
+        public Sprite Run_Sprite;
+
+        public Sprite Fight_Sprite;
+
+
+
+        //private Animator PlayerAnim;
+
 
 
         private void Start()
         {
             //PlayerAnim = gameObject.GetComponent<Animator>();
 
-            var text = transform.GetChild(0);
+            var text = transform.GetChild(0);
+
             m_Image = GetComponent<Image>();
-            var botao = transform.GetComponent<Button>();
+            botao = transform.GetComponent<Button>();
             botao.onClick.AddListener(SpendLoot);
             int prob = Random.Range(0, 100);
             SelectRarit(prob);
@@ -41,7 +47,7 @@ namespace DefaultNamespace.Battle
             text.GetComponent<Text>().text = _rarit.ToString();
         }
 
-        private void SpendLoot()
+        public void SpendLoot()
         {
             player.LootGenTest = TipeLoot;
             player.move = _rarit;

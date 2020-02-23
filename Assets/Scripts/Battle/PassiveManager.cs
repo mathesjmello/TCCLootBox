@@ -11,6 +11,8 @@ public class PassiveManager : MonoBehaviour
     public Button passiveButton, closeButton;
     public List<GameObject> passivePainel;
     private int i, l;
+    
+    private Loot[] loots;
 
     private void Start()
     {
@@ -21,15 +23,32 @@ public class PassiveManager : MonoBehaviour
     private void ClosePainel()
     {
         passivePainel[i].SetActive(false);
+        foreach (var loot in loots)
+        {
+            loot.botao.onClick.RemoveListener(Chose);
+            loot.botao.onClick.AddListener(loot.SpendLoot);
+        }
     }
 
     private void OpenPainel()
     {
+        loots = FindObjectsOfType<Loot>();
         if (RoundManager.playerTurn)
         {
             _player = RoundManager.turnTeam.Peek().gameObject.GetComponent<PlayerStats>();
             i = _player.passivaIndex;
+            passivePainel[i].SetActive(true);
+            foreach (var loot in loots)
+            {
+                loot.botao.onClick.RemoveListener(loot.SpendLoot);
+                loot.botao.onClick.AddListener(Chose);
+            }
         }
-        passivePainel[i].SetActive(true);
+        
+    }
+
+    private void Chose()
+    {
+        throw new NotImplementedException();
     }
 }

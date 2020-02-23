@@ -31,8 +31,7 @@ public class TempPlayerHp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LifeCheck();
-        Debug.Log("P. Health: " + PlayerHealth);              
+        LifeCheck();            
     }
 
     private void OnTriggerEnter(Collider col)

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class PassiveManager : MonoBehaviour
 {
+    public GameObject PrefabLoots;
+    public GameObject ChoseTransfom;
     private PlayerStats _player;
     public Button passiveButton, closeButton;
     public List<GameObject> passivePainel;
@@ -49,6 +51,18 @@ public class PassiveManager : MonoBehaviour
 
     private void Chose()
     {
-        throw new NotImplementedException();
+        var ClickCopy = Instantiate(PrefabLoots, ChoseTransfom.transform.position, Quaternion.identity, ChoseTransfom.transform);
+        var CopyLoot = ClickCopy.GetComponent<Loot>();
+        foreach (var loot in loots)
+        {
+            if (loot.Select)
+            {
+                CopyLoot.TypeLoot = loot.TypeLoot;
+                CopyLoot._rarit = loot._rarit;
+                CopyLoot.m_Image = loot.m_Image;
+                CopyLoot.text = transform.GetChild(0);
+                CopyLoot.text.GetComponent<Text>().text = loot.GetComponent<Text>().text;
+            }
+        }
     }
 }

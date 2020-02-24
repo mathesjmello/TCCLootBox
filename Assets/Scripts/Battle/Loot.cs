@@ -7,12 +7,11 @@ namespace DefaultNamespace.Battle
     {
         public int BadDrop = 50, MidDrop= 75, GoodDrop =90;
         public int TypeLoot;
-        public bool Select;
         private TaticsMove player;
         public int _rarit;
         public Button botao;
         public Image m_Image;
-
+        
         public Sprite Run_Sprite;
 
         public Sprite Fight_Sprite;
@@ -34,7 +33,6 @@ namespace DefaultNamespace.Battle
             m_Image = GetComponent<Image>();
             botao = transform.GetComponent<Button>();
             botao.onClick.AddListener(SpendLoot);
-            botao.onClick.AddListener(Clicked);
             int prob = Random.Range(0, 100);
             SelectRarit(prob);
             player = RoundManager.turnTeam.Peek();
@@ -51,14 +49,10 @@ namespace DefaultNamespace.Battle
             text.GetComponent<Text>().text = _rarit.ToString();
         }
 
-        private void Clicked()
-        {
-            Select = true;
-        }
+        
 
         public void SpendLoot()
         {
-            Select = false;
             player.LootGenTest = TypeLoot;
             player.move = _rarit;
             player.HitForce = _rarit;
@@ -86,6 +80,10 @@ namespace DefaultNamespace.Battle
                 _rarit = 1;
                 //PlayerAnim.SetTrigger("NegativeReact");
             }
+        }
+        public void Chose()
+        {
+            FindObjectOfType<PassiveManager>().SelectLoot(gameObject);
         }
     }
 }

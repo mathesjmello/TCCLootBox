@@ -6,4 +6,8 @@ using UnityEngine;
 
 public class Passive : MonoBehaviour
 {
+    public GameObject PrefabLoots;
+    public GameObject ChoseTransfom;
+    
+    
 }

@@ -7,13 +7,12 @@ using UnityEngine.UI;
 
 public class PassiveManager : MonoBehaviour
 {
-    public GameObject PrefabLoots;
-    public GameObject ChoseTransfom;
     private PlayerStats _player;
     public Button passiveButton, closeButton;
     public List<GameObject> passivePainel;
     private int i, l;
-    
+    private Transform lastParent;
+    private GameObject selectLoot;
     private Loot[] loots;
 
     private void Start()
@@ -24,10 +23,11 @@ public class PassiveManager : MonoBehaviour
 
     private void ClosePainel()
     {
+        selectLoot.transform.parent = lastParent;
         passivePainel[i].SetActive(false);
         foreach (var loot in loots)
         {
-            loot.botao.onClick.RemoveListener(Chose);
+            loot.botao.onClick.RemoveListener(loot.Chose);
             loot.botao.onClick.AddListener(loot.SpendLoot);
         }
     }
@@ -43,26 +43,18 @@ public class PassiveManager : MonoBehaviour
             foreach (var loot in loots)
             {
                 loot.botao.onClick.RemoveListener(loot.SpendLoot);
-                loot.botao.onClick.AddListener(Chose);
+                loot.botao.onClick.AddListener(loot.Chose);
             }
         }
         
     }
 
-    private void Chose()
+
+    public void SelectLoot(GameObject o)
     {
-        var ClickCopy = Instantiate(PrefabLoots, ChoseTransfom.transform.position, Quaternion.identity, ChoseTransfom.transform);
-        var CopyLoot = ClickCopy.GetComponent<Loot>();
-        foreach (var loot in loots)
-        {
-            if (loot.Select)
-            {
-                CopyLoot.TypeLoot = loot.TypeLoot;
-                CopyLoot._rarit = loot._rarit;
-                CopyLoot.m_Image = loot.m_Image;
-                CopyLoot.text = transform.GetChild(0);
-                CopyLoot.text.GetComponent<Text>().text = loot.GetComponent<Text>().text;
-            }
-        }
+        selectLoot = o;
+        lastParent = o.transform.parent;
+        o.transform.SetParent(passivePainel[i].GetComponent<Passive>().ChoseTransfom.transform, false); 
+        o.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(101,-82);
     }
 }

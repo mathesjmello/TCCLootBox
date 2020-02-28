@@ -7,6 +7,7 @@ namespace DefaultNamespace.Battle
     {
         public int BadDrop = 50, MidDrop= 75, GoodDrop =90;
         public int TypeLoot;
+        public bool CanUse;
         private TaticsMove player;
         public int _rarit;
         public Button botao;
@@ -29,7 +30,7 @@ namespace DefaultNamespace.Battle
             //PlayerAnim = gameObject.GetComponent<Animator>();
 
             text = transform.GetChild(0);
-
+            CanUse = true;
             m_Image = GetComponent<Image>();
             botao = transform.GetComponent<Button>();
             botao.onClick.AddListener(SpendLoot);
@@ -53,11 +54,14 @@ namespace DefaultNamespace.Battle
 
         public void SpendLoot()
         {
-            player.LootGenTest = TypeLoot;
-            player.move = _rarit;
-            player.HitForce = _rarit;
-            player.BeginTurn();
-            Destroy(gameObject);
+            if (CanUse)
+            {
+                player.LootGenTest = TypeLoot;
+                player.move = _rarit;
+                player.HitForce = _rarit;
+                player.BeginTurn();
+                Destroy(gameObject);
+            }  
         }
 
         private void SelectRarit(int prob)
@@ -86,4 +90,5 @@ namespace DefaultNamespace.Battle
             FindObjectOfType<PassiveManager>().SelectLoot(gameObject);
         }
     }
+    
 }

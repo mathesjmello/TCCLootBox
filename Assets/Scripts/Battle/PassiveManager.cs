@@ -14,6 +14,7 @@ public class PassiveManager : MonoBehaviour
     private Transform lastParent;
     private GameObject selectLoot;
     private Loot[] loots;
+    public Passive Passiva;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class PassiveManager : MonoBehaviour
     {
         selectLoot.transform.parent = lastParent;
         passivePainel[i].SetActive(false);
+        Passiva.CleanPainel();
         foreach (var loot in loots)
         {
             loot.botao.onClick.RemoveListener(loot.Chose);
@@ -56,5 +58,6 @@ public class PassiveManager : MonoBehaviour
         lastParent = o.transform.parent;
         o.transform.SetParent(passivePainel[i].GetComponent<Passive>().ChoseTransfom.transform, false); 
         o.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(101,-82);
+        Passiva.CheckChange(o);
     }
 }

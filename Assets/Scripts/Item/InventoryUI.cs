@@ -7,7 +7,7 @@ public class InventoryUI : MonoBehaviour
     // Bool p/ inventário aberto ou fechado
     private bool inventoryOpen = false;
     public bool InventoryOpen => inventoryOpen;
-    public GameObject inventoryParent;
+    public GameObject inventoryScreen;
     public GameObject inventoryTab;
     public GameObject craftingTab;
     // Update is called once per frame
@@ -32,13 +32,13 @@ public class InventoryUI : MonoBehaviour
     private void OpenInventory()
     {
         inventoryOpen = true;
-        inventoryParent.SetActive(true);
+        inventoryScreen.SetActive(true);
     }
     
     private void CloseInventory()
     {
         inventoryOpen = false;
-        inventoryParent.SetActive(false);
+        inventoryScreen.SetActive(false);
     }
 
     public void OnCraftingTabClicked()
@@ -52,4 +52,17 @@ public class InventoryUI : MonoBehaviour
         craftingTab.SetActive(false);
         inventoryTab.SetActive(true);
     }
+
+    // private void ChangeCursorState(bool lockCursor)
+    // {
+    //     if (lockCursor)
+    //     {
+    //         Cursor.lockState = CursorLockMode.Locked;
+    //         Cursor.visible = false;
+    //     }
+    //     else {
+    //         Cursor.lockState = CursorLockMode.None;
+    //         Cursor.visible = true;
+    //     }
+    // }
 }

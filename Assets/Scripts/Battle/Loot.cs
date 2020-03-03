@@ -89,6 +89,14 @@ namespace DefaultNamespace.Battle
         {
             FindObjectOfType<PassiveManager>().SelectLoot(gameObject);
         }
+
+        public void SetValue(bool b, int r)
+        {
+            Debug.Log("oi");
+            _rarit = r;
+            CanUse = b;
+            text.GetComponent<Text>().text = _rarit.ToString();
+        }
     }
     
 }

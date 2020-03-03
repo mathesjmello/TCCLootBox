@@ -9,8 +9,9 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-    	if (instance == null)
-    		instance.this;
+    	if (instance == null) {
+    		
+        }
     }
     
     public List<Item> itemList = new List<Item>();

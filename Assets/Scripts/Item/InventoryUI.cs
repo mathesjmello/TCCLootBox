@@ -10,6 +10,9 @@ public class InventoryUI : MonoBehaviour
     public GameObject inventoryScreen;
     public GameObject inventoryTab;
     public GameObject craftingTab;
+    
+    private List<ItemSlot> itemSlotList = new List<ItemSlot>();
+
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +30,11 @@ public class InventoryUI : MonoBehaviour
                 OpenInventory();
             }
         }
+    }
+
+    private void UpdateInventoryUI()
+    {
+        int itemCount = InventoryManager.instance.itensList.Count;
     }
 
     private void OpenInventory()

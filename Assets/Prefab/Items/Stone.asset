@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c87e9bdbb29ddd84d91cd9cf18472a88, type: 3}
-  m_Name: HealthItem
+  m_Script: {fileID: 11500000, guid: 3de6510c1aab74895a7d37a9ddb6f8fc, type: 3}
+  m_Name: Stone
   m_EditorClassIdentifier: 
-  name: Berry
-  icon: {fileID: 21300000, guid: 0f6b594d310c7bd4286c4068c299af24, type: 3}
-  itemDescription: + 25 Health
-  itemType: 0
-  amount: 25
+  name: Default Item
+  icon: {fileID: 0}

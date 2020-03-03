@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    #region singleton
     // Start is called before the first frame update
     public static InventoryManager instance;
 
     private void Awake()
     {
     	if (instance == null) {
-    		
+    		instance = this;
         }
     }
+
+    #endregion
     
-    public List<Item> itemList = new List<Item>();
+    public delegate void OnItemChange();
+    public OnItemChange onItemChange = delegate {};
+
+    public List<Item> itensList = new List<Item>();
     public List<Item> craftRecipes = new List<Item>();
 
     public Transform Canvas;
@@ -33,5 +39,11 @@ public class InventoryManager : MonoBehaviour
     	// }
     }
 
-    
+    public void AddItem(Item item)
+    {
+        itensList.Add(item);
+        onItemChange.Invoke();
+    }
+
+        
 }

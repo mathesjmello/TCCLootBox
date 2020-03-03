@@ -24,8 +24,7 @@ namespace DefaultNamespace.Battle
         //private Animator PlayerAnim;
 
 
-
-        private void Start()
+        private void Awake()
         {
             //PlayerAnim = gameObject.GetComponent<Animator>();
 
@@ -90,12 +89,27 @@ namespace DefaultNamespace.Battle
             FindObjectOfType<PassiveManager>().SelectLoot(gameObject);
         }
 
-        public void SetValue(bool b, int r)
+        public void SetValue(bool b, int r, int t)
         {
             Debug.Log("oi");
+            TypeLoot = t;
             _rarit = r;
             CanUse = b;
+            if (TypeLoot == 1)
+            {
+                m_Image.sprite = Run_Sprite;
+            }
+            else
+            {
+
+                m_Image.sprite = Fight_Sprite;
+            }
             text.GetComponent<Text>().text = _rarit.ToString();
+        }
+
+        public void NewOne()
+        {
+            
         }
     }
     

@@ -23,8 +23,8 @@ public class InventoryManager : MonoBehaviour
     public List<Item> itensList = new List<Item>();
     public List<Item> craftRecipes = new List<Item>();
 
-    public Transform Canvas;
-    public GameObject itemInfoPrefab;
+    // public Transform Canvas;
+    // public GameObject itemInfoPrefab;
     private GameObject currentItemInfo = null;
 
     public float moveX = 0f;

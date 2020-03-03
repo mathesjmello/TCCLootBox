@@ -12,8 +12,15 @@ public class InventoryUI : MonoBehaviour
     public GameObject craftingTab;
     
     private List<ItemSlot> itemSlotList = new List<ItemSlot>();
+    public GameObject itemSlotPrefab;
+    public Transform inventaryItemTransform;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        InventoryManager.instance.onItemChange += UpdateInventoryUI;
+        UpdateInventoryUI();
+    }
+    
     void Update()
     {
         // Abrir o inventário
@@ -35,20 +42,56 @@ public class InventoryUI : MonoBehaviour
     private void UpdateInventoryUI()
     {
         int itemCount = InventoryManager.instance.itensList.Count;
+        
+        if(itemCount > itemSlotList.Count)
+        {
+            // Adiciona mais itens nos slots
+            AddItemSlots(itemCount);
+        }
+
+        // Passa por cada item e checa se 
+        for(int i = 0; i < itemSlotList.Count; ++i)
+        {
+            if(i <= itemCount)
+            {
+                itemSlotList[i].AddItem(InventoryManager.instance.itensList[i]);
+            }
+            else
+            {
+                itemSlotList[i].DestroySlot();
+                itemSlotList.RemoveAt(i);
+            }
+        }
     }
 
+    // Adiciona mais itens nos slots do invetário
+    private void AddItemSlots(int itemCount)
+    {
+        int amount = itemCount - itemSlotList.Count;
+
+        for(int i = 0; i < amount; ++i)
+        {
+            GameObject gameObject = Instantiate(itemSlotPrefab, inventaryItemTransform);
+            ItemSlot newSlot = gameObject.GetComponent<ItemSlot>();
+            itemSlotList.Add(newSlot);
+        }
+    }
+
+    // Ao pressionar a tecla "i", o inventario abre
     private void OpenInventory()
     {
         inventoryOpen = true;
         inventoryScreen.SetActive(true);
     }
     
+    // Ao pressionar a tecla "i", o inventario fecha
     private void CloseInventory()
     {
         inventoryOpen = false;
         inventoryScreen.SetActive(false);
     }
 
+    // Alternar entre as abas de invetário e crafting
     public void OnCraftingTabClicked()
     {
         craftingTab.SetActive(true);
@@ -61,6 +104,7 @@ public class InventoryUI : MonoBehaviour
         inventoryTab.SetActive(true);
     }
 
+    // P/ travar o cursor do player e não atrapalhar no mapa
     // private void ChangeCursorState(bool lockCursor)
     // {
     //     if (lockCursor)

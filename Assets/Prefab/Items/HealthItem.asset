@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de6510c1aab74895a7d37a9ddb6f8fc, type: 3}
   m_Name: HealthItem
   m_EditorClassIdentifier: 
-  name: Default Item
+  name: HealthItem
   icon: {fileID: 0}

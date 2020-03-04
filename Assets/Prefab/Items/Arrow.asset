@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de6510c1aab74895a7d37a9ddb6f8fc, type: 3}
   m_Name: Arrow
   m_EditorClassIdentifier: 
-  name: Default Item
-  icon: {fileID: 0}
+  name: Arrow
+  icon: {fileID: 21300000, guid: 09b7bff60345a44b7a2c9194d28c7884, type: 3}

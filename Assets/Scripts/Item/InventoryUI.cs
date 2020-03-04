@@ -41,11 +41,11 @@ public class InventoryUI : MonoBehaviour
 
     private void UpdateInventoryUI()
     {
-        int itemCount = InventoryManager.instance.itensList.Count;
+        int itemCount = InventoryManager.instance.itemsList.Count;
         
         if(itemCount > itemSlotList.Count)
         {
-            // Adiciona mais itens nos slots
+            // Adiciona mais items nos slots
             AddItemSlots(itemCount);
         }
 
@@ -54,7 +54,7 @@ public class InventoryUI : MonoBehaviour
         {
             if(i <= itemCount)
             {
-                itemSlotList[i].AddItem(InventoryManager.instance.itensList[i]);
+                itemSlotList[i].AddItem(InventoryManager.instance.itemsList[i]);
             }
             else
             {
@@ -64,7 +64,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    // Adiciona mais itens nos slots do invetário
+    // Adiciona mais items nos slots do invetário
     private void AddItemSlots(int itemCount)
     {
         int amount = itemCount - itemSlotList.Count;

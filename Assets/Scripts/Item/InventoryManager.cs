@@ -20,7 +20,7 @@ public class InventoryManager : MonoBehaviour
     public delegate void OnItemChange();
     public OnItemChange onItemChange = delegate {};
 
-    public List<Item> itensList = new List<Item>();
+    public List<Item> itemsList = new List<Item>();
     public List<Item> craftRecipes = new List<Item>();
 
     // public Transform Canvas;
@@ -41,22 +41,21 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(Item item)
     {
-        itensList.Add(item);
+        itemsList.Add(item);
         onItemChange.Invoke();
     }
 
     public void RemoveItem(Item item) // Remover o Item depois de usado
     {
-        itensList.Remove(item);
+        itemsList.Remove(item);
         onItemChange.Invoke();
     }
-    
-    
-    public bool ContainsItem(Item item, int amount) // Verificar itens no Inventário
+     
+    public bool ContainsItem(Item item, int amount) // Verificar items no Inventário
     {
         int itemCounter = 0;
 
-        foreach(Item i in itensList) // Verifica se o item existe na lista do inventario
+        foreach(Item i in itemsList) // Verifica se o item existe na lista do inventario
         {
             
             if(i == item)
@@ -65,7 +64,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        if (itemCounter >= amount) // Se a quantidade de itens disponivel satisfaz o total requerido p/ receita
+        if (itemCounter >= amount) // Se a quantidade de items disponivel satisfaz o total requerido p/ receita
         {
             return true;
         }

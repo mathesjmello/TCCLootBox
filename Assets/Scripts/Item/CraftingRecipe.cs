@@ -26,16 +26,28 @@ public class CraftingRecipe : Item
         return true;
     }
 
-    public override void Use() // Usar o CraftRecipe
+    private void RemoveIngredientsFromInventory()
     {
-        if(CanCraft())
+        foreach (Ingredient ingredient in ingredients)
         {
-
+            InventoryManager.instance.RemoveItems(ingredient.item, ingredient.amount);
         }
     }
 
+    public override void Use() // Usar a CraftRecipe
+    {
+        if(CanCraft())
+        {
+            RemoveIngredientsFromInventory(); // Remove os itens necessarios p/ Craft
+            InventoryManager.instance.AddItem(result); // Adiciona o resultado no inventário
+            Debug.Log("Você criou um(a): " + result.name);
+        }
+        else {
+            Debug.Log("Você não tem a quantidade suficiente p/ Craft:" + result.name);
+        }
+    }
 
-
+    [System.Serializable]
     public class Ingredient
     {
         public Item item;

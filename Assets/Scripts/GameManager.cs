@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public List<Item> itemList = new List<Item>();
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #region  singleton
+    public static GameManager instance;
+    #endregion
 
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+    public List<Item> itemList = new List<Item>();
+    
     // [TESTE] - Adicionar Item no Inventário
     void Update()
     {
@@ -18,5 +24,10 @@ public class GameManager : MonoBehaviour
         {
             InventoryManager.instance.AddItem(itemList[Random.Range(0, itemList.Count)]);
         }
+    }
+
+    public void OnCraftItemUse(CraftItemType itemType, int amount)
+    {
+        Debug.Log("Consuming " + itemType + " Add amount " + amount);
     }
 }

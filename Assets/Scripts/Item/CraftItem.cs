@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "CraftItem", menuName = "Item/craftItem")]
-
-public enum CraftItemType
-{
-    HealthItem,
-    PotionItem,
-    AttackItem    
-}
+[CreateAssetMenu(fileName = "CraftItem", menuName = "Item/CraftItem")]
 
 public class CraftItem : Item
 {
@@ -23,6 +16,15 @@ public class CraftItem : Item
     public override void Use()
     {
         base.Use();
+        GameManager.instance.OnCraftItemUse(itemType, amount);
+        InventoryManager.instance.RemoveItem(this);
     }
 
+}
+
+public enum CraftItemType
+{
+    HealthItem,
+    PotionItem,
+    AttackItem    
 }

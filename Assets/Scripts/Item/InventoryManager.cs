@@ -45,5 +45,11 @@ public class InventoryManager : MonoBehaviour
         onItemChange.Invoke();
     }
 
+    // Remover o Item depois de usado
+    public void RemoveItem(Item item)
+    {
+        itensList.Remove(item);
+        onItemChange.Invoke();
+    }
         
 }

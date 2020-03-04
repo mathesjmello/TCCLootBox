@@ -45,11 +45,41 @@ public class InventoryManager : MonoBehaviour
         onItemChange.Invoke();
     }
 
-    // Remover o Item depois de usado
-    public void RemoveItem(Item item)
+    public void RemoveItem(Item item) // Remover o Item depois de usado
     {
         itensList.Remove(item);
         onItemChange.Invoke();
     }
-        
+    
+    
+    public bool ContainsItem(Item item, int amount) // Verificar itens no Inventário
+    {
+        int itemCounter = 0;
+
+        foreach(Item i in itensList) // Verifica se o item existe na lista do inventario
+        {
+            
+            if(i == item)
+            {
+                itemCounter++; // Soma +1 se o item for encontrado
+            }
+        }
+
+        if (itemCounter >= amount) // Se a quantidade de itens disponivel satisfaz o total requerido p/ receita
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+
+    public void RemoveItems(Item item, int amount)
+    {
+        for(int i = 0; i < amount; ++i)
+        {
+            RemoveItem(item);
+        }
+    }
 }

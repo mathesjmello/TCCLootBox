@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         }
     }
     public List<Item> itemList = new List<Item>();
+    public List<Item> craftingRecipes = newList<Item>();
     
     // [TESTE] - Adicionar Item no Inventário
     void Update()

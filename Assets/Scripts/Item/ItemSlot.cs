@@ -22,18 +22,14 @@ public class ItemSlot : MonoBehaviour
 
     public void UseItem()
     {
-        // if (item == null) return;
-
-        // if (Input.GetKey(KeyCode.LeftAlt))
-        // {
-        //     Debug.Log("Trying to switch");
-        //     Inventory.instance.SwitchHotbarInventory(item);
-        // }
-        // else
-        // {
-        //     item.Use();
-        // }
-        if (item != null)
+        if (item = null) return;
+        
+        if (Input.GetKey(KeyCode.LeftAlt))
+        {
+            Debug.Log("Trying to switch");
+            Inventory.instance.SwitchHotbarInventory(item);
+        }
+        else
         {
             item.Use();
         }

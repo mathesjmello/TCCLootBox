@@ -63,7 +63,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        foreach(Item i in hotbarList) 
+        foreach(Item i in hotbarList)
         {
             if (i == item)
             {
@@ -83,8 +83,15 @@ public class InventoryManager : MonoBehaviour
 
     public void RemoveItem(Item item) // Remover o Item depois de usado
     {
-        itemsList.Remove(item);
-        onItemChange.Invoke();
+        if(itemsList.Contains(item))
+        {
+            itemsList.Remove(item);
+            // onItemChange.Invoke();
+            
+        } else if(hotbarList.Contains(item))
+        {
+            itemsList.Remove(item);
+        }
     }
      
     public bool ContainsItem(Item item, int amount) // Verificar items no Inventário

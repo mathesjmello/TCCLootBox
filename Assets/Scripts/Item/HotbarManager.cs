@@ -13,7 +13,7 @@ public class HotbarManager : MonoBehaviour
     {
         SetupHotbarSlots();
     }
-    
+
     private void Update()
     {
         for(int i = 0; i < hotbarKeys.Length; i++)

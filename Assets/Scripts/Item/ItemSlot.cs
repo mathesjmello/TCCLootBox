@@ -50,7 +50,7 @@ public class ItemSlot : MonoBehaviour
 
     public void OnCursorEnter() // Mostrar informação dos items
     {
-        if (item == null) return;
+        if (item == null) return; // Se o item ñ existir then return;
 
         //display item info
         GameManager.instance.DisplayItemInfo(item.name, item.GetItemDescription(), transform.position);
@@ -58,7 +58,7 @@ public class ItemSlot : MonoBehaviour
 
     public void OnCursorExit() // Destruir informação dos items
     {
-        if (item == null) return;
+        if (item == null) return;// Se o item ñ existir then return;
 
         GameManager.instance.DestroyItemInfo();
     }

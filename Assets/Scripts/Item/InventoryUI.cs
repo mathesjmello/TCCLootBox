@@ -13,7 +13,8 @@ public class InventoryUI : MonoBehaviour
     
     private List<ItemSlot> itemSlotList = new List<ItemSlot>();
     public GameObject itemSlotPrefab;
-    public Transform inventaryItemTransform;
+    public Transform inventoryItemTransform;
+    public Transform craftingItemTransform;
 
     private void Start()
     {
@@ -71,7 +72,7 @@ public class InventoryUI : MonoBehaviour
 
         for(int i = 0; i < amount; ++i)
         {
-            GameObject gameObject = Instantiate(itemSlotPrefab, inventaryItemTransform);
+            GameObject gameObject = Instantiate(itemSlotPrefab, inventoryItemTransform);
             ItemSlot newSlot = gameObject.GetComponent<ItemSlot>();
             itemSlotList.Add(newSlot);
         }

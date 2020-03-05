@@ -17,7 +17,6 @@ public class CraftItem : Item
     {
         base.Use();
         GameManager.instance.OnCraftItemUse(itemType, amount);
-        InventoryManager.instance.RemoveItem(this);
     }
 
 }

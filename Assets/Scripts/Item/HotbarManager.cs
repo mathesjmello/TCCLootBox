@@ -7,11 +7,12 @@ public class HotbarManager : MonoBehaviour
     public int HotbarSlotSize => gameObject.transform.childCount;
     private List<ItemSlot> hotbarSlots = new List<ItemSlot>();
 
-    KeyCode[] hotbarKeys = new KeyCode[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5};
+    KeyCode[] hotbarKeys = new KeyCode[] {KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5};
     
     private void Start()
     {
         SetupHotbarSlots();
+        InventoryManager.instance.onItemChange += UpdateHotbarGUI;
     }
 
     private void Update()
@@ -21,8 +22,25 @@ public class HotbarManager : MonoBehaviour
             if(Input.GetKeyDown(hotbarKeys[i]))
             {
                 // Debug.Log("Use item: " + i);
-                hotbarSlots[i].UseItem();// Use item
+                hotbarSlots[i].UseItem(); // Use o item
                 return;
+            }
+        }
+    }
+
+    private void UpdateHotbarGUI()
+    {
+        int SlotCount = InventoryManager.instance.hotbarList.Count;
+        
+        for(int i = 0; i < HotbarSlotSize; i++)
+        {
+            if(i < SlotCount)
+            {
+                hotbarSlots[i].AddItem(InventoryManager.instance.hotbarList[i]);
+            }
+            else
+            {
+                hotbarSlots[i].ClearSlot();
             }
         }
     }

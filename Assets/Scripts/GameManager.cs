@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
 
     public List<Item> itemList = new List<Item>();
     public List<Item> craftingRecipes = new List<Item>();
+
+    public Transform canvas;
+    public GameObject itemInfoPrefab;
+    private GameObject currentInfo = null;
     
     private void Awake()
     {
@@ -31,5 +35,13 @@ public class GameManager : MonoBehaviour
     public void OnCraftItemUse(CraftItemType itemType, int amount)
     {
         Debug.Log("Consumindo: " + itemType + "| Add amount: " + amount);
+    }
+
+    public void DisplayItemInfo(string itemName, string itemDescription, Vector2 buttonPos)
+    {
+        if(currentInfo != null)
+        {
+            Destroy(currentInfo.gameObject);
+        }
     }
 }

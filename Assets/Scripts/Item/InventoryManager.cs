@@ -21,12 +21,7 @@ public class InventoryManager : MonoBehaviour
 
     public List<Item> itemsList = new List<Item>();
     public List<Item> craftRecipes = new List<Item>();
-    
     public List<Item> hotbarList = new List<Item>();
-
-    public delegate void OnItemChange();
-    public OnItemChange onItemChange = delegate {};
-
 
     // public Transform Canvas;
     // public GameObject itemInfoPrefab;
@@ -36,6 +31,9 @@ public class InventoryManager : MonoBehaviour
     public float moveX = 0f;
     public float moveY = 0f;
 
+    public delegate void OnItemChange();
+    public OnItemChange onItemChange = delegate {};
+    
     private void Update()
     {
     	// if() Se o botão da loot for clicado:
@@ -45,9 +43,8 @@ public class InventoryManager : MonoBehaviour
     	// }
     }
     
-    public void ChangeHotbarInventory(Item item) // Muda item do Inventário p/ Hotbar
+    public void ChangeHotbarInventory(Item item) // Muda item do Inventário p/ Hotbar e vice-versa 
     {
-        
         foreach (Item i in itemsList)
         {
             if(i == item) // Se o item existir no index
@@ -59,12 +56,22 @@ public class InventoryManager : MonoBehaviour
                 else
                 {
                     hotbarList.Add(item);
-                    itemList.Remove(item);
+                    itemsList.Remove(item);
                     onItemChange.Invoke();
                 }
+                return;
             }
+        }
 
-            return;
+        foreach(Item i in hotbarList) 
+        {
+            if (i == item)
+            {
+                hotbarList.Remove(item);
+                itemsList.Add(item);
+                onItemChange.Invoke();
+                return;
+            }
         }
     }
 

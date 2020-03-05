@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     #endregion
 
+    public List<Item> itemList = new List<Item>();
+    public List<Item> craftingRecipes = new List<Item>();
+    
     private void Awake()
     {
         if(instance == null)
@@ -15,8 +18,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
-    public List<Item> itemList = new List<Item>();
-    public List<Item> craftingRecipes = newList<Item>();
     
     // [TESTE] - Adicionar Item no Inventário
     void Update()

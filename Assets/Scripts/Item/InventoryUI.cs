@@ -4,69 +4,77 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    // Bool p/ inventário aberto ou fechado
-    private bool inventoryOpen = false;
+    private bool inventoryOpen = false; // Bool p/ inventário aberto ou fechado
     public bool InventoryOpen => inventoryOpen;
-    public GameObject inventoryScreen;
-    public GameObject inventoryTab;
-    public GameObject craftingTab;
+    
+    public GameObject inventoryScreen; // GUI do Inventário
+    public GameObject inventoryTab; // Aba Inventario
+    public GameObject craftingTab; // Aba Craft
     
     private List<ItemSlot> itemSlotList = new List<ItemSlot>();
     public GameObject itemSlotPrefab;
     public Transform inventoryItemTransform;
+    
     public Transform craftingItemTransform;
+
 
     private void Start()
     {
         InventoryManager.instance.onItemChange += UpdateInventoryUI;
         UpdateInventoryUI();
+        SetupCraftingRecipes();
     }
     
-    void Update()
+    void Update() // Abrir e fechar inventário
     {
-        // Abrir o inventário
         if(Input.GetKeyDown(KeyCode.I))
         {
             if (inventoryOpen)
             {
-                // Fechar inventario
                 CloseInventory();
-            }
-            else
-            {
-                // Abrir inventario
+            } else {
                 OpenInventory();
             }
         }
     }
 
-    private void UpdateInventoryUI()
+    private void SetupCraftingRecipes()
+    {
+        List<Item> craftingRecipes = GameManager.instance.craftingRecipes;
+
+        foreach(Item recipe in craftingRecipes)
+        {
+            GameObject gameObject = Instantiate(itemSlotPrefab, craftingItemTransform);
+            ItemSlot slot = gameObject.GetComponent<ItemSlot>();
+            slot.AddItem(recipe);
+        }
+
+    }
+
+    private void UpdateInventoryUI() // Adiciona os items novos no slot
     {
         int itemCount = InventoryManager.instance.itemsList.Count;
         
         if(itemCount > itemSlotList.Count)
         {
-            // Adiciona mais items nos slots
-            AddItemSlots(itemCount);
+            AddItemSlots(itemCount); // Adiciona o primeiro item se não existir numericamente
         }
 
-        // Passa por cada item e checa se 
-        for(int i = 0; i < itemSlotList.Count; ++i)
+        for(int i = 0; i < itemSlotList.Count; ++i) // Se existir
         {
             if(i <= itemCount)
             {
-                itemSlotList[i].AddItem(InventoryManager.instance.itemsList[i]);
+                itemSlotList[i].AddItem(InventoryManager.instance.itemsList[i]); // Adiciono uma instacia do item na lista atual
             }
             else
             {
-                itemSlotList[i].DestroySlot();
-                itemSlotList.RemoveAt(i);
+                itemSlotList[i].DestroySlot(); // Remove o item da lista atual e,
+                itemSlotList.RemoveAt(i); // Destroy o slot com e o icone
             }
         }
     }
 
-    // Adiciona mais items nos slots do invetário
-    private void AddItemSlots(int itemCount)
+    private void AddItemSlots(int itemCount) // Adiciona mais items nos slots do invetário
     {
         int amount = itemCount - itemSlotList.Count;
 
@@ -78,15 +86,13 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    // Ao pressionar a tecla "i", o inventario abre
-    private void OpenInventory()
+    private void OpenInventory() // Ao pressionar a tecla "i", o inventario abre
     {
         inventoryOpen = true;
         inventoryScreen.SetActive(true);
     }
     
-    // Ao pressionar a tecla "i", o inventario fecha
-    private void CloseInventory()
+    private void CloseInventory() // Ao pressionar a tecla "i", o inventario fecha
     {
         inventoryOpen = false;
         inventoryScreen.SetActive(false);

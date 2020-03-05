@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed715efda342b4685b12cdfd3c64a1c2, type: 3}
   m_Name: SwordStone
   m_EditorClassIdentifier: 
-  name: Default Item
-  icon: {fileID: 0}
-  itemType: 0
-  amount: 0
+  name: Sword Stone
+  icon: {fileID: 21300000, guid: 96d673c2338d7394c80e6e97393fbd9e, type: 3}
+  itemType: 2
+  amount: 10

@@ -38,8 +38,9 @@ public class CraftingRecipe : Item
     {
         if(CanCraft())
         {
-            RemoveIngredientsFromInventory(); // Remove os itens necessarios p/ Craft
-            InventoryManager.instance.AddItem(result); // Adiciona o resultado no inventário
+            RemoveIngredientsFromInventory(); // Remove os itens do inventário necessarios p/ Craft
+            InventoryManager.instance.AddItem(result); // Adiciona o resultado no inventário e
+            InventoryUI.instance.OnInventoryTabClicked(); // Volta p/ a aba de Inventory
             Debug.Log("Você criou um(a): " + result.name);
         }
         else {

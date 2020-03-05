@@ -30,6 +30,6 @@ public class GameManager : MonoBehaviour
 
     public void OnCraftItemUse(CraftItemType itemType, int amount)
     {
-        Debug.Log("Consuming " + itemType + " Add amount " + amount);
+        Debug.Log("Consumindo: " + itemType + " Add amount: " + amount);
     }
 }

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
+    #region singleton
+    public static InventoryUI instance;
+    #endregion
+
     private bool inventoryOpen = false; // Bool p/ inventário aberto ou fechado
     public bool InventoryOpen => inventoryOpen;
     
@@ -42,7 +46,7 @@ public class InventoryUI : MonoBehaviour
     {
         List<Item> craftingRecipes = GameManager.instance.craftingRecipes;
 
-        foreach(Item recipe in craftingRecipes)
+        foreach(Item recipe in craftingRecipes) // Adiciona as receitas na aba Craft
         {
             GameObject gameObject = Instantiate(itemSlotPrefab, craftingItemTransform);
             ItemSlot slot = gameObject.GetComponent<ItemSlot>();

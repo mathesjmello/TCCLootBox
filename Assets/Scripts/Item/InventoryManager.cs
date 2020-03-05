@@ -16,15 +16,21 @@ public class InventoryManager : MonoBehaviour
     }
 
     #endregion
-    
-    public delegate void OnItemChange();
-    public OnItemChange onItemChange = delegate {};
+
+    public HotbarManager hotbarManager;
 
     public List<Item> itemsList = new List<Item>();
     public List<Item> craftRecipes = new List<Item>();
+    
+    public List<Item> hotbarList = new List<Item>();
+
+    public delegate void OnItemChange();
+    public OnItemChange onItemChange = delegate {};
+
 
     // public Transform Canvas;
     // public GameObject itemInfoPrefab;
+    
     private GameObject currentItemInfo = null;
 
     public float moveX = 0f;
@@ -37,6 +43,29 @@ public class InventoryManager : MonoBehaviour
     	// 	Item newItem = itemList[Random.Range(0, itemList.Count)];
     	// 	Inventory.instance.AddItem(Instantiate(newItem));	
     	// }
+    }
+    
+    public void ChangeHotbarInventory(Item item) // Muda item do Inventário p/ Hotbar
+    {
+        
+        foreach (Item i in itemsList)
+        {
+            if(i == item) // Se o item existir no index
+            {
+                if(hotbarList.Count >= hotbarManager.HotbarSlotSize) // Checa se tem espaço suficiente nos Slots
+                {
+                    Debug.Log("Não há espaço suficiente para mais items");
+                }
+                else
+                {
+                    hotbarList.Add(item);
+                    itemList.Remove(item);
+                    onItemChange.Invoke();
+                }
+            }
+
+            return;
+        }
     }
 
     public void AddItem(Item item)
@@ -67,14 +96,12 @@ public class InventoryManager : MonoBehaviour
         if (itemCounter >= amount) // Se a quantidade de items disponivel satisfaz o total requerido p/ receita
         {
             return true;
-        }
-        else 
-        {
+        } else {
             return false;
         }
     }
 
-    public void RemoveItems(Item item, int amount)
+    public void RemoveItems(Item item, int amount) // Remove mais de um Item. [Usado p/ o Craft]
     {
         for(int i = 0; i < amount; ++i)
         {

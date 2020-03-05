@@ -27,7 +27,7 @@ public class ItemSlot : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftAlt))
         {
             Debug.Log("Trying to switch");
-            Inventory.instance.ChangeHotbarInventory(item);
+            InventoryManager.instance.ChangeHotbarInventory(item);
         }
         else
         {

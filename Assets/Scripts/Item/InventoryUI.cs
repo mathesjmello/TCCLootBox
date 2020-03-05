@@ -6,6 +6,14 @@ public class InventoryUI : MonoBehaviour
 {
     #region singleton
     public static InventoryUI instance;
+
+     private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
     #endregion
 
     private bool inventoryOpen = false; // Bool p/ inventário aberto ou fechado
@@ -66,9 +74,9 @@ public class InventoryUI : MonoBehaviour
 
         for(int i = 0; i < itemSlotList.Count; ++i) // Se existir
         {
-            if(i <= itemCount)
+            if(i < itemCount)
             {
-                itemSlotList[i].AddItem(InventoryManager.instance.itemsList[i]); // Adiciono uma instacia do item na lista atual
+                itemSlotList[i].AddItem(InventoryManager.instance.itemsList[i]); // Adiciona uma instacia do item na lista atual do inventario
             }
             else
             {

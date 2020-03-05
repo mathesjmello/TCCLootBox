@@ -52,19 +52,18 @@ public class ItemSlot : MonoBehaviour
     //     }
     // }
 
-    
-    // public void OnCursorEnter()
-    // {
-    //     if (item == null) return;
+    public void OnCursorEnter() // Mostrar informação dos items
+    {
+        if (item == null) return;
 
-    //     //display item info
-    //     GameManager.instance.DisplayItemInfo(item.name, item.GetItemDescription(), transform.position);
-    // }
+        //display item info
+        GameManager.instance.DisplayItemInfo(item.name, item.GetItemDescription(), transform.position);
+    }
 
-    // public void OnCursorExit()
-    // {
-    //     if (item == null) return;
+    public void OnCursorExit() // Destruir informação dos items
+    {
+        if (item == null) return;
 
-    //     GameManager.instance.DestroyItemInfo();
-    // }
+        GameManager.instance.DestroyItemInfo();
+    }
 }

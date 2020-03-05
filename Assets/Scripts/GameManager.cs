@@ -43,5 +43,16 @@ public class GameManager : MonoBehaviour
         {
             Destroy(currentInfo.gameObject);
         }
+        
+        currentInfo = Instantiate(itemInfoPrefab, buttonPos, Quaternion.identity, canvas);
+        currentInfo.GetComponent<ItemInfo>().Setup(itemName, itemDescription);
+    }
+
+    public void DestroyItemInfo()
+    {
+        if(currentInfo != null)
+        {
+            Destroy(currentInfo.gameObject);
+        }
     }
 }

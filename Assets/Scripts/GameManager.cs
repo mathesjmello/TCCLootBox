@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public Transform canvas;
     public GameObject itemInfoPrefab;
     private GameObject currentInfo = null;
+
+    public float moveX = 0f;
+    public float moveY = 0f;
     
     private void Awake()
     {
@@ -43,6 +46,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(currentInfo.gameObject);
         }
+
+        buttonPos.x += moveX;
+        buttonPos.y += moveY;
         
         currentInfo = Instantiate(itemInfoPrefab, buttonPos, Quaternion.identity, canvas);
         currentInfo.GetComponent<ItemInfo>().Setup(itemName, itemDescription);

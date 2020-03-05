@@ -20,14 +20,14 @@ public class ItemSlot : MonoBehaviour
         icon.sprite = null;
     }
 
-    public void UseItem()
+    public void UseItem() // Condição p/ atalho do teclado em mudar 
     {
         if (item = null) return;
         
         if (Input.GetKey(KeyCode.LeftAlt))
         {
             Debug.Log("Trying to switch");
-            Inventory.instance.SwitchHotbarInventory(item);
+            Inventory.instance.ChangeHotbarInventory(item);
         }
         else
         {

@@ -50,7 +50,6 @@ public class HotbarManager : MonoBehaviour
         for(int i = 0; i < HotbarSlotSize; i++)
         {
             ItemSlot slot = gameObject.transform.GetChild(i).GetComponent<ItemSlot>();
-            Debug.Log(slot);
             hotbarSlots.Add(slot);
         }
     }

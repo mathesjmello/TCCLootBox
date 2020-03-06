@@ -24,6 +24,7 @@ public class PassiveManager : MonoBehaviour
 
     private void ClosePainel()
     {
+        if(selectLoot)
         selectLoot.transform.parent = lastParent;
         passivePainel[i].SetActive(false);
         Passiva.CleanPainel();

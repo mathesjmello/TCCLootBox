@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
-{
-	  public string name; 
-	  public string description; // If they're any
-	  public int quantity;	
-	  public int price;	 
-	  public Sprite sprite; // Item's sprite
-	  public enum Type {weapon, consumable, equip, potion, heal};	 
-	  public Type type;
-	  public bool on_sale; // 0 - 1 (On Sale or Not)
-    
-    void Start()
-    {
-        
-    }
+[System.Serializable]
+[CreateAssetMenu(fileName = "Item", menuName = "Item/baseItem")]
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class Item : ScriptableObject
+{
+	
+    new public string name = "Default Item";
+	public Sprite icon = null;
+	public string itemDescription = "Descrição do Item";
+
+	public virtual void Use()
+	{
+		Debug.Log("Using " + name);
+		InventoryManager.instance.RemoveItem(this);
+	}
+
+	public virtual string GetItemDescription()
+	{
+		return itemDescription;
+	}
 }

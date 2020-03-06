@@ -59,6 +59,7 @@ public class InventoryManager : MonoBehaviour
                     itemsList.Remove(item);
                     onItemChange.Invoke();
                 }
+                
                 return;
             }
         }

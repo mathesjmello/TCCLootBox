@@ -5710,7 +5710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: debd24eb8b0c1429cb90ff4f94c276ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hotbarManager: {fileID: 0}
+  hotbarManager: {fileID: 1055867743}
   itemsList: []
   craftRecipes: []
   hotbarList: []

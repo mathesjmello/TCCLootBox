@@ -30,11 +30,11 @@ public class HotbarManager : MonoBehaviour
 
     private void UpdateHotbarGUI()
     {
-        int SlotCount = InventoryManager.instance.hotbarList.Count;
+        int slotCount = InventoryManager.instance.hotbarList.Count;
         
         for(int i = 0; i < HotbarSlotSize; i++)
         {
-            if(i < SlotCount)
+            if(i < slotCount)
             {
                 hotbarSlots[i].AddItem(InventoryManager.instance.hotbarList[i]);
             }

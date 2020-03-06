@@ -22,8 +22,8 @@ public class ItemSlot : MonoBehaviour
 
     public void UseItem() // Condição p/ atalho do teclado em mudar 
     {
-        if (item = null) return;
-        
+        if (item == null) return;
+   
         if (Input.GetKey(KeyCode.LeftAlt))
         {
             Debug.Log("Trying to switch");

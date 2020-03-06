@@ -7,7 +7,7 @@ public class HotbarManager : MonoBehaviour
     public int HotbarSlotSize => gameObject.transform.childCount;
     private List<ItemSlot> hotbarSlots = new List<ItemSlot>();
 
-    KeyCode[] hotbarKeys = new KeyCode[] {KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5};
+    KeyCode[] hotbarKeys = new KeyCode[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5 };
     
     private void Start()
     {
@@ -50,6 +50,7 @@ public class HotbarManager : MonoBehaviour
         for(int i = 0; i < HotbarSlotSize; i++)
         {
             ItemSlot slot = gameObject.transform.GetChild(i).GetComponent<ItemSlot>();
+            Debug.Log(slot);
             hotbarSlots.Add(slot);
         }
     }

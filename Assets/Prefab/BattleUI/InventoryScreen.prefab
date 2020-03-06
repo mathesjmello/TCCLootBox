@@ -1662,7 +1662,7 @@ GameObject:
   - component: {fileID: 8595096300491112479}
   - component: {fileID: 8595096300491112472}
   m_Layer: 5
-  m_Name: Content
+  m_Name: inventorySlotParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1869,7 +1869,7 @@ GameObject:
   - component: {fileID: 8595096300698341854}
   - component: {fileID: 8595096300698341855}
   m_Layer: 5
-  m_Name: Content
+  m_Name: craftingItemParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1966,7 +1966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.4, y: 0.7}
+  m_AnchoredPosition: {x: -1.4000015, y: 0.6999998}
   m_SizeDelta: {x: 46.64, y: 22.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8595096300747212975

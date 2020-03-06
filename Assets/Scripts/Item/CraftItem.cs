@@ -16,7 +16,9 @@ public class CraftItem : Item
     public override void Use()
     {
         base.Use();
+        
         GameManager.instance.OnCraftItemUse(itemType, amount);
+        InventoryManager.instance.RemoveItem(this);
     }
 
 }

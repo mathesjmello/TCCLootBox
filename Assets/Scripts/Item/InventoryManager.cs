@@ -20,7 +20,7 @@ public class InventoryManager : MonoBehaviour
     public HotbarManager hotbarManager;
 
     public List<Item> itemsList = new List<Item>();
-    public List<Item> craftRecipes = new List<Item>();
+    // public List<Item> craftRecipes = new List<Item>();
     public List<Item> hotbarList = new List<Item>();
 
     // public Transform Canvas;

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword Stone
   icon: {fileID: 21300000, guid: 96d673c2338d7394c80e6e97393fbd9e, type: 3}
+  itemDescription: Espada Comum
   result: {fileID: 11400000, guid: c4296cc054adf4255946b8c0c46401b2, type: 2}
   ingredients:
   - item: {fileID: 11400000, guid: 25a8911725f32aa49a8a7394250d7286, type: 2}

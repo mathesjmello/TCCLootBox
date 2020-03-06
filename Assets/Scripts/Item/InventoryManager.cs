@@ -84,15 +84,19 @@ public class InventoryManager : MonoBehaviour
 
     public void RemoveItem(Item item) // Remover o Item depois de usado
     {
-        if(itemsList.Contains(item))
+        Debug.Log("RemoveItemMethod()");
+        
+        if (itemsList.Contains(item))
         {
             itemsList.Remove(item);
-            // onItemChange.Invoke();
             
-        } else if(hotbarList.Contains(item))
+        } 
+        else if (hotbarList.Contains(item))
         {
-            itemsList.Remove(item);
+            hotbarList.Remove(item);
         }
+
+        onItemChange.Invoke();
     }
      
     public bool ContainsItem(Item item, int amount) // Verificar items no Inventário

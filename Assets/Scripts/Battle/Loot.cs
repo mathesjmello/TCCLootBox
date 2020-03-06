@@ -60,7 +60,11 @@ namespace DefaultNamespace.Battle
                 player.HitForce = _rarit;
                 player.BeginTurn();
                 Destroy(gameObject);
-            }  
+            }
+            else
+            {
+                FindObjectOfType<PassiveManager>().ChoseOne(this);
+            }
         }
 
         private void SelectRarit(int prob)
@@ -91,7 +95,6 @@ namespace DefaultNamespace.Battle
 
         public void SetValue(bool b, int r, int t)
         {
-            Debug.Log("oi");
             TypeLoot = t;
             _rarit = r;
             CanUse = b;
@@ -106,11 +109,7 @@ namespace DefaultNamespace.Battle
             }
             text.GetComponent<Text>().text = _rarit.ToString();
         }
-
-        public void NewOne()
-        {
-            
-        }
+        
     }
     
 }

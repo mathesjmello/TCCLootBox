@@ -60,4 +60,11 @@ public class PassiveManager : MonoBehaviour
         o.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(101,-82);
         Passiva.CheckChange(o);
     }
+
+    public void ChoseOne(Loot l)
+    {
+        var lootstats = selectLoot.GetComponent<Loot>();
+        lootstats.SetValue(true, l._rarit, l.TypeLoot );
+        ClosePainel();
+    }
 }

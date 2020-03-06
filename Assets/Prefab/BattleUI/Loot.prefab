@@ -35,10 +35,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 130.1}
+  m_SizeDelta: {x: 160, y: 130.09998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8505472598221740109
 CanvasRenderer:
@@ -137,9 +137,14 @@ MonoBehaviour:
   BadDrop: 50
   MidDrop: 75
   GoodDrop: 90
-  TipeLoot: 0
+  TypeLoot: 0
+  CanUse: 0
+  _rarit: 0
+  botao: {fileID: 1352389915913000019}
+  m_Image: {fileID: 1561672323074171811}
   Run_Sprite: {fileID: 21300000, guid: 5033e93b1f1e645448d4a6d50e9af01f, type: 3}
   Fight_Sprite: {fileID: 21300000, guid: 96d673c2338d7394c80e6e97393fbd9e, type: 3}
+  text: {fileID: 5458695550581898254}
 --- !u!1 &6150905846411631795
 GameObject:
   m_ObjectHideFlags: 0

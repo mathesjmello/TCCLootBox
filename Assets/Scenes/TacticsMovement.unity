@@ -3585,6 +3585,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0348221a03d7a0438751c0ccf2bee91, type: 2}
   craftingRecipes:
   - {fileID: 11400000, guid: 4db3cbb648950466f9787be46a01ad35, type: 2}
+  - {fileID: 11400000, guid: 8f12ebc08433d4522b420bb08dbe7314, type: 2}
+  - {fileID: 11400000, guid: ba20c46cdf8534469b0206202e31458a, type: 2}
   canvas: {fileID: 626703701}
   itemInfoPrefab: {fileID: 2400788845841610616, guid: 72d9d6eaf295442f296203ce17d787d1,
     type: 3}

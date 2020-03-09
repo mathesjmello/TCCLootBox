@@ -17,7 +17,7 @@ MonoBehaviour:
   itemDescription: "Descri\xE7\xE3o do Item"
   result: {fileID: 11400000, guid: f54724ab7450749c6aff08f544b9f30d, type: 2}
   ingredients:
-  - item: {fileID: 0}
-    amount: 0
-  - item: {fileID: 0}
-    amount: 0
+  - item: {fileID: 11400000, guid: bca9c9c4477f244acb58939d24dd24f8, type: 2}
+    amount: 2
+  - item: {fileID: 11400000, guid: fd7573dd17e704291baabe16d15c18b0, type: 2}
+    amount: 1

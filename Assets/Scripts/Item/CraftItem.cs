@@ -27,5 +27,6 @@ public enum CraftItemType
 {
     HealthItem,
     PotionItem,
-    AttackItem    
+    AttackItem,
+    MovementItem
 }

@@ -3,7 +3,15 @@ guid: 1c40a2896a3784f3fa9533bc016bf5f9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - inventoryScreen: {fileID: 8595096299128387588, guid: 9bd92a3fa341a4032b9ed6ad62b86e86,
+      type: 3}
+  - inventoryTab: {instanceID: 0}
+  - craftingTab: {instanceID: 0}
+  - itemSlotPrefab: {fileID: 2645853407316783421, guid: da44bdd035322417596a2fa8c698ba02,
+      type: 3}
+  - inventoryItemTransform: {instanceID: 0}
+  - craftingItemTransform: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

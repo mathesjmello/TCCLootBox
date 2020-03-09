@@ -8054,6 +8054,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 626703701}
     m_Modifications:
+    - target: {fileID: 972879697285105748, guid: dcb8d58ad7bcda24daa80f5aabb42793,
+        type: 3}
+      propertyPath: passiveButton
+      value: 
+      objectReference: {fileID: 904841241}
     - target: {fileID: 972879697285105750, guid: dcb8d58ad7bcda24daa80f5aabb42793,
         type: 3}
       propertyPath: m_Name
@@ -8164,11 +8169,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 972879697285105748, guid: dcb8d58ad7bcda24daa80f5aabb42793,
-        type: 3}
-      propertyPath: passiveButton
-      value: 
-      objectReference: {fileID: 904841241}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb8d58ad7bcda24daa80f5aabb42793, type: 3}
 --- !u!1 &1945142273
@@ -9877,6 +9877,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595096300029480194, guid: 9bd92a3fa341a4032b9ed6ad62b86e86,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bd92a3fa341a4032b9ed6ad62b86e86, type: 3}

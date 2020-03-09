@@ -998,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &344683069
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,7 +5104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a00bf3035c64b01a64b5bd5a886e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemList: []
+  itemList:
+  - {fileID: 11400000, guid: 25a8911725f32aa49a8a7394250d7286, type: 2}
+  - {fileID: 11400000, guid: 2a5e1817c3d01404ebe798fcea8f27f3, type: 2}
+  - {fileID: 11400000, guid: d6e2dcabd7b360043a631f9ac813e771, type: 2}
   craftingRecipes:
   - {fileID: 11400000, guid: 4db3cbb648950466f9787be46a01ad35, type: 2}
   canvas: {fileID: 626703701}

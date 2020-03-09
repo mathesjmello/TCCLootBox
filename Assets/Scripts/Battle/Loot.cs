@@ -6,30 +6,38 @@ namespace DefaultNamespace.Battle
     public class Loot: MonoBehaviour
     {
         public int BadDrop = 50, MidDrop= 75, GoodDrop =90;
-        public int TipeLoot;
+        public int TypeLoot;
+        public bool CanUse;
         private TaticsMove player;
-        private int _rarit;
+        public int _rarit;
+        public Button botao;
+        public Image m_Image;
+        
+        public Sprite Run_Sprite;
 
-        Image m_Image;
-        public Sprite Run_Sprite;
-        public Sprite Fight_Sprite;
-
-        //private Animator PlayerAnim;
+        public Sprite Fight_Sprite;
+
+        public Transform text;
 
 
-        private void Start()
+
+        //private Animator PlayerAnim;
+
+
+        private void Awake()
         {
             //PlayerAnim = gameObject.GetComponent<Animator>();
 
-            var text = transform.GetChild(0);
+            text = transform.GetChild(0);
+            CanUse = true;
             m_Image = GetComponent<Image>();
-            var botao = transform.GetComponent<Button>();
+            botao = transform.GetComponent<Button>();
             botao.onClick.AddListener(SpendLoot);
             int prob = Random.Range(0, 100);
             SelectRarit(prob);
             player = RoundManager.turnTeam.Peek();
             
-            if (TipeLoot == 1)
+            if (TypeLoot == 1)
             {
                 m_Image.sprite = Run_Sprite;
             }
@@ -41,13 +49,22 @@ namespace DefaultNamespace.Battle
             text.GetComponent<Text>().text = _rarit.ToString();
         }
 
-        private void SpendLoot()
+        
+
+        public void SpendLoot()
         {
-            player.LootGenTest = TipeLoot;
-            player.move = _rarit;
-            player.HitForce = _rarit;
-            player.BeginTurn();
-            Destroy(gameObject);
+            if (CanUse)
+            {
+                player.LootGenTest = TypeLoot;
+                player.move = _rarit;
+                player.HitForce = _rarit;
+                player.BeginTurn();
+                Destroy(gameObject);
+            }
+            else
+            {
+                FindObjectOfType<PassiveManager>().ChoseOne(this);
+            }
         }
 
         private void SelectRarit(int prob)
@@ -71,5 +88,28 @@ namespace DefaultNamespace.Battle
                 //PlayerAnim.SetTrigger("NegativeReact");
             }
         }
+        public void Chose()
+        {
+            FindObjectOfType<PassiveManager>().SelectLoot(gameObject);
+        }
+
+        public void SetValue(bool b, int r, int t)
+        {
+            TypeLoot = t;
+            _rarit = r;
+            CanUse = b;
+            if (TypeLoot == 1)
+            {
+                m_Image.sprite = Run_Sprite;
+            }
+            else
+            {
+
+                m_Image.sprite = Fight_Sprite;
+            }
+            text.GetComponent<Text>().text = _rarit.ToString();
+        }
+        
     }
+    
 }

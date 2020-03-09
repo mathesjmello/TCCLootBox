@@ -36,7 +36,7 @@ namespace DefaultNamespace.Battle
 
                 var index = Random.Range(1, 3);
                 var loot = Instantiate(PrefabLoots, Vector3.zero, Quaternion.identity, PainelLootBox.transform);
-                loot.GetComponent<Loot>().TipeLoot = index;
+                loot.GetComponent<Loot>().TypeLoot = index;
                 Destroy(transform.gameObject);
             }
         }

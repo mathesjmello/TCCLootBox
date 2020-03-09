@@ -7,7 +7,7 @@ public class InventoryUI : MonoBehaviour
     #region singleton
     public static InventoryUI instance;
 
-     private void Awake()
+    private void Awake()
     {
         if(instance == null)
         {

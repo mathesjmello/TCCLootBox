@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// DEVE SER ASSIMILADO COMO COMPONENTE DO PLAYER
 public class InventoryManager : MonoBehaviour
 {
     #region singleton

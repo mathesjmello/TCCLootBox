@@ -3137,6 +3137,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   passivaIndex: 0
   passivaLvl: 0
+--- !u!114 &1060997798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060997790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: debd24eb8b0c1429cb90ff4f94c276ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hotbarManager: {fileID: 4628270942523477833, guid: ab5bbff90c33c41259bf754dc5f5cbdd,
+    type: 3}
+  itemsList: []
+  hotbarList: []
+  moveX: 0
+  moveY: 0
 --- !u!1 &1062869039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,7 +3582,7 @@ MonoBehaviour:
   itemList:
   - {fileID: 11400000, guid: 25a8911725f32aa49a8a7394250d7286, type: 2}
   - {fileID: 11400000, guid: 2a5e1817c3d01404ebe798fcea8f27f3, type: 2}
-  - {fileID: 11400000, guid: d6e2dcabd7b360043a631f9ac813e771, type: 2}
+  - {fileID: 11400000, guid: c0348221a03d7a0438751c0ccf2bee91, type: 2}
   craftingRecipes:
   - {fileID: 11400000, guid: 4db3cbb648950466f9787be46a01ad35, type: 2}
   canvas: {fileID: 626703701}

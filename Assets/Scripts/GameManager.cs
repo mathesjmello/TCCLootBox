@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region  singleton
+    
     public static GameManager instance;
+    
     #endregion
 
     public List<Item> itemList = new List<Item>();

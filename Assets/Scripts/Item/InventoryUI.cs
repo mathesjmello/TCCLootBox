@@ -115,6 +115,7 @@ public class InventoryUI : MonoBehaviour
     {
         craftingTab.SetActive(true);
         inventoryTab.SetActive(false);
+        passivaTab.SetActive(false);
     }
     
     public void OnInventoryTabClicked()
@@ -123,6 +124,12 @@ public class InventoryUI : MonoBehaviour
         inventoryTab.SetActive(true);
     }
 
+    public void OnPassivaTabClicked()
+    {
+        craftingTab.SetActive(false);
+        inventoryTab.SetActive(false);
+    }
+    
     // P/ travar o cursor do player e não atrapalhar no mapa
     // private void ChangeCursorState(bool lockCursor)
     // {

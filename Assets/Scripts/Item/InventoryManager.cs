@@ -40,8 +40,10 @@ public class InventoryManager : MonoBehaviour
     	// if() Se o botão da loot for clicado:
     	// {
     	// 	Item newItem = itemList[Random.Range(0, itemList.Count)];
-    	// 	Inventory.instance.AddItem(Instantiate(newItem));	
+    	// 	Inventory.instance.AddItem(Instantiate(newItem));
     	// }
+        int itemsNumberInInventory = itemsList.Count;
+        // Debug.Log(itemsNumberInInventory);
     }
     
     public void ChangeHotbarInventory(Item item) // Muda item do Inventário p/ Hotbar e vice-versa 
@@ -84,9 +86,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void RemoveItem(Item item) // Remover o Item depois de usado
-    {
-        Debug.Log("RemoveItemMethod()");
-        
+    {   
         if (itemsList.Contains(item))
         {
             itemsList.Remove(item);

@@ -19,7 +19,7 @@ namespace DefaultNamespace.Battle
 
         public Transform text;
 
-
+        
 
         //private Animator PlayerAnim;
 
@@ -46,6 +46,7 @@ namespace DefaultNamespace.Battle
 
                 m_Image.sprite = Fight_Sprite;
             }
+            // Implementar o Instantiate no Inventário
             text.GetComponent<Text>().text = _rarit.ToString();
         }
 

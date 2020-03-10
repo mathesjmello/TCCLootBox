@@ -10,19 +10,15 @@ namespace DefaultNamespace.Battle
         public bool CanUse;
         private TaticsMove player;
         public int _rarit;
-        public Button botao;
-        public Image m_Image;
+        // public Button botao;
+        // public Image m_Image;
         
-        public Sprite Run_Sprite;
+        // public Transform text;
 
-        public Sprite Fight_Sprite;
-
-        public Transform text;
-
-        
+        public List<Item> movementList = new List<Item>();
+        public List<Item> attackList = new List<Item>();
 
         //private Animator PlayerAnim;
-
 
         private void Awake()
         {
@@ -30,7 +26,7 @@ namespace DefaultNamespace.Battle
 
             text = transform.GetChild(0);
             CanUse = true;
-            m_Image = GetComponent<Image>();
+            // m_Image = GetComponent<Image>();
             botao = transform.GetComponent<Button>();
             botao.onClick.AddListener(SpendLoot);
             int prob = Random.Range(0, 100);
@@ -41,12 +37,16 @@ namespace DefaultNamespace.Battle
             {
                 // Colocar Item Movimento na lista do inventário
                 m_Image.sprite = Run_Sprite;
+                Item newItem = movementList[Random.Range(0, movementList.Count)];
+                InventoryManager.instance.AddItem(Instantiate(newItem));
             }
             else
             {
 
                 // Colocar Item Espada na Lista do inventário
                 m_Image.sprite = Fight_Sprite;
+                Item newItem = attackList[Random.Range(0, attackList.Count)];
+                InventoryManager.instance.AddItem(Instantiate(newItem));
             }
             // Implementar o Instantiate no Inventário
             text.GetComponent<Text>().text = _rarit.ToString();
@@ -96,22 +96,22 @@ namespace DefaultNamespace.Battle
             FindObjectOfType<PassiveManager>().SelectLoot(gameObject);
         }
 
-        public void SetValue(bool b, int r, int t)
-        {
-            TypeLoot = t;
-            _rarit = r;
-            CanUse = b;
-            if (TypeLoot == 1)
-            {
-                m_Image.sprite = Run_Sprite;
-            }
-            else
-            {
+        // public void SetValue(bool b, int r, int t)
+        // {
+        //     TypeLoot = t;
+        //     _rarit = r;
+        //     CanUse = b;
+        //     if (TypeLoot == 1)
+        //     {
+        //         m_Image.sprite = Run_Sprite;
+        //     }
+        //     else
+        //     {
 
-                m_Image.sprite = Fight_Sprite;
-            }
-            text.GetComponent<Text>().text = _rarit.ToString();
-        }
+        //         m_Image.sprite = Fight_Sprite;
+        //     }
+        //     text.GetComponent<Text>().text = _rarit.ToString();
+        // }
         
     }
     

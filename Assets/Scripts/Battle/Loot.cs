@@ -39,11 +39,13 @@ namespace DefaultNamespace.Battle
             
             if (TypeLoot == 1)
             {
+                // Colocar Item Movimento na lista do inventário
                 m_Image.sprite = Run_Sprite;
             }
             else
             {
 
+                // Colocar Item Espada na Lista do inventário
                 m_Image.sprite = Fight_Sprite;
             }
             // Implementar o Instantiate no Inventário

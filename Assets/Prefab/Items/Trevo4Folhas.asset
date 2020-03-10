@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de6510c1aab74895a7d37a9ddb6f8fc, type: 3}
   m_Name: Trevo4Folhas
   m_EditorClassIdentifier: 
-  name: Default Item
-  icon: {fileID: 0}
-  itemDescription: "Descri\xE7\xE3o do Item"
+  name: Trevo da Sorte
+  icon: {fileID: 21300000, guid: 6f2523fe2ede648c98dc0cac99c60093, type: 3}
+  itemDescription: Item muito raro, pertencente ao universo QUINTAL DE IDOSO

@@ -17,7 +17,7 @@ MonoBehaviour:
   itemDescription: "Permite obter +3 de movimenta\xE7\xE3o"
   result: {fileID: 11400000, guid: c3f602008de684e5b8a0de996a00f157, type: 2}
   ingredients:
-  - item: {fileID: 0}
-    amount: 0
-  - item: {fileID: 0}
-    amount: 0
+  - item: {fileID: 11400000, guid: 6a09dc97a47e747b88be541d3559ce5e, type: 2}
+    amount: 2
+  - item: {fileID: 11400000, guid: c2a1bd28d261145f7bb900ec4aefb4ca, type: 2}
+    amount: 1

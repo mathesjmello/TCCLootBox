@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: debd24eb8b0c1429cb90ff4f94c276ac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hotbarManager: {fileID: 4628270942523477833, guid: ab5bbff90c33c41259bf754dc5f5cbdd,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

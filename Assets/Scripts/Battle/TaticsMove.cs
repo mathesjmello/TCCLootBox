@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TaticsMove : MonoBehaviour
+public partial class TaticsMove : MonoBehaviour
 {
 	public bool turn = false;
 
     protected List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
 
-    Stack<Tile> path = new Stack<Tile>();
+	protected Stack<Tile> path = new Stack<Tile>();
     Tile currentTile;
 
 	public int HitForce; 
@@ -18,10 +18,10 @@ public class TaticsMove : MonoBehaviour
     public float jumpHeight = 1;
     public float moveSpeed = 2;
 
-    Vector3 velocity = new Vector3();
+	protected Vector3 velocity = new Vector3();
     Vector3 pointVector = new Vector3();
 
-    float halfHeight = 0;
+	protected float halfHeight = 0;
 
     public Tile actualTargetTile;
 
@@ -118,7 +118,7 @@ public class TaticsMove : MonoBehaviour
     	}
     }
 
-    public void Move() {
+    public virtual void  Move() {
     	
     	if (path.Count > 0)
     	{
@@ -142,7 +142,7 @@ public class TaticsMove : MonoBehaviour
     			}
 
     			//Locomoção
-                transform.forward = pointVector;
+                //transform.forward = pointVector;
                 transform.position += velocity * Time.deltaTime;
     		} else {
     			transform.position = target;
@@ -175,13 +175,13 @@ public class TaticsMove : MonoBehaviour
       selectableTiles.Clear();
     }
 
-    void CalculatePointVector(Vector3 target)
+	protected void CalculatePointVector(Vector3 target)
     {
     	pointVector = target - transform.position;
     	pointVector.Normalize();
     }
 
-    void SetHorizotalVelocity()
+	protected void SetHorizotalVelocity()
     {
     	velocity = pointVector * moveSpeed;
     }
@@ -226,8 +226,7 @@ public class TaticsMove : MonoBehaviour
 
         return endTile;
     }
-
-    protected void FindPath(Tile target)
+	 protected void FindPath(Tile target)
     {
         ComputeProximityList(jumpHeight, target);
         GetCurrentTile();
@@ -245,7 +244,7 @@ public class TaticsMove : MonoBehaviour
         {
             Tile t = FindLowestF(openList); //Find the low F Cost for A*
 
-            closedList.Add(t); 
+            closedList.Add(t);
 
             if (t == target) // WE FIND THE PATH HERE!
             {
@@ -260,12 +259,12 @@ public class TaticsMove : MonoBehaviour
                 if (closedList.Contains(tile))
                 {
                     // Do nothing, already processed
-	                
                 }
                 else if (openList.Contains(tile))
                 {
                     // On openList, but not close to player
-                    float tempG = t.g + Vector3.Distance(tile.transform.position, t.transform.position); // Temporary cost for A*
+                    float tempG =
+                        t.g + Vector3.Distance(tile.transform.position, t.transform.position); // Temporary cost for A*
 
                     if (tempG < tile.g) // If tempG is faster than g Cost
                     {
@@ -273,7 +272,7 @@ public class TaticsMove : MonoBehaviour
                         tile.g = tempG;
                         tile.f = tile.g + tile.h;
                     }
-                }   
+                }
                 else
                 {
                     // First time see the tile
@@ -287,11 +286,12 @@ public class TaticsMove : MonoBehaviour
                 }
             }
         }
+
         // TODO - What to do if there's no path on target file?
         Debug.Log("Path not found");
     }
 
-    public void BeginTurn()
+	public void BeginTurn()
     {
 	   // LootGenTest = Random.Range(1, 3);
 	    Debug.Log(LootGenTest);

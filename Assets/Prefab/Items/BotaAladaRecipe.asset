@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf1a44eb2e954f75b5d88b434b40a42, type: 3}
+  m_Name: BotaAladaRecipe
+  m_EditorClassIdentifier: 
+  name: Bota Alada
+  icon: {fileID: 21300000, guid: bef145b8a52554f5387ec54b5b5a42d8, type: 3}
+  itemDescription: "Permite obter +3 de movimenta\xE7\xE3o"
+  result: {fileID: 11400000, guid: c3f602008de684e5b8a0de996a00f157, type: 2}
+  ingredients:
+  - item: {fileID: 11400000, guid: 6a09dc97a47e747b88be541d3559ce5e, type: 2}
+    amount: 2
+  - item: {fileID: 11400000, guid: c2a1bd28d261145f7bb900ec4aefb4ca, type: 2}
+    amount: 1

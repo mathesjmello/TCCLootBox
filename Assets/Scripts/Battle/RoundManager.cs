@@ -1,17 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
+	public static bool playerTurn;
     static Dictionary<string, List<TaticsMove>> units = new Dictionary<string, List<TaticsMove>>(); 
     static Queue<string> turnKey = new Queue<string>();
     public static Queue<TaticsMove> turnTeam = new Queue<TaticsMove>();
+    private static GameObject EnemyPainel;
+    public GameObject Painel;
+    public static bool Tutorial;
+    private void Start()
+    {
+	    EnemyPainel = Painel;
+    }
 
     void Update()
     {
     	if (turnTeam.Count == 0)
-    	{
+        {
+	        
     		InitTeamTurnQueue();
     	}
     }
@@ -23,7 +33,6 @@ public class RoundManager : MonoBehaviour
     	{
     		turnTeam.Enqueue(unit);
     	}
-
     	StartTurn();
     }
 
@@ -33,8 +42,13 @@ public class RoundManager : MonoBehaviour
     	{
 		    if (turnTeam.Peek().gameObject.GetComponent<PlayerMove>())
 		    {
+			    playerTurn = true;
+			    EnemyPainel.SetActive(false);
 			    return;
 		    }
+
+		    playerTurn = false;
+		    EnemyPainel.SetActive(true);
     		turnTeam.Peek().BeginTurn();
     	}
     }

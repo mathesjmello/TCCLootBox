@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 1c40a2896a3784f3fa9533bc016bf5f9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inventoryScreen: {fileID: 8595096299128387588, guid: 9bd92a3fa341a4032b9ed6ad62b86e86,
+      type: 3}
+  - inventoryTab: {fileID: 8474827663992874379, guid: 74d1c274fce0842daa3d40766deeb28f,
+      type: 3}
+  - craftingTab: {fileID: 6767756385896765331, guid: 1c9c64d9d0c6f416dbe3dff5a8ccf0c1,
+      type: 3}
+  - itemSlotPrefab: {fileID: 2645853407316783421, guid: da44bdd035322417596a2fa8c698ba02,
+      type: 3}
+  - inventoryItemTransform: {fileID: 3272903468295367986, guid: da44bdd035322417596a2fa8c698ba02,
+      type: 3}
+  - craftingItemTransform: {fileID: 6848474166858032788, guid: 5dfc202e0f0f341f799b5c401bcf67f0,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

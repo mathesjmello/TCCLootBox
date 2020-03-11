@@ -10,12 +10,14 @@ public class Dialogo : MonoBehaviour
     public GameObject Interrogaçao;
     public GameObject Conversa;
     public bool podeFalar = false;
+    public bool Guilda = false;
+
+
     [SerializeField]
     private int linhaAtual;
     public TextMeshProUGUI textoMensagem;
     public string[] texto;
     public int limitText;
-    public int NivelMissao;
     public int NivelEntrando;
 
     //public float timer = 0;
@@ -28,10 +30,9 @@ public class Dialogo : MonoBehaviour
     // private bool[] Mike = 
     public GameObject img;
     public GameObject[] imgs;
-    public int conta;
+    private int conta;
     //[SerializeField]
     //private bool[] ray;
-    public bool rodaCut = false;
     void Start()
     {
         textoMensagem.text = texto[linhaAtual].ToString();
@@ -128,10 +129,14 @@ public class Dialogo : MonoBehaviour
     }
     void Desabilitar()
     {
-        PlayerPrefs.SetInt("ConversaMonstros", 1);
+        
         panelBox.SetActive(false);
             estaFalando = false;
-            PlayerPrefs.SetInt("Missao", NivelEntrando);
+        if (Guilda == true)
+        {
+            PlayerPrefs.SetInt("DialogoGuilda", NivelEntrando);
+        
+        }
             Interrogaçao.SetActive(false);
             Conversa.SetActive(false);
 

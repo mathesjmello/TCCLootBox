@@ -115,7 +115,7 @@ public class InventoryUI : MonoBehaviour
     {
         craftingTab.SetActive(true);
         inventoryTab.SetActive(false);
-        passivaTab.SetActive(false);
+       // passivaTab.SetActive(false);
     }
     
     public void OnInventoryTabClicked()

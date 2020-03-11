@@ -6,24 +6,42 @@ public class ControleMonstros : MonoBehaviour
 {
     public GameObject Slime1;
     public GameObject Slime2;
-    public GameObject Slime3;
+    public GameObject Bruxa;
+    public GameObject Gatos;
+    public GameObject EventoMorteSlime;
+
+
+
 
     // Start is called before the first frame update
     void Start()
-    {
-        if (PlayerPrefs.GetInt("ConversaMonstros") == 0)
-        {
+    {    
             Slime1.SetActive(false);
             Slime2.SetActive(false);
-            Slime3.SetActive(false);
 
-        }
-        if (PlayerPrefs.GetInt("ConversaMonstros") == 1)
+        if (PlayerPrefs.GetInt("Missao") == 1)
         {
-            Slime1.SetActive(true);
-            Slime2.SetActive(true);
-            Slime3.SetActive(true);
-
+            if (PlayerPrefs.GetInt("Monstro1") == 0)
+            {
+                Slime1.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Monstro2") == 0)
+            {
+                Slime2.SetActive(true);
+            }
+            
+        }
+        if (PlayerPrefs.GetInt("Missao") == 2)
+        {
+            if (PlayerPrefs.GetInt("Bruxa") == 0)
+            {
+                Slime1.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Gatos") == 0)
+            {
+                Slime2.SetActive(true);
+            }
+            
         }
 
     }
@@ -31,20 +49,12 @@ public class ControleMonstros : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("Monstro1") == 1)
+        if(PlayerPrefs.GetInt("Monstro1") == 1 && PlayerPrefs.GetInt("Monstro2") == 1)
         {
-            Slime1.SetActive(false);
+            PlayerPrefs.SetInt("DialogoGuilda", 3);
+            EventoMorteSlime.SetActive(true);
 
         }
-        if (PlayerPrefs.GetInt("Monstro2") == 1)
-        {
-            Slime2.SetActive(false);
 
-        }
-        if (PlayerPrefs.GetInt("Monstro3") == 1)
-        {
-            Slime3.SetActive(false);
-
-        }
     }
 }

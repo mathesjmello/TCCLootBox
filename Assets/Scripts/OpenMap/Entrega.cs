@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Entrega : MonoBehaviour
 {
-    public GameObject Dialogo1;
-    public int M;
-    public GameObject Dialogo2;
+    public GameObject BemVindo;
+    public GameObject Quadro;
+    public GameObject Missao;
+    public GameObject Entregra;
+    public GameObject Portal;
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Dialogo1.SetActive(false);
-        Dialogo2.SetActive(false);
+        BemVindo.SetActive(false);
+        Quadro.SetActive(false);
+        Missao.SetActive(false);
+        Entregra.SetActive(false);
+        Portal.SetActive(false);
+
+
+
 
 
     }
@@ -20,15 +31,50 @@ public class Entrega : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("Missao",0) == 0)
+        if (PlayerPrefs.GetInt("DialogoGuilda",0) == 0)
         {
-            Dialogo1.SetActive(true);
+            BemVindo.SetActive(true);
+            Quadro.SetActive(false);
+            Missao.SetActive(false);
+            Entregra.SetActive(false);
+            Portal.SetActive(false);
 
         }
 
-        if (PlayerPrefs.GetInt("SlimesMortos") == 3)
+       
+        if (PlayerPrefs.GetInt("DialogoGuilda", 0) == 1)
         {
-            Dialogo2.SetActive(true);
+            BemVindo.SetActive(false);
+            Quadro.SetActive(true);
+            Missao.SetActive(false);
+            Entregra.SetActive(false);
+            Portal.SetActive(false);
+
+        }
+        if (PlayerPrefs.GetInt("DialogoGuilda", 0) == 2)
+        {
+            BemVindo.SetActive(false);
+            Quadro.SetActive(false);
+            Missao.SetActive(true);
+            Entregra.SetActive(false);
+            Portal.SetActive(false);
+
+        }
+        if (PlayerPrefs.GetInt("DialogoGuilda") == 3)
+        {
+            BemVindo.SetActive(false);
+            Quadro.SetActive(false);
+            Missao.SetActive(false);
+            Entregra.SetActive(true);
+            Portal.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("DialogoGuilda", 0) == 4)
+        {
+            BemVindo.SetActive(false);
+            Quadro.SetActive(false);
+            Missao.SetActive(false);
+            Entregra.SetActive(false);
+            Portal.SetActive(true);
 
         }
     }

@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Mission : MonoBehaviour
 {
-    public GameObject missao;
-    public GameObject missao2;
     public GameObject missao0;
+    public GameObject missao1;
+    public GameObject missao2;
+    public GameObject missao3;
+    public GameObject missao4;
 
     // Start is called before the first frame update
     void Start()
     {
         missao0.SetActive(true);
-        missao.SetActive(false);
-        missao2.SetActive(false);
+        missao1.SetActive(false);
+        missao2.SetActive(false);  
 
 
     }
@@ -25,14 +27,14 @@ public class Mission : MonoBehaviour
         if (PlayerPrefs.GetInt("Missao") == 2)
         {
             missao0.SetActive(false);
-            missao.SetActive(true);
+            missao1.SetActive(true);
 
         }
         if (PlayerPrefs.GetInt("SlimesMortos") == 3)
         {
             missao0.SetActive(false);
 
-            missao.SetActive(false);
+            missao1.SetActive(false);
 
             missao2.SetActive(true);
 

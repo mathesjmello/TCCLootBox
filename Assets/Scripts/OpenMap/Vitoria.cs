@@ -15,7 +15,7 @@ public class Vitoria : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerPrefs.GetInt("Missao") == 3)
+        if(PlayerPrefs.GetInt("Missao") == 6)
         {
             PlayerPrefs.DeleteAll();
             PlayerPrefs.SetString("_sceneName", NextCenaName);

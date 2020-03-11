@@ -198,16 +198,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 32900000, guid: 6319eeb095225794888595e1b5d16d66,
         type: 3}
-    - target: {fileID: 6958450945312753645, guid: ac6899f2b3776ce43a94f379bc0557c6,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1860356266}
-    - target: {fileID: 6958450945442078886, guid: ac6899f2b3776ce43a94f379bc0557c6,
-        type: 3}
-      propertyPath: NextCenaName
-      value: TesteMovimento2
-      objectReference: {fileID: 0}
     - target: {fileID: 6958450943993583731, guid: ac6899f2b3776ce43a94f379bc0557c6,
         type: 3}
       propertyPath: m_TargetCamera
@@ -228,6 +218,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_DirectAudioMutes.Array.data[0]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958450945312753645, guid: ac6899f2b3776ce43a94f379bc0557c6,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1860356266}
+    - target: {fileID: 6958450945442078886, guid: ac6899f2b3776ce43a94f379bc0557c6,
+        type: 3}
+      propertyPath: NextCenaName
+      value: TesteMovimento2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac6899f2b3776ce43a94f379bc0557c6, type: 3}
@@ -836,8 +836,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 789.8, y: 439}
-  m_SizeDelta: {x: 71.8, y: 47.7}
+  m_AnchoredPosition: {x: 0.57858, y: 0.034164}
+  m_SizeDelta: {x: 134.8, y: 84.387}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1863620536
 MonoBehaviour:
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c210087906848974586c966de0628380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextCenaName: TesteMovimento2
+  NextCenaName: Ilha1
   NovoJogo: 
   timeStart: 0
   time: 1
